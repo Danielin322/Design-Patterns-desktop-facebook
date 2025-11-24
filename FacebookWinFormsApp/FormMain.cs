@@ -34,8 +34,7 @@ namespace BasicFacebookFeatures
         private void login()
         {
             m_LoginResult = FacebookService.Login(
-                /// (This is Desig Patter's App ID. replace it with your own)
-                textBoxAppID.Text,
+                "1389047795918927",
                 /// requested permissions:
                 "email",
                 "public_profile"
@@ -45,6 +44,10 @@ namespace BasicFacebookFeatures
             if (string.IsNullOrEmpty(m_LoginResult.ErrorMessage))
             {
                 afterLogin();
+                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow();
+                fbWindow.Show(); // opens FacebookWindow
+
+                this.Hide(); //hides FormMain
             }
         }
 
@@ -81,6 +84,11 @@ namespace BasicFacebookFeatures
             m_LoginResult = null;
             buttonLogin.Enabled = true;
             buttonLogout.Enabled = false;
+        }
+
+        private void textBoxAppID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
