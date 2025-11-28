@@ -7,45 +7,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FacebookWrapper;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BasicFacebookFeatures
 {
-    public partial class FacebookWindow : Form
+    public partial class FormMainFacebookWindow : Form
     {
-        public FacebookWindow()
+        private LoginResult m_LoginResult;
+        public FormMainFacebookWindow(LoginResult loginResult)
         {
+            m_LoginResult = loginResult;
             InitializeComponent();
         }
 
-        
-
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            // move to profile form (dont forget to give the user option to go back)
+            FormProfile profileForm = new FormProfile(m_LoginResult);
+            profileForm.FormClosed += exitFromPhotosForm;
+            this.Hide();
+            profileForm.Show();
         }
 
         private void buttonFriends_Click(object sender, EventArgs e)
         {
             // move to friends form (dont forget to give the user option to go back)
         }
-
         
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            //log out
+            FacebookService.LogoutWithUI();
+            this.Close();   
         }
 
         private void FacebookWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+
         }
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            // go to photos form ( dont forget to give the user option to go back)
+            // go to photos form ( dont forget to give the user option to go back)s
         }
 
-        
+        private void pictureBox_Profile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMainFacebookWindow_Load(object sender, EventArgs e)
+        {
+            // Show picture of user
+            pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
+
+            //show user name
+            textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name;
+
+            // Enable user to log out
+            buttonLogout.Enabled = true;
+        }
+
+        private void textBoxUserFullName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void exitFromPhotosForm(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }

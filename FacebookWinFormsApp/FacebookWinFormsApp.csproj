@@ -77,12 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacebookWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacebookWindow.Designer.cs">
-      <DependentUpon>FacebookWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormFriends.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +89,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMainFacebookWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainFacebookWindow.Designer.cs">
+      <DependentUpon>FormMainFacebookWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,14 +103,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FacebookWindow.resx">
-      <DependentUpon>FacebookWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormFriends.resx">
       <DependentUpon>FormFriends.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainFacebookWindow.resx">
+      <DependentUpon>FormMainFacebookWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>

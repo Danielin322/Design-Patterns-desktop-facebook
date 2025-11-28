@@ -37,17 +37,32 @@ namespace BasicFacebookFeatures
                 "1389047795918927",
                 /// requested permissions:
                 "email",
-                "public_profile"
-                /// add any relevant permissions
-                );
+                "public_profile",
+                "user_age_range",
+                "user_birthday",
+                "user_friends",
+                "user_gender",
+                "user_hometown",
+                "user_likes",
+                "user_link",
+                "user_location",
+                "user_photos",
+                "user_posts",
+                "user_videos");
 
             if (string.IsNullOrEmpty(m_LoginResult.ErrorMessage))
             {
-                afterLogin();
-                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow();
+                //Create and show FacebookWindow
+                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_LoginResult);
+                fbWindow.FormClosed += logout;
+                this.Hide(); //hides FormMain
                 fbWindow.Show(); // opens FacebookWindow
 
-                this.Hide(); //hides FormMain
+                //this.Hide(); //hides FormMain
+            }
+            else
+            {
+                MessageBox.Show(m_LoginResult.ErrorMessage, "Login Failed");
             }
         }
 
@@ -57,8 +72,13 @@ namespace BasicFacebookFeatures
             try
             {
                 m_LoginResult = FacebookService.Connect("EAAUm6cZC4eUEBPZCFs9rJRpwlUmdHcPvU1tUNkIyP37zRZCjSvfdHaW5t3xsOnUL0bEKHL8Snjk6AZC3O32KWEbaItglEnXWQ2zEMXHqsdfdv0ecXNs3hO69juHrZCfRN9FGvfuJZAXhP4Pm57DRRoDeB8De6ZABnfrRflh6zgPwnavpyHS3ZCYX1E6K1QLTHff5sAZDZD");
+                //Create and show FacebookWindow
+                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_LoginResult);
+                fbWindow.FormClosed += logout;
+                this.Hide(); //hides FormMain
+                fbWindow.Show(); // opens FacebookWindow
 
-                afterLogin();
+                //this.Hide(); //hides FormMain
             }
             catch (Exception ex)
             {
@@ -66,27 +86,21 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void afterLogin()
-        {
 
-            buttonLogin.Text = $"Logged in as {m_LoginResult.LoggedInUser.Name}";
-            buttonLogin.BackColor = Color.LightGreen;
-            pictureBoxProfile.ImageLocation = m_LoginResult.LoggedInUser.PictureNormalURL;
-            buttonLogin.Enabled = false;
-            buttonLogout.Enabled = true;
-        }
-
-        private void buttonLogout_Click(object sender, EventArgs e)
+        private void logout(object sender, EventArgs e)
         {
-            FacebookService.LogoutWithUI();
-            buttonLogin.Text = "Login";
-            buttonLogin.BackColor = buttonLogout.BackColor;
+            this.Show();
             m_LoginResult = null;
             buttonLogin.Enabled = true;
-            buttonLogout.Enabled = false;
         }
 
+
         private void textBoxAppID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
