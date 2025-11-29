@@ -32,6 +32,7 @@
             this.buttonFriends = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.flowLayoutPanelPhotos = new System.Windows.Forms.FlowLayoutPanel();
+            this.listBoxAlbums = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonUserPhotos
@@ -63,6 +64,7 @@
             this.buttonProfile.TabIndex = 26;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // flowLayoutPanelPhotos
             // 
@@ -73,11 +75,22 @@
             this.flowLayoutPanelPhotos.Size = new System.Drawing.Size(1361, 784);
             this.flowLayoutPanelPhotos.TabIndex = 30;
             // 
+            // listBoxAlbums
+            // 
+            this.listBoxAlbums.FormattingEnabled = true;
+            this.listBoxAlbums.ItemHeight = 25;
+            this.listBoxAlbums.Location = new System.Drawing.Point(1102, 39);
+            this.listBoxAlbums.Name = "listBoxAlbums";
+            this.listBoxAlbums.Size = new System.Drawing.Size(297, 229);
+            this.listBoxAlbums.TabIndex = 31;
+            this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
+            // 
             // FormPhotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.flowLayoutPanelPhotos);
             this.Controls.Add(this.buttonUserPhotos);
             this.Controls.Add(this.buttonFriends);
@@ -95,5 +108,6 @@
         private System.Windows.Forms.Button buttonFriends;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhotos;
+        private System.Windows.Forms.ListBox listBoxAlbums;
     }
 }

@@ -24,8 +24,8 @@ namespace BasicFacebookFeatures
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult);
-            profileForm.FormClosed += exitFromPhotosForm;
-            this.Hide();
+            //profileForm.FormClosed += exitFromPhotosForm;
+            this.Close();
             profileForm.Show();
         }
 
@@ -49,8 +49,8 @@ namespace BasicFacebookFeatures
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            photosForm.FormClosed += exitFromPhotosForm;
-            this.Hide();
+            //photosForm.FormClosed += exitFromPhotosForm;
+            this.Close();
             photosForm.Show();
         }
 
@@ -76,9 +76,9 @@ namespace BasicFacebookFeatures
 
         }
 
-        public void exitFromPhotosForm(object sender, EventArgs e)
-        {
-            this.Show();
-        }
+        //public void exitFromPhotosForm(object sender, EventArgs e)
+        //{
+        //    this.Show();
+        //}
     }
 }

@@ -130,14 +130,14 @@ namespace BasicFacebookFeatures
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            photosForm.FormClosed += exitFromPhotosForm;
-            this.Hide();
+            //photosForm.FormClosed += exitFromPhotosForm;
+            this.Close();
             photosForm.Show();
         }
 
-        public void exitFromPhotosForm(object sender, EventArgs e)
-        {
-            this.Show();
-        }
+        //public void exitFromPhotosForm(object sender, EventArgs e)
+        //{
+        //    this.Show();
+        //}
     }
 }
