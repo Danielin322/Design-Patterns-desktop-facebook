@@ -95,6 +95,12 @@
     <Compile Include="FormMainFacebookWindow.Designer.cs">
       <DependentUpon>FormMainFacebookWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPhotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPhotos.Designer.cs">
+      <DependentUpon>FormPhotos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainFacebookWindow.resx">
       <DependentUpon>FormMainFacebookWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPhotos.resx">
+      <DependentUpon>FormPhotos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>

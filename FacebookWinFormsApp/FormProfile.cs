@@ -28,15 +28,6 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSeeAllPhotos_Click(object sender, EventArgs e)
-        {
-            // move to the same form that the button "photos" from main sends us
-        }
 
         private void buttonSeeFriends_Click(object sender, EventArgs e)
         {
@@ -57,7 +48,6 @@ namespace BasicFacebookFeatures
             textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name;
 
             textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday;
-            textBoxContactDetails.Text = m_LoginResult.LoggedInUser.Link;
             textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location.Name;
             textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email;   
             textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown.Name;
@@ -101,6 +91,53 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show("No Posts to retrieve :(");
             }
+        }
+
+        private void buttonSeeLikes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fetchLikes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fetchLikes()
+        {
+            listBoxLikesByUser.Items.Clear();
+
+            foreach (Page likedPage in m_LoginResult.LoggedInUser.LikedPages)
+            {
+                if (likedPage.Name != null)
+                {
+                    listBoxLikesByUser.Items.Add(likedPage.Name);
+                }
+                else
+                {
+                    listBoxLikesByUser.Items.Add(string.Format("[{0}]", likedPage.Category));
+                }
+            }
+
+            if (listBoxLikesByUser.Items.Count == 0)
+            {
+                MessageBox.Show("No Likes to retrieve :(");
+            }
+        }
+
+        private void buttonUserPhotos_Click(object sender, EventArgs e)
+        {
+            FormPhotos photosForm = new FormPhotos(m_LoginResult);
+            photosForm.FormClosed += exitFromPhotosForm;
+            this.Hide();
+            photosForm.Show();
+        }
+
+        public void exitFromPhotosForm(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }

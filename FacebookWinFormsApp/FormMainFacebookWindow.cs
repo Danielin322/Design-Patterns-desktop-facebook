@@ -48,7 +48,10 @@ namespace BasicFacebookFeatures
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            // go to photos form ( dont forget to give the user option to go back)s
+            FormPhotos photosForm = new FormPhotos(m_LoginResult);
+            photosForm.FormClosed += exitFromPhotosForm;
+            this.Hide();
+            photosForm.Show();
         }
 
         private void pictureBox_Profile_Click(object sender, EventArgs e)

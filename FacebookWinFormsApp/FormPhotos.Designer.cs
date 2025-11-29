@@ -28,12 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonUserPhotos = new System.Windows.Forms.Button();
+            this.buttonFriends = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.flowLayoutPanelPhotos = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // buttonUserPhotos
+            // 
+            this.buttonUserPhotos.Location = new System.Drawing.Point(860, 1106);
+            this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUserPhotos.Name = "buttonUserPhotos";
+            this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
+            this.buttonUserPhotos.TabIndex = 28;
+            this.buttonUserPhotos.Text = "Photos";
+            this.buttonUserPhotos.UseVisualStyleBackColor = true;
+            // 
+            // buttonFriends
+            // 
+            this.buttonFriends.Location = new System.Drawing.Point(1046, 1106);
+            this.buttonFriends.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFriends.Name = "buttonFriends";
+            this.buttonFriends.Size = new System.Drawing.Size(144, 66);
+            this.buttonFriends.TabIndex = 27;
+            this.buttonFriends.Text = "Friends";
+            this.buttonFriends.UseVisualStyleBackColor = true;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(1236, 1106);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(144, 66);
+            this.buttonProfile.TabIndex = 26;
+            this.buttonProfile.Text = "Profile";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelPhotos
+            // 
+            this.flowLayoutPanelPhotos.AutoScroll = true;
+            this.flowLayoutPanelPhotos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelPhotos.Location = new System.Drawing.Point(55, 302);
+            this.flowLayoutPanelPhotos.Name = "flowLayoutPanelPhotos";
+            this.flowLayoutPanelPhotos.Size = new System.Drawing.Size(1361, 784);
+            this.flowLayoutPanelPhotos.TabIndex = 30;
+            // 
+            // FormPhotos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.Controls.Add(this.flowLayoutPanelPhotos);
+            this.Controls.Add(this.buttonUserPhotos);
+            this.Controls.Add(this.buttonFriends);
+            this.Controls.Add(this.buttonProfile);
+            this.Name = "FormPhotos";
             this.Text = "FormPhotos";
+            this.Load += new System.EventHandler(this.FormPhotos_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonUserPhotos;
+        private System.Windows.Forms.Button buttonFriends;
+        private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhotos;
     }
 }
