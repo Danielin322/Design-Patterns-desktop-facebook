@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BasicFacebookFeatures
@@ -24,7 +25,6 @@ namespace BasicFacebookFeatures
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult);
-            //profileForm.FormClosed += exitFromPhotosForm;
             this.Close();
             profileForm.Show();
         }
@@ -41,23 +41,15 @@ namespace BasicFacebookFeatures
             this.Close();   
         }
 
-        private void FacebookWindow_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            //photosForm.FormClosed += exitFromPhotosForm;
             this.Close();
             photosForm.Show();
         }
 
-        private void pictureBox_Profile_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)
         {
@@ -69,16 +61,37 @@ namespace BasicFacebookFeatures
 
             // Enable user to log out
             buttonLogout.Enabled = true;
+            
+            fetchLikedPages();
+
         }
 
-        private void textBoxUserFullName_TextChanged(object sender, EventArgs e)
+        private void buttonPublishPost_Click(object sender, EventArgs e)
         {
+            textBoxNewPost.Clear();
+            MessageBox.Show("Post published successfully! (not really...)");
 
         }
 
-        //public void exitFromPhotosForm(object sender, EventArgs e)
-        //{
-        //    this.Show();
-        //}
+
+
+        private void fetchLikedPages()
+        {
+            listBoxLikedPages.Items.Clear();
+            listBoxLikedPages.DisplayMember = "Name";
+
+            try
+            {
+                foreach (Page page in m_LoginResult.LoggedInUser.LikedPages)
+                {
+                    listBoxLikedPages.Items.Add(page);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

@@ -108,7 +108,6 @@
             this.textBoxBirthdayDate.Size = new System.Drawing.Size(299, 38);
             this.textBoxBirthdayDate.TabIndex = 11;
             this.textBoxBirthdayDate.Text = "birthday date";
-            this.textBoxBirthdayDate.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBoxGender
             // 
@@ -267,7 +266,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormProfile";
             this.Text = "FormProfile";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProfile_FormClosed);
             this.Load += new System.EventHandler(this.FormProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
             this.ResumeLayout(false);

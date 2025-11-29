@@ -23,10 +23,6 @@ namespace BasicFacebookFeatures
             InitializeComponent();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void buttonSeeFriends_Click(object sender, EventArgs e)
@@ -34,10 +30,6 @@ namespace BasicFacebookFeatures
             // move to the same form that the button "friends" from main sends us
         }
 
-        private void FormProfile_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
 
         private void FormProfile_Load(object sender, EventArgs e)
         {

@@ -30,7 +30,6 @@ namespace BasicFacebookFeatures
             {                
                 fetchAlbums();
 
-                //fetchAndShowPhotosFromAlbum();
             }
             catch (KeyNotFoundException)
             {
@@ -120,15 +119,10 @@ namespace BasicFacebookFeatures
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult);
-            //profileForm.FormClosed += exitFromPhotosForm;
             this.Close();
             profileForm.Show();
         }
 
-        //public void exitFromPhotosForm(object sender, EventArgs e)
-        //{
-        //    this.Show();
-        //}
     }
 }
 
