@@ -43,6 +43,7 @@
             this.buttonProfile = new System.Windows.Forms.Button();
             this.textBoxContactDetails = new System.Windows.Forms.TextBox();
             this.buttonHome = new System.Windows.Forms.Button();
+            this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +138,7 @@
             this.listBoxPosts.Location = new System.Drawing.Point(75, 122);
             this.listBoxPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(793, 929);
+            this.listBoxPosts.Size = new System.Drawing.Size(314, 929);
             this.listBoxPosts.TabIndex = 15;
             // 
             // textBoxUserLocation
@@ -206,11 +207,23 @@
             this.buttonHome.UseVisualStyleBackColor = true;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
+            // flowLayoutPanelPosts
+            // 
+            this.flowLayoutPanelPosts.AutoScroll = true;
+            this.flowLayoutPanelPosts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanelPosts.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(447, 130);
+            this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
+            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(523, 915);
+            this.flowLayoutPanelPosts.TabIndex = 28;
+            this.flowLayoutPanelPosts.WrapContents = false;
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 1246);
+            this.Controls.Add(this.flowLayoutPanelPosts);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.textBoxContactDetails);
             this.Controls.Add(this.buttonUserPhotos);
@@ -251,5 +264,6 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.TextBox textBoxContactDetails;
         private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
     }
 }

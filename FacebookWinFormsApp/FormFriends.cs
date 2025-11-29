@@ -13,6 +13,8 @@ namespace BasicFacebookFeatures
 {
     public partial class FormFriends : Form
     {
+        private LoginResult m_LoginResult;
+
         public FormFriends()
         {
             InitializeComponent();

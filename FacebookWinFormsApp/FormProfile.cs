@@ -70,35 +70,93 @@ namespace BasicFacebookFeatures
         //    }
         //}
 
+
         private void fetchPosts()
         {
             try
             {
-                listBoxPosts.Items.Clear();
+                flowLayoutPanelPosts.Controls.Clear(); // נקה תוכן קודם
 
                 foreach (Post post in m_LoginResult.LoggedInUser.Posts)
                 {
+                    string content = null;
+
                     if (post.Message != null)
                     {
-                        listBoxPosts.Items.Add(post.Message);
+                        content = post.Message;
                     }
                     else if (post.Caption != null)
                     {
-                        listBoxPosts.Items.Add(post.Caption);
+                        content = post.Caption;
                     }
                     else
                     {
-                        listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+                        content = string.Format("[{0}]", post.Type);
+                    }
+
+                    if (!string.IsNullOrEmpty(content))
+                    {
+                        addPostToFlowPanel(content);
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
+
+
+        private void addPostToFlowPanel(string postText)
+        {
+            Label postLabel = new Label();
+
+            postLabel.AutoSize = false;
+            postLabel.Width = flowLayoutPanelPosts.Width - 30;
+            postLabel.Padding = new Padding(10);
+            postLabel.Margin = new Padding(5);
+            postLabel.Text = postText;
+
+            postLabel.BackColor = Color.White;
+            postLabel.BorderStyle = BorderStyle.FixedSingle;
+            postLabel.Font = new Font("Segoe UI", 10);
+
+            postLabel.Height = TextRenderer.MeasureText(postText, postLabel.Font, new Size(postLabel.Width, int.MaxValue)).Height + 20;
+
+            flowLayoutPanelPosts.Controls.Add(postLabel);
+        }
+
+
+
+        //private void fetchPosts()
+        //{
+        //    try
+        //    {
+        //        listBoxPosts.Items.Clear();
+
+        //        foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+        //        {
+        //            if (post.Message != null)
+        //            {
+        //                listBoxPosts.Items.Add(post.Message);
+        //            }
+        //            else if (post.Caption != null)
+        //            {
+        //                listBoxPosts.Items.Add(post.Caption);
+        //            }
+        //            else
+        //            {
+        //                listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+        //            }
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+
+        //}
 
         //private void buttonSeeLikes_Click(object sender, EventArgs e)
         //{
