@@ -32,6 +32,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.buttonSearchName = new System.Windows.Forms.Button();
+            this.buttonUserPhotos = new System.Windows.Forms.Button();
+            this.buttonFriends = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -39,7 +43,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(158, 184);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1085, 977);
+            this.listView1.Size = new System.Drawing.Size(1085, 910);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -71,11 +75,56 @@
             this.buttonSearchName.UseVisualStyleBackColor = true;
             this.buttonSearchName.Click += new System.EventHandler(this.buttonSearchName_Click);
             // 
+            // buttonUserPhotos
+            // 
+            this.buttonUserPhotos.Location = new System.Drawing.Point(827, 1127);
+            this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUserPhotos.Name = "buttonUserPhotos";
+            this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
+            this.buttonUserPhotos.TabIndex = 16;
+            this.buttonUserPhotos.Text = "Photos";
+            this.buttonUserPhotos.UseVisualStyleBackColor = true;
+            // 
+            // buttonFriends
+            // 
+            this.buttonFriends.Location = new System.Drawing.Point(1013, 1127);
+            this.buttonFriends.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFriends.Name = "buttonFriends";
+            this.buttonFriends.Size = new System.Drawing.Size(144, 66);
+            this.buttonFriends.TabIndex = 15;
+            this.buttonFriends.Text = "Friends";
+            this.buttonFriends.UseVisualStyleBackColor = true;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(1203, 1127);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(144, 66);
+            this.buttonProfile.TabIndex = 14;
+            this.buttonProfile.Text = "Profile";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.Location = new System.Drawing.Point(644, 1127);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(144, 66);
+            this.buttonHome.TabIndex = 28;
+            this.buttonHome.Text = "Home";
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
             // FormFriends
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1407, 1223);
+            this.Controls.Add(this.buttonHome);
+            this.Controls.Add(this.buttonUserPhotos);
+            this.Controls.Add(this.buttonFriends);
+            this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.buttonSearchName);
             this.Controls.Add(this.textBoxSearchName);
             this.Controls.Add(this.textBox1);
@@ -93,5 +142,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.Button buttonSearchName;
+        private System.Windows.Forms.Button buttonUserPhotos;
+        private System.Windows.Forms.Button buttonFriends;
+        private System.Windows.Forms.Button buttonProfile;
+        private System.Windows.Forms.Button buttonHome;
     }
 }

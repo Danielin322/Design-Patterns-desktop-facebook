@@ -40,6 +40,7 @@
             this.buttonPublishPost = new System.Windows.Forms.Button();
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,17 +158,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 459);
+            this.label1.Location = new System.Drawing.Point(21, 469);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(394, 37);
             this.label1.TabIndex = 12;
             this.label1.Text = "Pages you recently liked:";
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.Location = new System.Drawing.Point(705, 1114);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(144, 66);
+            this.buttonHome.TabIndex = 28;
+            this.buttonHome.Text = "Home";
+            this.buttonHome.UseVisualStyleBackColor = true;
             // 
             // FormMainFacebookWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxLikedPages);
             this.Controls.Add(this.buttonPublishPost);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button buttonPublishPost;
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonHome;
     }
 }

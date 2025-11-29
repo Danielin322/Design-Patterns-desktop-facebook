@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FacebookWrapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,13 @@ namespace BasicFacebookFeatures
             ensure visible that item.
 
             If no item is found, display a notification.*/
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            FormMainFacebookWindow HomeForm = new FormMainFacebookWindow(m_LoginResult);
+            this.Close();
+            HomeForm.Show();
         }
     }
 }

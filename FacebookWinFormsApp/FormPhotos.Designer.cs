@@ -33,6 +33,7 @@
             this.buttonProfile = new System.Windows.Forms.Button();
             this.flowLayoutPanelPhotos = new System.Windows.Forms.FlowLayoutPanel();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonUserPhotos
@@ -85,11 +86,23 @@
             this.listBoxAlbums.TabIndex = 31;
             this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
             // 
+            // buttonHome
+            // 
+            this.buttonHome.Location = new System.Drawing.Point(682, 1106);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(144, 66);
+            this.buttonHome.TabIndex = 32;
+            this.buttonHome.Text = "Home";
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
             // FormPhotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.flowLayoutPanelPhotos);
             this.Controls.Add(this.buttonUserPhotos);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhotos;
         private System.Windows.Forms.ListBox listBoxAlbums;
+        private System.Windows.Forms.Button buttonHome;
     }
 }

@@ -37,15 +37,12 @@
             this.textBoxGender = new System.Windows.Forms.TextBox();
             this.textBoxUserCity = new System.Windows.Forms.TextBox();
             this.listBoxPosts = new System.Windows.Forms.ListBox();
-            this.buttonSeeFriends = new System.Windows.Forms.Button();
             this.textBoxUserLocation = new System.Windows.Forms.TextBox();
-            this.buttonSeeLikes = new System.Windows.Forms.Button();
-            this.listBoxLikesByUser = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonUserPhotos = new System.Windows.Forms.Button();
             this.buttonFriends = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.textBoxContactDetails = new System.Windows.Forms.TextBox();
+            this.buttonHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,22 +134,11 @@
             // 
             this.listBoxPosts.FormattingEnabled = true;
             this.listBoxPosts.ItemHeight = 25;
-            this.listBoxPosts.Location = new System.Drawing.Point(117, 168);
+            this.listBoxPosts.Location = new System.Drawing.Point(75, 122);
             this.listBoxPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(793, 329);
+            this.listBoxPosts.Size = new System.Drawing.Size(793, 929);
             this.listBoxPosts.TabIndex = 15;
-            // 
-            // buttonSeeFriends
-            // 
-            this.buttonSeeFriends.Location = new System.Drawing.Point(1104, 766);
-            this.buttonSeeFriends.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSeeFriends.Name = "buttonSeeFriends";
-            this.buttonSeeFriends.Size = new System.Drawing.Size(292, 52);
-            this.buttonSeeFriends.TabIndex = 16;
-            this.buttonSeeFriends.Text = "see all friends";
-            this.buttonSeeFriends.UseVisualStyleBackColor = true;
-            this.buttonSeeFriends.Click += new System.EventHandler(this.buttonSeeFriends_Click);
             // 
             // textBoxUserLocation
             // 
@@ -165,38 +151,6 @@
             this.textBoxUserLocation.Size = new System.Drawing.Size(295, 38);
             this.textBoxUserLocation.TabIndex = 19;
             this.textBoxUserLocation.Text = "user location";
-            // 
-            // buttonSeeLikes
-            // 
-            this.buttonSeeLikes.Location = new System.Drawing.Point(117, 971);
-            this.buttonSeeLikes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSeeLikes.Name = "buttonSeeLikes";
-            this.buttonSeeLikes.Size = new System.Drawing.Size(233, 58);
-            this.buttonSeeLikes.TabIndex = 21;
-            this.buttonSeeLikes.Text = "see all likes";
-            this.buttonSeeLikes.UseVisualStyleBackColor = true;
-            this.buttonSeeLikes.Click += new System.EventHandler(this.buttonSeeLikes_Click);
-            // 
-            // listBoxLikesByUser
-            // 
-            this.listBoxLikesByUser.FormattingEnabled = true;
-            this.listBoxLikesByUser.ItemHeight = 25;
-            this.listBoxLikesByUser.Location = new System.Drawing.Point(117, 747);
-            this.listBoxLikesByUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBoxLikesByUser.Name = "listBoxLikesByUser";
-            this.listBoxLikesByUser.Size = new System.Drawing.Size(687, 204);
-            this.listBoxLikesByUser.TabIndex = 20;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(117, 515);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(233, 58);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "see all posts";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonUserPhotos
             // 
@@ -241,20 +195,28 @@
             this.textBoxContactDetails.TabIndex = 26;
             this.textBoxContactDetails.Text = "Contact Details";
             // 
+            // buttonHome
+            // 
+            this.buttonHome.Location = new System.Drawing.Point(724, 1135);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(144, 66);
+            this.buttonHome.TabIndex = 27;
+            this.buttonHome.Text = "Home";
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 1246);
+            this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.textBoxContactDetails);
             this.Controls.Add(this.buttonUserPhotos);
             this.Controls.Add(this.buttonFriends);
             this.Controls.Add(this.buttonProfile);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonSeeLikes);
-            this.Controls.Add(this.listBoxLikesByUser);
             this.Controls.Add(this.textBoxUserLocation);
-            this.Controls.Add(this.buttonSeeFriends);
             this.Controls.Add(this.listBoxPosts);
             this.Controls.Add(this.textBoxUserCity);
             this.Controls.Add(this.textBoxGender);
@@ -283,14 +245,11 @@
         private System.Windows.Forms.TextBox textBoxGender;
         private System.Windows.Forms.TextBox textBoxUserCity;
         private System.Windows.Forms.ListBox listBoxPosts;
-        private System.Windows.Forms.Button buttonSeeFriends;
         private System.Windows.Forms.TextBox textBoxUserLocation;
-        private System.Windows.Forms.Button buttonSeeLikes;
-        private System.Windows.Forms.ListBox listBoxLikesByUser;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonUserPhotos;
         private System.Windows.Forms.Button buttonFriends;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.TextBox textBoxContactDetails;
+        private System.Windows.Forms.Button buttonHome;
     }
 }

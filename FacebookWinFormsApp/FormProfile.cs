@@ -33,91 +33,106 @@ namespace BasicFacebookFeatures
 
         private void FormProfile_Load(object sender, EventArgs e)
         {
+            if (m_LoginResult?.LoggedInUser == null)
+            {
+                MessageBox.Show("Login failed or user data not available.");
+                this.Close();
+                return;
+            }
+
             // Show picture of user
-            pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
+            if (!string.IsNullOrEmpty(m_LoginResult.LoggedInUser.PictureNormalURL))
+            {
+                pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
+            }
 
-            //show user name
-            textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name;
+            // if some of the info is missing, we show empty string
 
-            textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday;
-            textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location.Name;
-            textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email;   
-            textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown.Name;
-            textBoxGender.Text = m_LoginResult.LoggedInUser.Gender.ToString();
+            textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name ?? "";
+            textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday ?? "";
+            textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location?.Name ?? "";
+            textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email ?? "";
+            textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown?.Name ?? "";
+            textBoxGender.Text = m_LoginResult.LoggedInUser.Gender?.ToString() ?? "";
 
+            fetchPosts();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                fetchPosts();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        fetchPosts();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void fetchPosts()
         {
-            listBoxPosts.Items.Clear();
-
-            foreach (Post post in m_LoginResult.LoggedInUser.Posts)
-            {
-                if (post.Message != null)
-                {
-                    listBoxPosts.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    listBoxPosts.Items.Add(post.Caption);
-                }
-                else
-                {
-                    listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
-                }
-            }
-
-            if (listBoxPosts.Items.Count == 0)
-            {
-                MessageBox.Show("No Posts to retrieve :(");
-            }
-        }
-
-        private void buttonSeeLikes_Click(object sender, EventArgs e)
-        {
             try
             {
-                fetchLikes();
+                listBoxPosts.Items.Clear();
+
+                foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+                {
+                    if (post.Message != null)
+                    {
+                        listBoxPosts.Items.Add(post.Message);
+                    }
+                    else if (post.Caption != null)
+                    {
+                        listBoxPosts.Items.Add(post.Caption);
+                    }
+                    else
+                    {
+                        listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
+                    }
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
-        private void fetchLikes()
-        {
-            listBoxLikesByUser.Items.Clear();
+        //private void buttonSeeLikes_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        fetchLikes();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
-            foreach (Page likedPage in m_LoginResult.LoggedInUser.LikedPages)
-            {
-                if (likedPage.Name != null)
-                {
-                    listBoxLikesByUser.Items.Add(likedPage.Name);
-                }
-                else
-                {
-                    listBoxLikesByUser.Items.Add(string.Format("[{0}]", likedPage.Category));
-                }
-            }
+        //private void fetchLikes()
+        //{
+        //    listBoxLikesByUser.Items.Clear();
 
-            if (listBoxLikesByUser.Items.Count == 0)
-            {
-                MessageBox.Show("No Likes to retrieve :(");
-            }
-        }
+        //    foreach (Page likedPage in m_LoginResult.LoggedInUser.LikedPages)
+        //    {
+        //        if (likedPage.Name != null)
+        //        {
+        //            listBoxLikesByUser.Items.Add(likedPage.Name);
+        //        }
+        //        else
+        //        {
+        //            listBoxLikesByUser.Items.Add(string.Format("[{0}]", likedPage.Category));
+        //        }
+        //    }
+
+        //    if (listBoxLikesByUser.Items.Count == 0)
+        //    {
+        //        MessageBox.Show("No Likes to retrieve :(");
+        //    }
+        //}
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
@@ -127,9 +142,11 @@ namespace BasicFacebookFeatures
             photosForm.Show();
         }
 
-        //public void exitFromPhotosForm(object sender, EventArgs e)
-        //{
-        //    this.Show();
-        //}
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            FormMainFacebookWindow HomeForm = new FormMainFacebookWindow(m_LoginResult);
+            this.Close();
+            HomeForm.Show();
+        }
     }
 }
