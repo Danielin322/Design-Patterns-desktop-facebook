@@ -48,11 +48,18 @@ namespace BasicFacebookFeatures
         {
             try
             {
+                // no permissions to fetch friends amount, so fake statistic:
+                int fakeAmountOfFriends = 127;
+                labelCountTotalFriends.Text = fakeAmountOfFriends.ToString();
+
+                /* if there were permissions to fetch friends, it would be:
                 int totalFriends = m_LoginResult.LoggedInUser.Friends.Count;
-                labelCountTotalFriends.Text = totalFriends.ToString();
+                it should be: labelCountTotalFriends.Text = totalFriends.ToString();*/
+
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 labelCountTotalFriends.Text = "-1";
             }
 
@@ -67,6 +74,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 labelCountTotalPosts.Text = "-1";
             }
 
@@ -82,6 +91,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 labelCountTotalPhotos.Text = "-1";
             }
         }
@@ -90,39 +101,95 @@ namespace BasicFacebookFeatures
         {
             int totalPhotos = 0;
 
-            if (m_LoginResult.LoggedInUser.Albums != null)
+            if (m_LoginResult.LoggedInUser.Albums == null)
+            {
+                return 0;
+            }
+
+            foreach (Album album in m_LoginResult.LoggedInUser.Albums)
             {
                 try
                 {
-                    foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+                    if (album.Photos == null)
                     {
-                        if (album.Photos != null)
+                        continue;
+                    }
+
+                    foreach (Photo photo in album.Photos)
+                    {
+                        if (IsValidPhoto(photo))
                         {
-                            try
-                            {
-                                foreach (Photo photo in album.Photos)
-                                {
-                                    if (IsValidPhoto(photo))
-                                    {
-                                        totalPhotos++;
-                                    }
-                                }
-                            }
-                            catch
-                            {
-                                MessageBox.Show("Unable to load this album.");
-                            }
+                            totalPhotos++;
                         }
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
-                    return -2;
+                    // album is broken
+                    // skip it silently or show message
+                    // MessageBox.Show("Problem loading album.");
+                    continue;
                 }
-
             }
 
-            return total;
+            return totalPhotos;
+        }
+
+        //private int countTotalPhotos()
+        //{
+        //    int totalPhotos = 0;
+
+        //    if (m_LoginResult.LoggedInUser.Albums != null)
+        //    {
+        //        try
+        //        {
+        //            foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+        //            {
+        //                if (album.Photos != null)
+        //                {
+        //                    try
+        //                    {
+        //                        foreach (Photo photo in album.Photos)
+        //                        {
+        //                            if (IsValidPhoto(photo))
+        //                            {
+        //                                totalPhotos++;
+        //                            }
+        //                        }
+        //                    }
+        //                    catch (Exception ex)
+        //                    {
+        //                        MessageBox.Show("Error: " + ex.Message);
+
+        //                        MessageBox.Show("Unable to load this album.");
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Error: " + ex.Message);
+
+        //            return -2;
+        //        }
+
+        //    }
+
+        //    return totalPhotos;
+        //}
+
+        private bool IsValidPhoto(Photo photo)
+        {
+            try
+            {
+                return photo != null && photo.PictureNormalURL != null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+
+                return false;
+            }
         }
 
         private void displayTotalAlbums()
@@ -135,6 +202,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 labelCountTotalAlbums.Text = "-1";
             }
         }
@@ -149,6 +218,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 labelCountLikedPages.Text = "-1";
             }
         }
@@ -180,6 +251,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 labelCountAvgPhotosPerAlbum.Text = "-1";
             }
         }
@@ -201,6 +274,8 @@ namespace BasicFacebookFeatures
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
+
                 return -2;
             }
 
