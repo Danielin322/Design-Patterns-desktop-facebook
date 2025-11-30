@@ -36,14 +36,12 @@
             this.textBoxBirthdayDate = new System.Windows.Forms.TextBox();
             this.textBoxGender = new System.Windows.Forms.TextBox();
             this.textBoxUserCity = new System.Windows.Forms.TextBox();
-            this.listBoxPosts = new System.Windows.Forms.ListBox();
             this.textBoxUserLocation = new System.Windows.Forms.TextBox();
             this.buttonUserPhotos = new System.Windows.Forms.Button();
-            this.buttonFriends = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.textBoxContactDetails = new System.Windows.Forms.TextBox();
             this.buttonHome = new System.Windows.Forms.Button();
             this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelMyPosts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +75,7 @@
             // 
             this.textBoxUserEmail.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxUserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserEmail.Location = new System.Drawing.Point(1103, 982);
+            this.textBoxUserEmail.Location = new System.Drawing.Point(1072, 945);
             this.textBoxUserEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUserEmail.Name = "textBoxUserEmail";
             this.textBoxUserEmail.ReadOnly = true;
@@ -88,12 +86,13 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(1246, 448);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(155, 49);
+            this.textBox1.Size = new System.Drawing.Size(155, 42);
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "About";
             // 
@@ -123,23 +122,13 @@
             // 
             this.textBoxUserCity.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxUserCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserCity.Location = new System.Drawing.Point(1103, 1045);
+            this.textBoxUserCity.Location = new System.Drawing.Point(1072, 1008);
             this.textBoxUserCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUserCity.Name = "textBoxUserCity";
             this.textBoxUserCity.ReadOnly = true;
             this.textBoxUserCity.Size = new System.Drawing.Size(295, 38);
             this.textBoxUserCity.TabIndex = 14;
             this.textBoxUserCity.Text = "user city";
-            // 
-            // listBoxPosts
-            // 
-            this.listBoxPosts.FormattingEnabled = true;
-            this.listBoxPosts.ItemHeight = 25;
-            this.listBoxPosts.Location = new System.Drawing.Point(75, 122);
-            this.listBoxPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBoxPosts.Name = "listBoxPosts";
-            this.listBoxPosts.Size = new System.Drawing.Size(314, 929);
-            this.listBoxPosts.TabIndex = 15;
             // 
             // textBoxUserLocation
             // 
@@ -155,7 +144,7 @@
             // 
             // buttonUserPhotos
             // 
-            this.buttonUserPhotos.Location = new System.Drawing.Point(899, 1135);
+            this.buttonUserPhotos.Location = new System.Drawing.Point(1246, 1135);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUserPhotos.Name = "buttonUserPhotos";
             this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
@@ -164,41 +153,22 @@
             this.buttonUserPhotos.UseVisualStyleBackColor = true;
             this.buttonUserPhotos.Click += new System.EventHandler(this.buttonUserPhotos_Click);
             // 
-            // buttonFriends
-            // 
-            this.buttonFriends.Location = new System.Drawing.Point(1085, 1135);
-            this.buttonFriends.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonFriends.Name = "buttonFriends";
-            this.buttonFriends.Size = new System.Drawing.Size(144, 66);
-            this.buttonFriends.TabIndex = 24;
-            this.buttonFriends.Text = "Friends";
-            this.buttonFriends.UseVisualStyleBackColor = true;
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Location = new System.Drawing.Point(1275, 1135);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(144, 66);
-            this.buttonProfile.TabIndex = 23;
-            this.buttonProfile.Text = "Profile";
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            // 
             // textBoxContactDetails
             // 
             this.textBoxContactDetails.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxContactDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxContactDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContactDetails.Location = new System.Drawing.Point(1135, 889);
+            this.textBoxContactDetails.Location = new System.Drawing.Point(1104, 852);
             this.textBoxContactDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxContactDetails.Name = "textBoxContactDetails";
             this.textBoxContactDetails.ReadOnly = true;
-            this.textBoxContactDetails.Size = new System.Drawing.Size(261, 49);
+            this.textBoxContactDetails.Size = new System.Drawing.Size(261, 42);
             this.textBoxContactDetails.TabIndex = 26;
             this.textBoxContactDetails.Text = "Contact Details";
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(724, 1135);
+            this.buttonHome.Location = new System.Drawing.Point(1071, 1135);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(144, 66);
@@ -212,25 +182,33 @@
             this.flowLayoutPanelPosts.AutoScroll = true;
             this.flowLayoutPanelPosts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanelPosts.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(447, 130);
+            this.flowLayoutPanelPosts.Location = new System.Drawing.Point(143, 168);
             this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(523, 915);
+            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(725, 684);
             this.flowLayoutPanelPosts.TabIndex = 28;
             this.flowLayoutPanelPosts.WrapContents = false;
+            // 
+            // labelMyPosts
+            // 
+            this.labelMyPosts.AutoSize = true;
+            this.labelMyPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMyPosts.Location = new System.Drawing.Point(176, 89);
+            this.labelMyPosts.Name = "labelMyPosts";
+            this.labelMyPosts.Size = new System.Drawing.Size(208, 51);
+            this.labelMyPosts.TabIndex = 29;
+            this.labelMyPosts.Text = "My Posts";
             // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 1246);
+            this.Controls.Add(this.labelMyPosts);
             this.Controls.Add(this.flowLayoutPanelPosts);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.textBoxContactDetails);
             this.Controls.Add(this.buttonUserPhotos);
-            this.Controls.Add(this.buttonFriends);
-            this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.textBoxUserLocation);
-            this.Controls.Add(this.listBoxPosts);
             this.Controls.Add(this.textBoxUserCity);
             this.Controls.Add(this.textBoxGender);
             this.Controls.Add(this.textBoxBirthdayDate);
@@ -257,13 +235,11 @@
         private System.Windows.Forms.TextBox textBoxBirthdayDate;
         private System.Windows.Forms.TextBox textBoxGender;
         private System.Windows.Forms.TextBox textBoxUserCity;
-        private System.Windows.Forms.ListBox listBoxPosts;
         private System.Windows.Forms.TextBox textBoxUserLocation;
         private System.Windows.Forms.Button buttonUserPhotos;
-        private System.Windows.Forms.Button buttonFriends;
-        private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.TextBox textBoxContactDetails;
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
+        private System.Windows.Forms.Label labelMyPosts;
     }
 }

@@ -58,24 +58,11 @@ namespace BasicFacebookFeatures
             fetchPosts();
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        fetchPosts();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-
         private void fetchPosts()
         {
             try
             {
-                flowLayoutPanelPosts.Controls.Clear(); // נקה תוכן קודם
+                flowLayoutPanelPosts.Controls.Clear();
 
                 foreach (Post post in m_LoginResult.LoggedInUser.Posts)
                 {
@@ -83,6 +70,7 @@ namespace BasicFacebookFeatures
 
                     if (post.Message != null)
                     {
+                        
                         content = post.Message;
                     }
                     else if (post.Caption != null)
@@ -127,71 +115,6 @@ namespace BasicFacebookFeatures
         }
 
 
-
-        //private void fetchPosts()
-        //{
-        //    try
-        //    {
-        //        listBoxPosts.Items.Clear();
-
-        //        foreach (Post post in m_LoginResult.LoggedInUser.Posts)
-        //        {
-        //            if (post.Message != null)
-        //            {
-        //                listBoxPosts.Items.Add(post.Message);
-        //            }
-        //            else if (post.Caption != null)
-        //            {
-        //                listBoxPosts.Items.Add(post.Caption);
-        //            }
-        //            else
-        //            {
-        //                listBoxPosts.Items.Add(string.Format("[{0}]", post.Type));
-        //            }
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-        //}
-
-        //private void buttonSeeLikes_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        fetchLikes();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        //private void fetchLikes()
-        //{
-        //    listBoxLikesByUser.Items.Clear();
-
-        //    foreach (Page likedPage in m_LoginResult.LoggedInUser.LikedPages)
-        //    {
-        //        if (likedPage.Name != null)
-        //        {
-        //            listBoxLikesByUser.Items.Add(likedPage.Name);
-        //        }
-        //        else
-        //        {
-        //            listBoxLikesByUser.Items.Add(string.Format("[{0}]", likedPage.Category));
-        //        }
-        //    }
-
-        //    if (listBoxLikesByUser.Items.Count == 0)
-        //    {
-        //        MessageBox.Show("No Likes to retrieve :(");
-        //    }
-        //}
-
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
@@ -205,6 +128,13 @@ namespace BasicFacebookFeatures
             FormMainFacebookWindow HomeForm = new FormMainFacebookWindow(m_LoginResult);
             this.Close();
             HomeForm.Show();
+        }
+
+        private void buttonFriends_Click(object sender, EventArgs e)
+        {
+            FormFriends FriendsForm = new FormFriends(m_LoginResult);
+            this.Close();
+            FriendsForm.Show();
         }
     }
 }

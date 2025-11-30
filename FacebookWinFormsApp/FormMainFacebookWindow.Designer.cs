@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainFacebookWindow));
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonFriends = new System.Windows.Forms.Button();
             this.textBoxUserFullName = new System.Windows.Forms.TextBox();
             this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
             this.buttonLogout = new System.Windows.Forms.Button();
@@ -40,7 +39,7 @@
             this.buttonPublishPost = new System.Windows.Forms.Button();
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonHome = new System.Windows.Forms.Button();
+            this.buttonStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,17 +53,6 @@
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = true;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // buttonFriends
-            // 
-            this.buttonFriends.Location = new System.Drawing.Point(1095, 1114);
-            this.buttonFriends.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonFriends.Name = "buttonFriends";
-            this.buttonFriends.Size = new System.Drawing.Size(144, 66);
-            this.buttonFriends.TabIndex = 3;
-            this.buttonFriends.Text = "Friends";
-            this.buttonFriends.UseVisualStyleBackColor = true;
-            this.buttonFriends.Click += new System.EventHandler(this.buttonFriends_Click);
             // 
             // textBoxUserFullName
             // 
@@ -106,7 +94,7 @@
             // 
             // buttonUserPhotos
             // 
-            this.buttonUserPhotos.Location = new System.Drawing.Point(909, 1114);
+            this.buttonUserPhotos.Location = new System.Drawing.Point(1104, 1114);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUserPhotos.Name = "buttonUserPhotos";
             this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
@@ -164,22 +152,23 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Pages you recently liked:";
             // 
-            // buttonHome
+            // buttonStatistics
             // 
-            this.buttonHome.Location = new System.Drawing.Point(705, 1114);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(144, 66);
-            this.buttonHome.TabIndex = 28;
-            this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Location = new System.Drawing.Point(920, 1114);
+            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(144, 66);
+            this.buttonStatistics.TabIndex = 13;
+            this.buttonStatistics.Text = "Statistics";
+            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // FormMainFacebookWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1229);
-            this.Controls.Add(this.buttonHome);
+            this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxLikedPages);
             this.Controls.Add(this.buttonPublishPost);
@@ -189,7 +178,6 @@
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.pictureBox_Profile);
             this.Controls.Add(this.textBoxUserFullName);
-            this.Controls.Add(this.buttonFriends);
             this.Controls.Add(this.buttonProfile);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMainFacebookWindow";
@@ -204,7 +192,6 @@
 
         #endregion
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.Button buttonFriends;
         private System.Windows.Forms.TextBox textBoxUserFullName;
         private System.Windows.Forms.PictureBox pictureBox_Profile;
         private System.Windows.Forms.Button buttonLogout;
@@ -214,6 +201,6 @@
         private System.Windows.Forms.Button buttonPublishPost;
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Button buttonStatistics;
     }
 }

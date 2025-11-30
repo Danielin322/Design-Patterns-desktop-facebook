@@ -1,4 +1,5 @@
 ﻿using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,10 @@ namespace BasicFacebookFeatures
     {
         private LoginResult m_LoginResult;
 
-        public FormFriends()
+        public FormFriends(LoginResult loginResult)
         {
+            m_LoginResult = loginResult;
+
             InitializeComponent();
         }
 
@@ -38,5 +41,39 @@ namespace BasicFacebookFeatures
             this.Close();
             HomeForm.Show();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            FormProfile profileForm = new FormProfile(m_LoginResult);
+            this.Close();
+            profileForm.Show();
+        }
+
+        private void FormFriends_Load(object sender, EventArgs e)
+        {
+            fetchFriends();
+        }
+
+
+
+        private void fetchFriends()
+        {
+            listViewFriends.Items.Clear();
+
+            foreach (User friend in m_LoginResult.LoggedInUser.Friends)
+            {
+                if (friend.Name != null)
+                {
+                    ListViewItem item = new ListViewItem(friend.Name);
+                    listViewFriends.Items.Add(item);
+                }
+            }
+
+            if (listViewFriends.Items.Count == 0)
+            {
+                MessageBox.Show("No Friends to retrieve :(");
+            }
+        }
+
     }
 }
