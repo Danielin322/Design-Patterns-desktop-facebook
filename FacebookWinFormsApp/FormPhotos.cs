@@ -129,6 +129,13 @@ namespace BasicFacebookFeatures
             this.Close();
             HomeForm.Show();
         }
+
+        private void buttonStatistics_Click(object sender, EventArgs e)
+        {
+            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
+            this.Close();
+            formStats.Show();
+        }
     }
 }
 

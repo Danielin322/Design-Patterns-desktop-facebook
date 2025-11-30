@@ -32,6 +32,8 @@
             this.flowLayoutPanelPhotos = new System.Windows.Forms.FlowLayoutPanel();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
             this.buttonHome = new System.Windows.Forms.Button();
+            this.labelMyPhotos = new System.Windows.Forms.Label();
+            this.buttonStatistics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonProfile
@@ -76,11 +78,34 @@
             this.buttonHome.UseVisualStyleBackColor = true;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
+            // labelMyPhotos
+            // 
+            this.labelMyPhotos.AutoSize = true;
+            this.labelMyPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMyPhotos.Location = new System.Drawing.Point(506, 132);
+            this.labelMyPhotos.Name = "labelMyPhotos";
+            this.labelMyPhotos.Size = new System.Drawing.Size(401, 85);
+            this.labelMyPhotos.TabIndex = 33;
+            this.labelMyPhotos.Text = "My Photos";
+            // 
+            // buttonStatistics
+            // 
+            this.buttonStatistics.Location = new System.Drawing.Point(889, 1126);
+            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(144, 66);
+            this.buttonStatistics.TabIndex = 34;
+            this.buttonStatistics.Text = "Statistics";
+            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
+            // 
             // FormPhotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.Controls.Add(this.buttonStatistics);
+            this.Controls.Add(this.labelMyPhotos);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.flowLayoutPanelPhotos);
@@ -89,6 +114,7 @@
             this.Text = "FormPhotos";
             this.Load += new System.EventHandler(this.FormPhotos_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +123,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhotos;
         private System.Windows.Forms.ListBox listBoxAlbums;
         private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Label labelMyPhotos;
+        private System.Windows.Forms.Button buttonStatistics;
     }
 }

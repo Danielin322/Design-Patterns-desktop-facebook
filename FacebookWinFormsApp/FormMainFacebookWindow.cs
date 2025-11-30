@@ -29,12 +29,7 @@ namespace BasicFacebookFeatures
             profileForm.Show();
         }
 
-        private void buttonFriends_Click(object sender, EventArgs e)
-        {
-            // move to friends form (dont forget to give the user option to go back)
-        }
-        
-
+       
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             FacebookService.LogoutWithUI();

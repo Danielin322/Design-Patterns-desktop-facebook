@@ -42,6 +42,7 @@
             this.buttonHome = new System.Windows.Forms.Button();
             this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
             this.labelMyPosts = new System.Windows.Forms.Label();
+            this.buttonStatistics = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +145,7 @@
             // 
             // buttonUserPhotos
             // 
-            this.buttonUserPhotos.Location = new System.Drawing.Point(1246, 1135);
+            this.buttonUserPhotos.Location = new System.Drawing.Point(1307, 1152);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUserPhotos.Name = "buttonUserPhotos";
             this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
@@ -168,7 +169,7 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(1071, 1135);
+            this.buttonHome.Location = new System.Drawing.Point(1132, 1152);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(144, 66);
@@ -198,11 +199,23 @@
             this.labelMyPosts.TabIndex = 29;
             this.labelMyPosts.Text = "My Posts";
             // 
+            // buttonStatistics
+            // 
+            this.buttonStatistics.Location = new System.Drawing.Point(952, 1152);
+            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonStatistics.Name = "buttonStatistics";
+            this.buttonStatistics.Size = new System.Drawing.Size(144, 66);
+            this.buttonStatistics.TabIndex = 30;
+            this.buttonStatistics.Text = "Statistics";
+            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 1246);
+            this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.labelMyPosts);
             this.Controls.Add(this.flowLayoutPanelPosts);
             this.Controls.Add(this.buttonHome);
@@ -241,5 +254,6 @@
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
         private System.Windows.Forms.Label labelMyPosts;
+        private System.Windows.Forms.Button buttonStatistics;
     }
 }

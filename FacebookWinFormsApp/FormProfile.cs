@@ -25,13 +25,7 @@ namespace BasicFacebookFeatures
 
 
 
-        private void buttonSeeFriends_Click(object sender, EventArgs e)
-        {
-            // move to the same form that the button "friends" from main sends us
-        }
-
-
-        private void FormProfile_Load(object sender, EventArgs e)
+         private void FormProfile_Load(object sender, EventArgs e)
         {
             if (m_LoginResult?.LoggedInUser == null)
             {
@@ -69,8 +63,7 @@ namespace BasicFacebookFeatures
                     string content = null;
 
                     if (post.Message != null)
-                    {
-                        
+                    {                       
                         content = post.Message;
                     }
                     else if (post.Caption != null)
@@ -118,7 +111,6 @@ namespace BasicFacebookFeatures
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            //photosForm.FormClosed += exitFromPhotosForm;
             this.Close();
             photosForm.Show();
         }
@@ -129,12 +121,13 @@ namespace BasicFacebookFeatures
             this.Close();
             HomeForm.Show();
         }
+       
 
-        private void buttonFriends_Click(object sender, EventArgs e)
+        private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormFriends FriendsForm = new FormFriends(m_LoginResult);
+            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
             this.Close();
-            FriendsForm.Show();
+            formStats.Show();
         }
     }
 }

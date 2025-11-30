@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BasicFacebookFeatures
 {
     public partial class FormUserStatistics : Form
@@ -40,7 +41,6 @@ namespace BasicFacebookFeatures
             displayTotalPhotos();
             displayTotalAlbums();
             displayTotalLikedPages();
-            //displayMostActiveAlbum(); /////// needed?
             displayAveragePhotosPerAlbum();
         }
 
@@ -53,6 +53,7 @@ namespace BasicFacebookFeatures
                 labelCountTotalFriends.Text = fakeAmountOfFriends.ToString();
 
                 /* if there were permissions to fetch friends, it would be:
+                 
                 int totalFriends = m_LoginResult.LoggedInUser.Friends.Count;
                 it should be: labelCountTotalFriends.Text = totalFriends.ToString();*/
 
@@ -60,17 +61,49 @@ namespace BasicFacebookFeatures
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                labelCountTotalFriends.Text = "-1";
             }
 
         }
 
+        private int countAllPosts()
+        {
+            int totalPosts = 0;
+            string dummyFetch = null;
+
+            foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    dummyFetch = post.Message;
+                }
+                else if (post.Caption != null)
+                {
+                    dummyFetch = post.Caption;
+                }
+
+                dummyFunctionToTriggerFetch(post); // Trigger auto-fetch of next pages
+                totalPosts++;
+            }
+
+            return totalPosts;
+        }
+
+        private void dummyFunctionToTriggerFetch(Post post)
+        {
+            string dummyFetch = post.Message; // Trigger auto-fetch of next pages
+        }
+
+
         private void displayTotalPosts()
         {
+            int totalPosts = 0;
+
             try
             {
-                int totalPosts = m_LoginResult.LoggedInUser.Posts.Count;
+
+                totalPosts = countAllPosts();
                 labelCountTotalPosts.Text = totalPosts.ToString();
+
             }
             catch (Exception ex)
             {
@@ -125,58 +158,13 @@ namespace BasicFacebookFeatures
                 }
                 catch
                 {
-                    // album is broken
-                    // skip it silently or show message
-                    // MessageBox.Show("Problem loading album.");
+                    // the album is broken, we skip it instead of throwing error
                     continue;
                 }
             }
 
             return totalPhotos;
         }
-
-        //private int countTotalPhotos()
-        //{
-        //    int totalPhotos = 0;
-
-        //    if (m_LoginResult.LoggedInUser.Albums != null)
-        //    {
-        //        try
-        //        {
-        //            foreach (Album album in m_LoginResult.LoggedInUser.Albums)
-        //            {
-        //                if (album.Photos != null)
-        //                {
-        //                    try
-        //                    {
-        //                        foreach (Photo photo in album.Photos)
-        //                        {
-        //                            if (IsValidPhoto(photo))
-        //                            {
-        //                                totalPhotos++;
-        //                            }
-        //                        }
-        //                    }
-        //                    catch (Exception ex)
-        //                    {
-        //                        MessageBox.Show("Error: " + ex.Message);
-
-        //                        MessageBox.Show("Unable to load this album.");
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Error: " + ex.Message);
-
-        //            return -2;
-        //        }
-
-        //    }
-
-        //    return totalPhotos;
-        //}
 
         private bool IsValidPhoto(Photo photo)
         {
@@ -224,23 +212,6 @@ namespace BasicFacebookFeatures
             }
         }
 
-        //private void displayMostActiveAlbum()
-        //{
-        //    Album mostActiveAlbum = null;
-
-        //    int maxPhotos = 0;
-
-        //    foreach (Album album in m_LoginResult.LoggedInUser.Albums)
-        //    {
-        //        if (album.Photos != null && album.Photos.Count > maxPhotos)
-        //        {
-        //            maxPhotos = album.Photos.Count;
-        //            mostActiveAlbum = album;
-        //        }
-        //    }
-        //    labelMostActiveAlbum.Text = mostActiveAlbum != null ? mostActiveAlbum.Name : "N/A";
-        //}
-
         private void displayAveragePhotosPerAlbum()
         {
             try
@@ -282,6 +253,25 @@ namespace BasicFacebookFeatures
 
         }
 
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            FormProfile profileForm = new FormProfile(m_LoginResult);
+            this.Close();
+            profileForm.Show();
+        }
 
+        private void buttonUserPhotos_Click(object sender, EventArgs e)
+        {
+            FormPhotos photosForm = new FormPhotos(m_LoginResult);
+            this.Close();
+            photosForm.Show();
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            FormMainFacebookWindow HomeForm = new FormMainFacebookWindow(m_LoginResult);
+            this.Close();
+            HomeForm.Show();
+        }
     }
 }
