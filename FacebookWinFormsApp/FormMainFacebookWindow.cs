@@ -25,7 +25,6 @@ namespace BasicFacebookFeatures
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult);
-            this.Close();
             profileForm.Show();
         }
 
@@ -40,7 +39,6 @@ namespace BasicFacebookFeatures
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            this.Close();
             photosForm.Show();
         }
 
@@ -68,8 +66,6 @@ namespace BasicFacebookFeatures
 
         }
 
-
-
         private void fetchLikedPages()
         {
             listBoxLikedPages.Items.Clear();
@@ -92,8 +88,13 @@ namespace BasicFacebookFeatures
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
             FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
-            this.Close();
             formStats.Show();
+        }
+
+        private void SpecialMomentsCollage_Click(object sender, EventArgs e)
+        {
+            FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoginResult);
+            collageForm.Show();
         }
     }
 }

@@ -78,7 +78,6 @@ namespace BasicFacebookFeatures
                 this.Hide(); //hides FormMain
                 fbWindow.Show(); // opens FacebookWindow
 
-                //this.Hide(); //hides FormMain
             }
             catch (Exception ex)
             {
@@ -92,17 +91,8 @@ namespace BasicFacebookFeatures
             this.Show();
             m_LoginResult = null;
             buttonLogin.Enabled = true;
+            buttonConnectAsDesig.Enabled = true;
         }
 
-
-        private void textBoxAppID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

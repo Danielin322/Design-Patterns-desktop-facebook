@@ -30,9 +30,9 @@
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.textBoxAppID = new System.Windows.Forms.TextBox();
             this.buttonConnectAsDesig = new System.Windows.Forms.Button();
+            this.textBoxAppID = new System.Windows.Forms.TextBox();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -61,26 +61,6 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Location = new System.Drawing.Point(18, 17);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(268, 44);
-            this.buttonLogin.TabIndex = 36;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // textBoxAppID
-            // 
-            this.textBoxAppID.Location = new System.Drawing.Point(319, 126);
-            this.textBoxAppID.Name = "textBoxAppID";
-            this.textBoxAppID.Size = new System.Drawing.Size(446, 32);
-            this.textBoxAppID.TabIndex = 54;
-            this.textBoxAppID.Text = "1389047795918927";
-            this.textBoxAppID.TextChanged += new System.EventHandler(this.textBoxAppID_TextChanged);
-            // 
             // buttonConnectAsDesig
             // 
             this.buttonConnectAsDesig.Location = new System.Drawing.Point(18, 69);
@@ -91,6 +71,25 @@
             this.buttonConnectAsDesig.Text = "Connect As Desig";
             this.buttonConnectAsDesig.UseVisualStyleBackColor = true;
             this.buttonConnectAsDesig.Click += new System.EventHandler(this.buttonConnectAsDesig_Click);
+            // 
+            // textBoxAppID
+            // 
+            this.textBoxAppID.Location = new System.Drawing.Point(319, 126);
+            this.textBoxAppID.Name = "textBoxAppID";
+            this.textBoxAppID.Size = new System.Drawing.Size(446, 32);
+            this.textBoxAppID.TabIndex = 54;
+            this.textBoxAppID.Text = "1389047795918927";
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(18, 17);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(268, 44);
+            this.buttonLogin.TabIndex = 36;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // tabControl1
             // 
@@ -114,7 +113,6 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

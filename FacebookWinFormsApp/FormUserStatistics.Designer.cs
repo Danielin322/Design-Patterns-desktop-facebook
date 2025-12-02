@@ -54,9 +54,10 @@
             // 
             this.labelUserStatistics.AutoSize = true;
             this.labelUserStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserStatistics.Location = new System.Drawing.Point(586, 53);
+            this.labelUserStatistics.Location = new System.Drawing.Point(440, 42);
+            this.labelUserStatistics.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserStatistics.Name = "labelUserStatistics";
-            this.labelUserStatistics.Size = new System.Drawing.Size(314, 51);
+            this.labelUserStatistics.Size = new System.Drawing.Size(243, 38);
             this.labelUserStatistics.TabIndex = 0;
             this.labelUserStatistics.Text = "User Statistics";
             // 
@@ -64,9 +65,10 @@
             // 
             this.labelTotalFriends.AutoSize = true;
             this.labelTotalFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalFriends.Location = new System.Drawing.Point(92, 327);
+            this.labelTotalFriends.Location = new System.Drawing.Point(69, 262);
+            this.labelTotalFriends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalFriends.Name = "labelTotalFriends";
-            this.labelTotalFriends.Size = new System.Drawing.Size(208, 33);
+            this.labelTotalFriends.Size = new System.Drawing.Size(157, 26);
             this.labelTotalFriends.TabIndex = 1;
             this.labelTotalFriends.Text = "Total Friends:";
             // 
@@ -74,9 +76,10 @@
             // 
             this.labelTotalPosts.AutoSize = true;
             this.labelTotalPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPosts.Location = new System.Drawing.Point(92, 470);
+            this.labelTotalPosts.Location = new System.Drawing.Point(69, 376);
+            this.labelTotalPosts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalPosts.Name = "labelTotalPosts";
-            this.labelTotalPosts.Size = new System.Drawing.Size(181, 33);
+            this.labelTotalPosts.Size = new System.Drawing.Size(138, 26);
             this.labelTotalPosts.TabIndex = 2;
             this.labelTotalPosts.Text = "Total Posts:";
             // 
@@ -84,9 +87,10 @@
             // 
             this.labelTotalPhotos.AutoSize = true;
             this.labelTotalPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPhotos.Location = new System.Drawing.Point(92, 613);
+            this.labelTotalPhotos.Location = new System.Drawing.Point(69, 490);
+            this.labelTotalPhotos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalPhotos.Name = "labelTotalPhotos";
-            this.labelTotalPhotos.Size = new System.Drawing.Size(199, 33);
+            this.labelTotalPhotos.Size = new System.Drawing.Size(152, 26);
             this.labelTotalPhotos.TabIndex = 3;
             this.labelTotalPhotos.Text = "Total Photos:";
             // 
@@ -94,9 +98,10 @@
             // 
             this.labelTotalAlbums.AutoSize = true;
             this.labelTotalAlbums.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAlbums.Location = new System.Drawing.Point(92, 756);
+            this.labelTotalAlbums.Location = new System.Drawing.Point(69, 605);
+            this.labelTotalAlbums.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalAlbums.Name = "labelTotalAlbums";
-            this.labelTotalAlbums.Size = new System.Drawing.Size(207, 33);
+            this.labelTotalAlbums.Size = new System.Drawing.Size(158, 26);
             this.labelTotalAlbums.TabIndex = 4;
             this.labelTotalAlbums.Text = "Total Albums:";
             // 
@@ -104,9 +109,10 @@
             // 
             this.labelTotalLikedPages.AutoSize = true;
             this.labelTotalLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalLikedPages.Location = new System.Drawing.Point(816, 327);
+            this.labelTotalLikedPages.Location = new System.Drawing.Point(612, 262);
+            this.labelTotalLikedPages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalLikedPages.Name = "labelTotalLikedPages";
-            this.labelTotalLikedPages.Size = new System.Drawing.Size(274, 33);
+            this.labelTotalLikedPages.Size = new System.Drawing.Size(209, 26);
             this.labelTotalLikedPages.TabIndex = 5;
             this.labelTotalLikedPages.Text = "Total Liked Pages:";
             // 
@@ -114,9 +120,10 @@
             // 
             this.labelMostActiveAlbum.AutoSize = true;
             this.labelMostActiveAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostActiveAlbum.Location = new System.Drawing.Point(816, 470);
+            this.labelMostActiveAlbum.Location = new System.Drawing.Point(612, 376);
+            this.labelMostActiveAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMostActiveAlbum.Name = "labelMostActiveAlbum";
-            this.labelMostActiveAlbum.Size = new System.Drawing.Size(283, 33);
+            this.labelMostActiveAlbum.Size = new System.Drawing.Size(218, 26);
             this.labelMostActiveAlbum.TabIndex = 6;
             this.labelMostActiveAlbum.Text = "Most Active Album:";
             // 
@@ -124,9 +131,10 @@
             // 
             this.lableAveragePhotosPerAlbum.AutoSize = true;
             this.lableAveragePhotosPerAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableAveragePhotosPerAlbum.Location = new System.Drawing.Point(816, 613);
+            this.lableAveragePhotosPerAlbum.Location = new System.Drawing.Point(612, 490);
+            this.lableAveragePhotosPerAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lableAveragePhotosPerAlbum.Name = "lableAveragePhotosPerAlbum";
-            this.lableAveragePhotosPerAlbum.Size = new System.Drawing.Size(395, 33);
+            this.lableAveragePhotosPerAlbum.Size = new System.Drawing.Size(304, 26);
             this.lableAveragePhotosPerAlbum.TabIndex = 7;
             this.lableAveragePhotosPerAlbum.Text = "Average Photos per Album:";
             // 
@@ -134,9 +142,10 @@
             // 
             this.labelMostLikedPhoto.AutoSize = true;
             this.labelMostLikedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostLikedPhoto.Location = new System.Drawing.Point(816, 756);
+            this.labelMostLikedPhoto.Location = new System.Drawing.Point(612, 605);
+            this.labelMostLikedPhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMostLikedPhoto.Name = "labelMostLikedPhoto";
-            this.labelMostLikedPhoto.Size = new System.Drawing.Size(264, 33);
+            this.labelMostLikedPhoto.Size = new System.Drawing.Size(203, 26);
             this.labelMostLikedPhoto.TabIndex = 8;
             this.labelMostLikedPhoto.Text = "Most Liked Photo:";
             // 
@@ -144,9 +153,10 @@
             // 
             this.labelCountMostLikedPhoto.AutoSize = true;
             this.labelCountMostLikedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountMostLikedPhoto.Location = new System.Drawing.Point(1093, 756);
+            this.labelCountMostLikedPhoto.Location = new System.Drawing.Point(820, 605);
+            this.labelCountMostLikedPhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountMostLikedPhoto.Name = "labelCountMostLikedPhoto";
-            this.labelCountMostLikedPhoto.Size = new System.Drawing.Size(252, 33);
+            this.labelCountMostLikedPhoto.Size = new System.Drawing.Size(193, 26);
             this.labelCountMostLikedPhoto.TabIndex = 16;
             this.labelCountMostLikedPhoto.Text = "count most Liked";
             // 
@@ -154,9 +164,10 @@
             // 
             this.labelCountAvgPhotosPerAlbum.AutoSize = true;
             this.labelCountAvgPhotosPerAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountAvgPhotosPerAlbum.Location = new System.Drawing.Point(1226, 613);
+            this.labelCountAvgPhotosPerAlbum.Location = new System.Drawing.Point(920, 490);
+            this.labelCountAvgPhotosPerAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountAvgPhotosPerAlbum.Name = "labelCountAvgPhotosPerAlbum";
-            this.labelCountAvgPhotosPerAlbum.Size = new System.Drawing.Size(236, 33);
+            this.labelCountAvgPhotosPerAlbum.Size = new System.Drawing.Size(181, 26);
             this.labelCountAvgPhotosPerAlbum.TabIndex = 15;
             this.labelCountAvgPhotosPerAlbum.Text = "count avg photo";
             // 
@@ -164,9 +175,10 @@
             // 
             this.labelCountMostActiveAlbum.AutoSize = true;
             this.labelCountMostActiveAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountMostActiveAlbum.Location = new System.Drawing.Point(1122, 470);
+            this.labelCountMostActiveAlbum.Location = new System.Drawing.Point(842, 376);
+            this.labelCountMostActiveAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountMostActiveAlbum.Name = "labelCountMostActiveAlbum";
-            this.labelCountMostActiveAlbum.Size = new System.Drawing.Size(277, 33);
+            this.labelCountMostActiveAlbum.Size = new System.Drawing.Size(212, 26);
             this.labelCountMostActiveAlbum.TabIndex = 14;
             this.labelCountMostActiveAlbum.Text = "count active album";
             // 
@@ -174,9 +186,10 @@
             // 
             this.labelCountLikedPages.AutoSize = true;
             this.labelCountLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountLikedPages.Location = new System.Drawing.Point(1106, 327);
+            this.labelCountLikedPages.Location = new System.Drawing.Point(830, 262);
+            this.labelCountLikedPages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountLikedPages.Name = "labelCountLikedPages";
-            this.labelCountLikedPages.Size = new System.Drawing.Size(259, 33);
+            this.labelCountLikedPages.Size = new System.Drawing.Size(198, 26);
             this.labelCountLikedPages.TabIndex = 13;
             this.labelCountLikedPages.Text = "count liked pages";
             // 
@@ -184,9 +197,10 @@
             // 
             this.labelCountTotalAlbums.AutoSize = true;
             this.labelCountTotalAlbums.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountTotalAlbums.Location = new System.Drawing.Point(306, 756);
+            this.labelCountTotalAlbums.Location = new System.Drawing.Point(230, 605);
+            this.labelCountTotalAlbums.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountTotalAlbums.Name = "labelCountTotalAlbums";
-            this.labelCountTotalAlbums.Size = new System.Drawing.Size(204, 33);
+            this.labelCountTotalAlbums.Size = new System.Drawing.Size(157, 26);
             this.labelCountTotalAlbums.TabIndex = 12;
             this.labelCountTotalAlbums.Text = "count Albums";
             // 
@@ -194,9 +208,10 @@
             // 
             this.labelCountTotalPhotos.AutoSize = true;
             this.labelCountTotalPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountTotalPhotos.Location = new System.Drawing.Point(306, 613);
+            this.labelCountTotalPhotos.Location = new System.Drawing.Point(230, 490);
+            this.labelCountTotalPhotos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountTotalPhotos.Name = "labelCountTotalPhotos";
-            this.labelCountTotalPhotos.Size = new System.Drawing.Size(196, 33);
+            this.labelCountTotalPhotos.Size = new System.Drawing.Size(151, 26);
             this.labelCountTotalPhotos.TabIndex = 11;
             this.labelCountTotalPhotos.Text = "count Photos";
             // 
@@ -204,9 +219,10 @@
             // 
             this.labelCountTotalPosts.AutoSize = true;
             this.labelCountTotalPosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountTotalPosts.Location = new System.Drawing.Point(291, 470);
+            this.labelCountTotalPosts.Location = new System.Drawing.Point(218, 376);
+            this.labelCountTotalPosts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountTotalPosts.Name = "labelCountTotalPosts";
-            this.labelCountTotalPosts.Size = new System.Drawing.Size(178, 33);
+            this.labelCountTotalPosts.Size = new System.Drawing.Size(137, 26);
             this.labelCountTotalPosts.TabIndex = 10;
             this.labelCountTotalPosts.Text = "count Posts";
             // 
@@ -214,18 +230,19 @@
             // 
             this.labelCountTotalFriends.AutoSize = true;
             this.labelCountTotalFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountTotalFriends.Location = new System.Drawing.Point(306, 327);
+            this.labelCountTotalFriends.Location = new System.Drawing.Point(230, 262);
+            this.labelCountTotalFriends.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountTotalFriends.Name = "labelCountTotalFriends";
-            this.labelCountTotalFriends.Size = new System.Drawing.Size(205, 33);
+            this.labelCountTotalFriends.Size = new System.Drawing.Size(156, 26);
             this.labelCountTotalFriends.TabIndex = 9;
             this.labelCountTotalFriends.Text = "count Friends";
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(916, 1122);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHome.Location = new System.Drawing.Point(925, 822);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(144, 66);
+            this.buttonHome.Size = new System.Drawing.Size(131, 53);
             this.buttonHome.TabIndex = 29;
             this.buttonHome.Text = "Home";
             this.buttonHome.UseVisualStyleBackColor = true;
@@ -233,10 +250,10 @@
             // 
             // buttonUserPhotos
             // 
-            this.buttonUserPhotos.Location = new System.Drawing.Point(1091, 1122);
-            this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUserPhotos.Location = new System.Drawing.Point(790, 822);
+            this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUserPhotos.Name = "buttonUserPhotos";
-            this.buttonUserPhotos.Size = new System.Drawing.Size(144, 66);
+            this.buttonUserPhotos.Size = new System.Drawing.Size(131, 53);
             this.buttonUserPhotos.TabIndex = 28;
             this.buttonUserPhotos.Text = "Photos";
             this.buttonUserPhotos.UseVisualStyleBackColor = true;
@@ -244,10 +261,11 @@
             // 
             // buttonProfile
             // 
-            this.buttonProfile.Location = new System.Drawing.Point(1268, 1122);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonProfile.Location = new System.Drawing.Point(1060, 822);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(144, 66);
+            this.buttonProfile.Size = new System.Drawing.Size(121, 53);
             this.buttonProfile.TabIndex = 30;
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = true;
@@ -255,9 +273,9 @@
             // 
             // FormUserStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1474, 1229);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(1237, 916);
             this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.buttonUserPhotos);
@@ -278,7 +296,9 @@
             this.Controls.Add(this.labelTotalPosts);
             this.Controls.Add(this.labelTotalFriends);
             this.Controls.Add(this.labelUserStatistics);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormUserStatistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUserStatistics";
             this.Load += new System.EventHandler(this.FormUserStatistics_Load);
             this.ResumeLayout(false);

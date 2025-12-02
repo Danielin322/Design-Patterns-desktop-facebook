@@ -269,9 +269,7 @@ namespace BasicFacebookFeatures
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            FormMainFacebookWindow HomeForm = new FormMainFacebookWindow(m_LoginResult);
             this.Close();
-            HomeForm.Show();
         }
     }
 }
