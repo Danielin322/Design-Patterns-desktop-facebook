@@ -13,23 +13,19 @@ using System.Windows.Forms;
 namespace BasicFacebookFeatures
 {
     public partial class FormPhotos : Form
-
     {
-
         private LoginResult m_LoginResult;
-
-        public FormPhotos(LoginResult loginResult)
+        public FormPhotos(LoginResult i_LoginResult)
         {
-            m_LoginResult = loginResult;
+            m_LoginResult = i_LoginResult;
             InitializeComponent();
         }
 
         private void FormPhotos_Load(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 fetchAlbums();
-
             }
             catch (KeyNotFoundException)
             {
@@ -46,7 +42,6 @@ namespace BasicFacebookFeatures
             listBoxAlbums.Items.Clear();
             listBoxAlbums.DisplayMember = "Name";
 
-
             foreach (Album album in m_LoginResult.LoggedInUser.Albums)
             {
                 listBoxAlbums.Items.Add(album);
@@ -58,11 +53,11 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private bool IsValidPhoto(Photo photo)
+        private bool IsValidPhoto(Photo io_Photo)
         {
             try
             {
-                return photo != null && photo.PictureNormalURL != null;
+                return io_Photo != null && io_Photo.PictureNormalURL != null;
             }
             catch
             {
@@ -70,12 +65,12 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void addPhotoToLayoutPanel(Photo photo)
+        private void addPhotoToLayoutPanel(Photo io_Photo)
         {
             PictureBox pictureBox = new PictureBox();
             pictureBox.Size = new Size(100, 100);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox.LoadAsync(photo.PictureNormalURL);
+            pictureBox.LoadAsync(io_Photo.PictureNormalURL);
 
             flowLayoutPanelPhotos.Controls.Add(pictureBox);
         }
@@ -136,4 +131,3 @@ namespace BasicFacebookFeatures
         }
     }
 }
-

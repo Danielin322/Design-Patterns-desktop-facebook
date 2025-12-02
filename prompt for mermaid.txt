@@ -1,0 +1,87 @@
+use case diagram:
+flowchart TB
+    %% Actors
+    User([User])
+    FB([Facebook Graph API])
+
+    %% System boundary for the app
+    subgraph APP [Facebook WinForms App]
+        UC_Login((Log in with Facebook))
+        UC_Dashboard((View main dashboard))
+        UC_Profile((View profile details))
+        UC_Photos((View photos & albums))
+        UC_Collage((Start collage slideshow))
+        UC_LikedPages((View liked pages))
+        UC_Stats((View user statistics))
+        UC_Post((Publish post))
+        UC_Logout((Log out))
+    end
+
+    %% User initiates login first
+    User --> UC_Login
+
+    %% Login enables access to all other use cases
+    UC_Login --> UC_Dashboard
+    
+    UC_Dashboard --> UC_Profile
+    UC_Dashboard --> UC_Photos
+    UC_Dashboard --> UC_Collage
+    UC_Dashboard --> UC_LikedPages
+    UC_Dashboard --> UC_Stats
+    UC_Dashboard --> UC_Post
+    UC_Dashboard --> UC_Logout
+
+    %% API interactions
+    UC_Login --> FB
+    UC_Profile --> FB
+    UC_Photos --> FB
+    UC_LikedPages --> FB
+    UC_Stats --> FB
+    UC_Logout --> FB
+     UC_Post --> FB
+     UC_Collage --> FB
+
+
+collage sequence diagram:
+sequenceDiagram
+    actor User
+    participant Main as Main Window
+    participant Collage as Collage Form
+    participant FB as Facebook API
+    participant Timer
+
+    User ->> Main: Click "Special Moments Collage"
+    Main ->> Collage: Open Collage Form
+
+    Collage ->> FB: Load all user photos
+    FB -->> Collage: Return photos list
+
+    Collage ->> Timer: Start timer (every 2 seconds)
+
+    loop Every 2 seconds
+        Timer ->> Collage: Timer_Tick()
+        Collage ->> Collage: Select next 4 photos
+        Collage ->> Collage: Update PictureBoxes
+    end
+
+    User ->> Collage: Click "Home"
+    Collage ->> Main: Close Collage Form\n(Return to Main Window)
+
+statistics sequence diagram:
+sequenceDiagram
+    actor User
+    participant Main as Main Window
+    participant Stats as Statistics Form
+    participant FB as Facebook API
+
+    User ->> Main: Click "Statistics"
+    Main ->> Stats: Open Statistics Form
+
+    Stats ->> FB: Request posts
+    Stats ->> FB: Request albums/photos
+    Stats ->> FB: Request liked pages
+
+    Stats ->> Stats: Count posts\nCount photos\nCount liked pages\nUpdate labels
+
+    User ->> Stats: Click "Home"
+    Stats ->> Main: Close and return

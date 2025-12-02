@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Page = FacebookWrapper.ObjectModel.Page;
 
 namespace BasicFacebookFeatures
 {
@@ -25,6 +27,8 @@ namespace BasicFacebookFeatures
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult);
+            profileForm.FormClosed += returnHome;
+            this.Hide();
             profileForm.Show();
         }
 
@@ -39,10 +43,10 @@ namespace BasicFacebookFeatures
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
             FormPhotos photosForm = new FormPhotos(m_LoginResult);
+            photosForm.FormClosed += returnHome;
+            this.Hide();
             photosForm.Show();
         }
-
-       
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)
         {
@@ -95,6 +99,11 @@ namespace BasicFacebookFeatures
         {
             FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoginResult);
             collageForm.Show();
+        }
+
+        private void returnHome(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }

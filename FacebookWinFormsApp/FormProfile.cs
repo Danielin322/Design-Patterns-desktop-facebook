@@ -12,18 +12,15 @@ using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures
 {
-
     public partial class FormProfile : Form
     {
         private LoginResult m_LoginResult;
 
-        public FormProfile(LoginResult loginResult)
+        public FormProfile(LoginResult i_LoginResult)
         {
-            m_LoginResult = loginResult;
+            m_LoginResult = i_LoginResult;
             InitializeComponent();
         }
-
-
 
          private void FormProfile_Load(object sender, EventArgs e)
         {
@@ -41,7 +38,6 @@ namespace BasicFacebookFeatures
             }
 
             // if some of the info is missing, we show empty string
-
             textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name ?? "";
             textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday ?? "";
             textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location?.Name ?? "";
@@ -87,8 +83,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-
-        private void addPostToFlowPanel(string postText)
+        private void addPostToFlowPanel(string i_PostText)
         {
             Label postLabel = new Label();
 
@@ -96,17 +91,13 @@ namespace BasicFacebookFeatures
             postLabel.Width = flowLayoutPanelPosts.Width - 30;
             postLabel.Padding = new Padding(10);
             postLabel.Margin = new Padding(5);
-            postLabel.Text = postText;
-
+            postLabel.Text = i_PostText;
             postLabel.BackColor = Color.White;
             postLabel.BorderStyle = BorderStyle.FixedSingle;
             postLabel.Font = new Font("Segoe UI", 10);
-
-            postLabel.Height = TextRenderer.MeasureText(postText, postLabel.Font, new Size(postLabel.Width, int.MaxValue)).Height + 20;
-
+            postLabel.Height = TextRenderer.MeasureText(i_PostText, postLabel.Font, new Size(postLabel.Width, int.MaxValue)).Height + 20;
             flowLayoutPanelPosts.Controls.Add(postLabel);
         }
-
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
@@ -120,7 +111,6 @@ namespace BasicFacebookFeatures
             this.Close();
         }
        
-
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
             FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
