@@ -85,10 +85,11 @@
             // labelCollageOfPhotos
             // 
             this.labelCollageOfPhotos.AutoSize = true;
-            this.labelCollageOfPhotos.BackColor = System.Drawing.Color.Pink;
-            this.labelCollageOfPhotos.Location = new System.Drawing.Point(333, 67);
+            this.labelCollageOfPhotos.BackColor = System.Drawing.Color.Transparent;
+            this.labelCollageOfPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCollageOfPhotos.Location = new System.Drawing.Point(179, 40);
             this.labelCollageOfPhotos.Name = "labelCollageOfPhotos";
-            this.labelCollageOfPhotos.Size = new System.Drawing.Size(179, 20);
+            this.labelCollageOfPhotos.Size = new System.Drawing.Size(565, 55);
             this.labelCollageOfPhotos.TabIndex = 5;
             this.labelCollageOfPhotos.Text = "Here are your moments!";
             // 
