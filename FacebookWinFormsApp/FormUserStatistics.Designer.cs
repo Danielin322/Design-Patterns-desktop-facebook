@@ -34,12 +34,10 @@
             this.labelTotalPhotos = new System.Windows.Forms.Label();
             this.labelTotalAlbums = new System.Windows.Forms.Label();
             this.labelTotalLikedPages = new System.Windows.Forms.Label();
-            this.labelMostActiveAlbum = new System.Windows.Forms.Label();
             this.lableAveragePhotosPerAlbum = new System.Windows.Forms.Label();
             this.labelMostLikedPhoto = new System.Windows.Forms.Label();
             this.labelCountMostLikedPhoto = new System.Windows.Forms.Label();
             this.labelCountAvgPhotosPerAlbum = new System.Windows.Forms.Label();
-            this.labelCountMostActiveAlbum = new System.Windows.Forms.Label();
             this.labelCountLikedPages = new System.Windows.Forms.Label();
             this.labelCountTotalAlbums = new System.Windows.Forms.Label();
             this.labelCountTotalPhotos = new System.Windows.Forms.Label();
@@ -53,7 +51,7 @@
             // labelUserStatistics
             // 
             this.labelUserStatistics.AutoSize = true;
-            this.labelUserStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserStatistics.Location = new System.Drawing.Point(434, 94);
             this.labelUserStatistics.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserStatistics.Name = "labelUserStatistics";
@@ -116,22 +114,11 @@
             this.labelTotalLikedPages.TabIndex = 5;
             this.labelTotalLikedPages.Text = "Total Liked Pages:";
             // 
-            // labelMostActiveAlbum
-            // 
-            this.labelMostActiveAlbum.AutoSize = true;
-            this.labelMostActiveAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostActiveAlbum.Location = new System.Drawing.Point(612, 376);
-            this.labelMostActiveAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelMostActiveAlbum.Name = "labelMostActiveAlbum";
-            this.labelMostActiveAlbum.Size = new System.Drawing.Size(283, 33);
-            this.labelMostActiveAlbum.TabIndex = 6;
-            this.labelMostActiveAlbum.Text = "Most Active Album:";
-            // 
             // lableAveragePhotosPerAlbum
             // 
             this.lableAveragePhotosPerAlbum.AutoSize = true;
             this.lableAveragePhotosPerAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableAveragePhotosPerAlbum.Location = new System.Drawing.Point(612, 490);
+            this.lableAveragePhotosPerAlbum.Location = new System.Drawing.Point(612, 376);
             this.lableAveragePhotosPerAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lableAveragePhotosPerAlbum.Name = "lableAveragePhotosPerAlbum";
             this.lableAveragePhotosPerAlbum.Size = new System.Drawing.Size(395, 33);
@@ -142,7 +129,7 @@
             // 
             this.labelMostLikedPhoto.AutoSize = true;
             this.labelMostLikedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostLikedPhoto.Location = new System.Drawing.Point(612, 605);
+            this.labelMostLikedPhoto.Location = new System.Drawing.Point(612, 491);
             this.labelMostLikedPhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMostLikedPhoto.Name = "labelMostLikedPhoto";
             this.labelMostLikedPhoto.Size = new System.Drawing.Size(264, 33);
@@ -153,7 +140,7 @@
             // 
             this.labelCountMostLikedPhoto.AutoSize = true;
             this.labelCountMostLikedPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountMostLikedPhoto.Location = new System.Drawing.Point(890, 605);
+            this.labelCountMostLikedPhoto.Location = new System.Drawing.Point(890, 491);
             this.labelCountMostLikedPhoto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountMostLikedPhoto.Name = "labelCountMostLikedPhoto";
             this.labelCountMostLikedPhoto.Size = new System.Drawing.Size(167, 33);
@@ -164,23 +151,12 @@
             // 
             this.labelCountAvgPhotosPerAlbum.AutoSize = true;
             this.labelCountAvgPhotosPerAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountAvgPhotosPerAlbum.Location = new System.Drawing.Point(1011, 490);
+            this.labelCountAvgPhotosPerAlbum.Location = new System.Drawing.Point(1011, 376);
             this.labelCountAvgPhotosPerAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountAvgPhotosPerAlbum.Name = "labelCountAvgPhotosPerAlbum";
             this.labelCountAvgPhotosPerAlbum.Size = new System.Drawing.Size(167, 33);
             this.labelCountAvgPhotosPerAlbum.TabIndex = 15;
             this.labelCountAvgPhotosPerAlbum.Text = "avg photos";
-            // 
-            // labelCountMostActiveAlbum
-            // 
-            this.labelCountMostActiveAlbum.AutoSize = true;
-            this.labelCountMostActiveAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountMostActiveAlbum.Location = new System.Drawing.Point(904, 376);
-            this.labelCountMostActiveAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCountMostActiveAlbum.Name = "labelCountMostActiveAlbum";
-            this.labelCountMostActiveAlbum.Size = new System.Drawing.Size(192, 33);
-            this.labelCountMostActiveAlbum.TabIndex = 14;
-            this.labelCountMostActiveAlbum.Text = "active album";
             // 
             // labelCountLikedPages
             // 
@@ -239,36 +215,45 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(925, 822);
+            this.buttonHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHome.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHome.Location = new System.Drawing.Point(909, 822);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(131, 53);
             this.buttonHome.TabIndex = 29;
             this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.UseVisualStyleBackColor = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // buttonUserPhotos
             // 
-            this.buttonUserPhotos.Location = new System.Drawing.Point(790, 822);
+            this.buttonUserPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUserPhotos.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonUserPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUserPhotos.Location = new System.Drawing.Point(758, 822);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUserPhotos.Name = "buttonUserPhotos";
             this.buttonUserPhotos.Size = new System.Drawing.Size(131, 53);
             this.buttonUserPhotos.TabIndex = 28;
             this.buttonUserPhotos.Text = "Photos";
-            this.buttonUserPhotos.UseVisualStyleBackColor = true;
+            this.buttonUserPhotos.UseVisualStyleBackColor = false;
             this.buttonUserPhotos.Click += new System.EventHandler(this.buttonUserPhotos_Click);
             // 
             // buttonProfile
             // 
+            this.buttonProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonProfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonProfile.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfile.Location = new System.Drawing.Point(1060, 822);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(121, 53);
             this.buttonProfile.TabIndex = 30;
             this.buttonProfile.Text = "Profile";
-            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // FormUserStatistics
@@ -281,7 +266,6 @@
             this.Controls.Add(this.buttonUserPhotos);
             this.Controls.Add(this.labelCountMostLikedPhoto);
             this.Controls.Add(this.labelCountAvgPhotosPerAlbum);
-            this.Controls.Add(this.labelCountMostActiveAlbum);
             this.Controls.Add(this.labelCountLikedPages);
             this.Controls.Add(this.labelCountTotalAlbums);
             this.Controls.Add(this.labelCountTotalPhotos);
@@ -289,7 +273,6 @@
             this.Controls.Add(this.labelCountTotalFriends);
             this.Controls.Add(this.labelMostLikedPhoto);
             this.Controls.Add(this.lableAveragePhotosPerAlbum);
-            this.Controls.Add(this.labelMostActiveAlbum);
             this.Controls.Add(this.labelTotalLikedPages);
             this.Controls.Add(this.labelTotalAlbums);
             this.Controls.Add(this.labelTotalPhotos);
@@ -300,7 +283,6 @@
             this.Name = "FormUserStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUserStatistics";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUserStatistics_FormClosing);
             this.Load += new System.EventHandler(this.FormUserStatistics_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -315,12 +297,10 @@
         private System.Windows.Forms.Label labelTotalPhotos;
         private System.Windows.Forms.Label labelTotalAlbums;
         private System.Windows.Forms.Label labelTotalLikedPages;
-        private System.Windows.Forms.Label labelMostActiveAlbum;
         private System.Windows.Forms.Label lableAveragePhotosPerAlbum;
         private System.Windows.Forms.Label labelMostLikedPhoto;
         private System.Windows.Forms.Label labelCountMostLikedPhoto;
         private System.Windows.Forms.Label labelCountAvgPhotosPerAlbum;
-        private System.Windows.Forms.Label labelCountMostActiveAlbum;
         private System.Windows.Forms.Label labelCountLikedPages;
         private System.Windows.Forms.Label labelCountTotalAlbums;
         private System.Windows.Forms.Label labelCountTotalPhotos;

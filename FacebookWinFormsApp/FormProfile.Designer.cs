@@ -68,14 +68,14 @@
             // textBoxUserFullName
             // 
             this.textBoxUserFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUserFullName.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBoxUserFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUserFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserFullName.Location = new System.Drawing.Point(868, 259);
+            this.textBoxUserFullName.BackColor = System.Drawing.Color.Lavender;
+            this.textBoxUserFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUserFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserFullName.Location = new System.Drawing.Point(837, 259);
             this.textBoxUserFullName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserFullName.Name = "textBoxUserFullName";
             this.textBoxUserFullName.ReadOnly = true;
-            this.textBoxUserFullName.Size = new System.Drawing.Size(256, 44);
+            this.textBoxUserFullName.Size = new System.Drawing.Size(338, 37);
             this.textBoxUserFullName.TabIndex = 6;
             this.textBoxUserFullName.Text = "textBoxUserFullName";
             // 
@@ -83,7 +83,7 @@
             // 
             this.textBoxUserEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserEmail.Location = new System.Drawing.Point(868, 753);
             this.textBoxUserEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserEmail.Name = "textBoxUserEmail";
@@ -95,7 +95,7 @@
             // textBoxBirthdayDate
             // 
             this.textBoxBirthdayDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBirthdayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBirthdayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBirthdayDate.Location = new System.Drawing.Point(921, 446);
             this.textBoxBirthdayDate.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBirthdayDate.Name = "textBoxBirthdayDate";
@@ -107,7 +107,7 @@
             // 
             this.textBoxGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxGender.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGender.Location = new System.Drawing.Point(902, 504);
             this.textBoxGender.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxGender.Name = "textBoxGender";
@@ -120,7 +120,7 @@
             // 
             this.textBoxUserCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserCity.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUserCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserCity.Location = new System.Drawing.Point(852, 803);
             this.textBoxUserCity.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserCity.Name = "textBoxUserCity";
@@ -133,7 +133,7 @@
             // 
             this.textBoxUserLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxUserLocation.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUserLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserLocation.Location = new System.Drawing.Point(924, 560);
             this.textBoxUserLocation.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserLocation.Name = "textBoxUserLocation";
@@ -145,6 +145,7 @@
             // buttonUserPhotos
             // 
             this.buttonUserPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonUserPhotos.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonUserPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUserPhotos.Location = new System.Drawing.Point(1053, 922);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(2);
@@ -152,12 +153,13 @@
             this.buttonUserPhotos.Size = new System.Drawing.Size(108, 53);
             this.buttonUserPhotos.TabIndex = 25;
             this.buttonUserPhotos.Text = "Photos";
-            this.buttonUserPhotos.UseVisualStyleBackColor = true;
+            this.buttonUserPhotos.UseVisualStyleBackColor = false;
             this.buttonUserPhotos.Click += new System.EventHandler(this.buttonUserPhotos_Click);
             // 
             // buttonHome
             // 
             this.buttonHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonHome.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHome.Location = new System.Drawing.Point(920, 922);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
@@ -165,7 +167,7 @@
             this.buttonHome.Size = new System.Drawing.Size(108, 53);
             this.buttonHome.TabIndex = 27;
             this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.UseVisualStyleBackColor = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // flowLayoutPanelPosts
@@ -197,6 +199,7 @@
             // 
             this.buttonStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonStatistics.AutoSize = true;
+            this.buttonStatistics.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStatistics.Location = new System.Drawing.Point(768, 922);
             this.buttonStatistics.Margin = new System.Windows.Forms.Padding(2);
@@ -204,7 +207,7 @@
             this.buttonStatistics.Size = new System.Drawing.Size(127, 53);
             this.buttonStatistics.TabIndex = 30;
             this.buttonStatistics.Text = "Statistics";
-            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.UseVisualStyleBackColor = false;
             this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // label2
@@ -317,7 +320,6 @@
             this.Name = "FormProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProfile";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormProfile_FormClosing);
             this.Load += new System.EventHandler(this.FormProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
             this.ResumeLayout(false);

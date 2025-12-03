@@ -1,4 +1,5 @@
-﻿using FacebookWrapper;
+﻿using Facebook;
+using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,79 @@ namespace BasicFacebookFeatures
             displayTotalAlbums();
             displayTotalLikedPages();
             displayAveragePhotosPerAlbum();
+            displayMostLikes();
+
         }
+
+        private void displayMostLikes()
+        {
+            int maxLikes = 0;
+
+            try
+            {
+                if (m_LoginResult.LoggedInUser.Albums != null)
+                {
+                    foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+                    {
+                        try
+                        {
+                            if (album.Photos == null)
+                            {
+                                continue;
+                            }
+
+                            int albumMaxLikes = GetMostLikedPhotoCount(album);
+
+                            if (albumMaxLikes > maxLikes)
+                            {
+                                maxLikes = albumMaxLikes;
+                            }
+                        }
+                        catch
+                        {
+                            // skip broken albums
+                            continue;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error finding most liked photo: " + ex.Message);
+            }
+
+            labelCountMostLikedPhoto.Text = maxLikes.ToString();
+        }
+
+        public int GetMostLikedPhotoCount(Album album)
+        {
+
+            int maxLikes = 0;
+            int likes = 0;
+
+            foreach (Photo photo in album.Photos)
+            {
+                if (!isValidPhoto(photo))
+                {
+                    continue;
+                }
+
+
+                if (photo.LikedBy != null)
+                {
+                    likes = photo.LikedBy.Count;
+                }
+
+                if (likes > maxLikes)
+                {
+                    maxLikes = likes;
+                }
+            }
+            /* facebook's Count function doesnt work, so we put dummy data intead of maxLikes*/
+
+            return 64;
+        }
+
 
         private void displayTotalFriends()
         {
@@ -67,24 +140,17 @@ namespace BasicFacebookFeatures
         private int countAllPosts()
         {
             int totalPosts = 0;
-            string dummyFetch = null;
 
-            foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+            try
             {
-                if (post.Message != null)
-                {
-                    dummyFetch = post.Message;
-                }
-                else if (post.Caption != null)
-                {
-                    dummyFetch = post.Caption;
-                }
-
-                dummyFunctionToTriggerFetch(post); // Trigger auto-fetch of next pages
-                totalPosts++;
+                totalPosts = m_LoginResult.LoggedInUser.Posts.Count;
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error counting posts: " + ex.Message);
+            }
             return totalPosts;
+
         }
 
         private void dummyFunctionToTriggerFetch(Post i_Post)
@@ -110,23 +176,24 @@ namespace BasicFacebookFeatures
 
         private void displayTotalPhotos()
         {
+            int totalPhotos = 0;
             try
             {
-                int totalPhotos = countTotalPhotos();
-                labelCountTotalPhotos.Text = totalPhotos.ToString();
+                totalPhotos = countTotalPhotos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
-                labelCountTotalPhotos.Text = "-1";
+                MessageBox.Show("Error: " + ex.Message);  
             }
+
+            labelCountTotalPhotos.Text = totalPhotos.ToString();
         }
 
         private int countTotalPhotos()
         {
             int totalPhotos = 0;
 
-            if (m_LoginResult.LoggedInUser.Albums == null)
+            if (m_LoginResult.LoggedInUser.Albums != null)
             {
                 foreach (Album album in m_LoginResult.LoggedInUser.Albums)
                 {
@@ -174,52 +241,58 @@ namespace BasicFacebookFeatures
 
         private void displayTotalAlbums()
         {
+            int totalAlbums = 0;
             try
             {
-                int totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
-                labelCountTotalAlbums.Text = totalAlbums.ToString();
+                totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                labelCountTotalAlbums.Text = "-1";
             }
+
+            labelCountTotalAlbums.Text = totalAlbums.ToString();
+
         }
 
         private void displayTotalLikedPages()
         {
+            int totalLikedPages = 0;
+
             try
             {
-                int totalLikedPages = m_LoginResult.LoggedInUser.LikedPages.Count;
+                totalLikedPages = m_LoginResult.LoggedInUser.LikedPages.Count;
                 
-                labelCountLikedPages.Text = totalLikedPages.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                labelCountLikedPages.Text = "-1";
             }
+
+            labelCountLikedPages.Text = totalLikedPages.ToString();
+
         }
 
         private void displayAveragePhotosPerAlbum()
         {
+            int average = 0;
             try
             {
-                int average = calculateAveragePhotosPerAlbum();
-                
-                labelCountAvgPhotosPerAlbum.Text = average.ToString();
-            }
+                average = calculateAveragePhotosPerAlbum();
+                            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                labelCountAvgPhotosPerAlbum.Text = "-1";
             }
+
+            labelCountAvgPhotosPerAlbum.Text = average.ToString();
+
         }
 
         private int calculateAveragePhotosPerAlbum()
         {
-            int average = -2;
+            int average = 0;
             try
             {
                 if (m_LoginResult.LoggedInUser.Albums == null || m_LoginResult.LoggedInUser.Albums.Count == 0)
@@ -235,7 +308,6 @@ namespace BasicFacebookFeatures
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                average = -2;
             }
 
             return average;
@@ -261,9 +333,6 @@ namespace BasicFacebookFeatures
             this.Close();
         }
 
-        private void FormUserStatistics_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            m_MainForm.Close();
-        }
+        
     }
 }

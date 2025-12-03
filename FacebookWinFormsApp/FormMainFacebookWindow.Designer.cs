@@ -48,6 +48,7 @@
             // 
             this.buttonProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonProfile.AutoSize = true;
+            this.buttonProfile.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProfile.Location = new System.Drawing.Point(1042, 865);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
@@ -55,7 +56,7 @@
             this.buttonProfile.Size = new System.Drawing.Size(108, 53);
             this.buttonProfile.TabIndex = 2;
             this.buttonProfile.Text = "Profile";
-            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // textBoxUserFullName
@@ -81,7 +82,7 @@
             this.pictureBox_Profile.Location = new System.Drawing.Point(903, 48);
             this.pictureBox_Profile.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_Profile.Name = "pictureBox_Profile";
-            this.pictureBox_Profile.Size = new System.Drawing.Size(212, 209);
+            this.pictureBox_Profile.Size = new System.Drawing.Size(212, 203);
             this.pictureBox_Profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Profile.TabIndex = 5;
             this.pictureBox_Profile.TabStop = false;
@@ -105,6 +106,7 @@
             // 
             this.buttonUserPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonUserPhotos.AutoSize = true;
+            this.buttonUserPhotos.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonUserPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUserPhotos.Location = new System.Drawing.Point(918, 865);
             this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(2);
@@ -112,27 +114,27 @@
             this.buttonUserPhotos.Size = new System.Drawing.Size(108, 53);
             this.buttonUserPhotos.TabIndex = 7;
             this.buttonUserPhotos.Text = "Photos";
-            this.buttonUserPhotos.UseVisualStyleBackColor = true;
+            this.buttonUserPhotos.UseVisualStyleBackColor = false;
             this.buttonUserPhotos.Click += new System.EventHandler(this.buttonUserPhotos_Click);
             // 
             // textBoxNewPost
             // 
             this.textBoxNewPost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNewPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNewPost.Location = new System.Drawing.Point(29, 105);
+            this.textBoxNewPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNewPost.Location = new System.Drawing.Point(489, 421);
             this.textBoxNewPost.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNewPost.Multiline = true;
             this.textBoxNewPost.Name = "textBoxNewPost";
             this.textBoxNewPost.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNewPost.Size = new System.Drawing.Size(717, 156);
+            this.textBoxNewPost.Size = new System.Drawing.Size(626, 287);
             this.textBoxNewPost.TabIndex = 8;
             // 
             // labelPost
             // 
             this.labelPost.AutoSize = true;
             this.labelPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPost.Location = new System.Drawing.Point(33, 48);
+            this.labelPost.Location = new System.Drawing.Point(482, 363);
             this.labelPost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPost.Name = "labelPost";
             this.labelPost.Size = new System.Drawing.Size(348, 37);
@@ -143,14 +145,15 @@
             // 
             this.buttonPublishPost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPublishPost.AutoSize = true;
+            this.buttonPublishPost.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonPublishPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPublishPost.Location = new System.Drawing.Point(655, 276);
+            this.buttonPublishPost.Location = new System.Drawing.Point(974, 743);
             this.buttonPublishPost.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPublishPost.Name = "buttonPublishPost";
             this.buttonPublishPost.Size = new System.Drawing.Size(126, 50);
             this.buttonPublishPost.TabIndex = 10;
             this.buttonPublishPost.Text = "Publish";
-            this.buttonPublishPost.UseVisualStyleBackColor = true;
+            this.buttonPublishPost.UseVisualStyleBackColor = false;
             this.buttonPublishPost.Click += new System.EventHandler(this.buttonPublishPost_Click);
             // 
             // listBoxLikedPages
@@ -160,17 +163,18 @@
             this.listBoxLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxLikedPages.FormattingEnabled = true;
             this.listBoxLikedPages.ItemHeight = 31;
-            this.listBoxLikedPages.Location = new System.Drawing.Point(29, 399);
+            this.listBoxLikedPages.Location = new System.Drawing.Point(7, 100);
             this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
-            this.listBoxLikedPages.Size = new System.Drawing.Size(408, 407);
+            this.listBoxLikedPages.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxLikedPages.Size = new System.Drawing.Size(408, 655);
             this.listBoxLikedPages.TabIndex = 11;
             // 
             // LablePagesYouLiked
             // 
             this.LablePagesYouLiked.AutoSize = true;
             this.LablePagesYouLiked.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LablePagesYouLiked.Location = new System.Drawing.Point(33, 329);
+            this.LablePagesYouLiked.Location = new System.Drawing.Point(11, 30);
             this.LablePagesYouLiked.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LablePagesYouLiked.Name = "LablePagesYouLiked";
             this.LablePagesYouLiked.Size = new System.Drawing.Size(394, 37);
@@ -181,6 +185,7 @@
             // 
             this.buttonStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonStatistics.AutoSize = true;
+            this.buttonStatistics.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStatistics.Location = new System.Drawing.Point(783, 865);
             this.buttonStatistics.Margin = new System.Windows.Forms.Padding(2);
@@ -188,7 +193,7 @@
             this.buttonStatistics.Size = new System.Drawing.Size(119, 53);
             this.buttonStatistics.TabIndex = 13;
             this.buttonStatistics.Text = "Statistics";
-            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.UseVisualStyleBackColor = false;
             this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // SpecialMomentsCollage

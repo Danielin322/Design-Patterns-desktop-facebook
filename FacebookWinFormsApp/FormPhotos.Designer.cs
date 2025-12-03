@@ -38,13 +38,16 @@
             // 
             // buttonProfile
             // 
-            this.buttonProfile.Location = new System.Drawing.Point(931, 901);
+            this.buttonProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonProfile.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfile.Location = new System.Drawing.Point(1022, 907);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(108, 53);
             this.buttonProfile.TabIndex = 26;
             this.buttonProfile.Text = "Profile";
-            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // flowLayoutPanelPhotos
@@ -71,13 +74,16 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(795, 901);
+            this.buttonHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHome.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHome.Location = new System.Drawing.Point(886, 907);
             this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(108, 53);
             this.buttonHome.TabIndex = 32;
             this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.UseVisualStyleBackColor = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // labelMyPhotos
@@ -93,13 +99,16 @@
             // 
             // buttonStatistics
             // 
-            this.buttonStatistics.Location = new System.Drawing.Point(667, 901);
+            this.buttonStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStatistics.BackColor = System.Drawing.Color.MediumPurple;
+            this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStatistics.Location = new System.Drawing.Point(748, 907);
             this.buttonStatistics.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStatistics.Name = "buttonStatistics";
-            this.buttonStatistics.Size = new System.Drawing.Size(108, 53);
+            this.buttonStatistics.Size = new System.Drawing.Size(118, 53);
             this.buttonStatistics.TabIndex = 34;
             this.buttonStatistics.Text = "Statistics";
-            this.buttonStatistics.UseVisualStyleBackColor = true;
+            this.buttonStatistics.UseVisualStyleBackColor = false;
             this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // FormPhotos
@@ -117,7 +126,6 @@
             this.Name = "FormPhotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPhotos";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPhotos_FormClosing);
             this.Load += new System.EventHandler(this.FormPhotos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

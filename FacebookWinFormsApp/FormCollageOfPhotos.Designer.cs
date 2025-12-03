@@ -42,6 +42,7 @@
             // 
             // Home
             // 
+            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Home.Location = new System.Drawing.Point(745, 462);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(108, 37);
@@ -107,7 +108,6 @@
             this.Name = "FormCollageOfPhotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCollageOfPhotos";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCollageOfPhotos_FormClosing);
             this.Load += new System.EventHandler(this.FormCollageOfPhotos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

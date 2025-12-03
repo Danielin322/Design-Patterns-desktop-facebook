@@ -133,9 +133,5 @@ namespace BasicFacebookFeatures
             formStats.Show();
         }
 
-        private void FormPhotos_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            m_MainForm.Close();
-        }
     }
 }

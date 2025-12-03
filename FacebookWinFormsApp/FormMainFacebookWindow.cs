@@ -24,6 +24,7 @@ namespace BasicFacebookFeatures
             InitializeComponent();
         }
 
+
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoginResult,this);
