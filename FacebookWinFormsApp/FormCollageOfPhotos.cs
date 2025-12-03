@@ -85,5 +85,10 @@ namespace BasicFacebookFeatures
 
             m_PhotosForCollage = photosForCollage;
         }
+
+        private void FormCollageOfPhotos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_MainForm.Close();
+        }
     }
 }

@@ -107,6 +107,7 @@
             this.Name = "FormCollageOfPhotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCollageOfPhotos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCollageOfPhotos_FormClosing);
             this.Load += new System.EventHandler(this.FormCollageOfPhotos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

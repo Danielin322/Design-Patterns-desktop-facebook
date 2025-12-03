@@ -61,14 +61,14 @@
             // textBoxUserFullName
             // 
             this.textBoxUserFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUserFullName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxUserFullName.BackColor = System.Drawing.Color.Lavender;
             this.textBoxUserFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUserFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserFullName.Location = new System.Drawing.Point(903, 276);
             this.textBoxUserFullName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserFullName.Name = "textBoxUserFullName";
             this.textBoxUserFullName.ReadOnly = true;
-            this.textBoxUserFullName.Size = new System.Drawing.Size(212, 28);
+            this.textBoxUserFullName.Size = new System.Drawing.Size(212, 31);
             this.textBoxUserFullName.TabIndex = 4;
             this.textBoxUserFullName.TabStop = false;
             // 

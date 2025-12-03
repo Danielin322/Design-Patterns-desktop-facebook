@@ -300,6 +300,7 @@
             this.Name = "FormUserStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUserStatistics";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormUserStatistics_FormClosing);
             this.Load += new System.EventHandler(this.FormUserStatistics_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -260,5 +260,10 @@ namespace BasicFacebookFeatures
             m_MainForm.Show();
             this.Close();
         }
+
+        private void FormUserStatistics_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_MainForm.Close();
+        }
     }
 }
