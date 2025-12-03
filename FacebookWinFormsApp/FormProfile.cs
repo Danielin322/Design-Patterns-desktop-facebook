@@ -15,10 +15,13 @@ namespace BasicFacebookFeatures
     public partial class FormProfile : Form
     {
         private LoginResult m_LoginResult;
+        private FormMainFacebookWindow m_MainForm;
 
-        public FormProfile(LoginResult i_LoginResult)
+
+        public FormProfile(LoginResult i_LoginResult,FormMainFacebookWindow i_MainForm)
         {
             m_LoginResult = i_LoginResult;
+            m_MainForm = i_MainForm;
             InitializeComponent();
         }
 
@@ -44,7 +47,6 @@ namespace BasicFacebookFeatures
             textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email ?? "";
             textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown?.Name ?? "";
             textBoxGender.Text = m_LoginResult.LoggedInUser.Gender?.ToString() ?? "";
-
             fetchPosts();
         }
 
@@ -101,19 +103,20 @@ namespace BasicFacebookFeatures
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            FormPhotos photosForm = new FormPhotos(m_LoginResult);
+            FormPhotos photosForm = new FormPhotos(m_LoginResult, m_MainForm);
             this.Close();
             photosForm.Show();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
+            m_MainForm.Show();
             this.Close();
         }
        
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
+            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult, m_MainForm);
             this.Close();
             formStats.Show();
         }

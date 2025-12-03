@@ -15,25 +15,26 @@ namespace BasicFacebookFeatures
     public partial class FormCollageOfPhotos : Form
     {
         private LoginResult m_LoginResult;
+        private FormMainFacebookWindow m_MainForm;
         private List<Photo> m_PhotosForCollage;
         private Timer m_Timer;
         private int m_PhotoIndex = 0;
 
-        public FormCollageOfPhotos(LoginResult loginResult)
+        public FormCollageOfPhotos(LoginResult i_LoginResult, FormMainFacebookWindow i_MainForm)
         {
-            m_LoginResult = loginResult;
+            m_LoginResult = i_LoginResult;
+            m_MainForm = i_MainForm;
             InitializeComponent();
-
             m_Timer = new Timer();
             m_Timer.Interval = 2000;
             m_Timer.Tick += Timer_Tick;
             m_Timer.Start();
         }
 
-       
+
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (m_PhotosForCollage.Count == 0 || m_PhotosForCollage == null)
+            if (m_PhotosForCollage == null || m_PhotosForCollage.Count == 0)
             {
                 return;
             }
@@ -45,12 +46,12 @@ namespace BasicFacebookFeatures
                 placesForPhotos[i].LoadAsync(m_PhotosForCollage[m_PhotoIndex].PictureNormalURL);
                 m_PhotoIndex = (m_PhotoIndex + 1) % m_PhotosForCollage.Count;
             }
-
         }
 
-
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
+            m_Timer.Stop();
+            m_MainForm.Show();
             this.Close();
         }
 
@@ -80,7 +81,6 @@ namespace BasicFacebookFeatures
                 {
                     //cant fetch album
                 }
-
             }
 
             m_PhotosForCollage = photosForCollage;

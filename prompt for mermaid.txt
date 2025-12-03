@@ -85,3 +85,137 @@ sequenceDiagram
 
     User ->> Stats: Click "Home"
     Stats ->> Main: Close and return
+	
+	code for class diagram:
+	classDiagram
+
+%% ========= Core app classes =========
+class Program {
+  +Main() void
+}
+
+class FormMain {
+  -m_LoginResult : LoginResult
+  +FormMain()
+  +buttonLogin_Click()
+  +buttonConnectAsDesig_Click()
+}
+
+class FormMainFacebookWindow {
+  -m_LoginResult : LoginResult
+  +FormMainFacebookWindow(i_LoginResult : LoginResult)
+  +FormMainFacebookWindow_Load()
+  +buttonProfile_Click()
+  +buttonUserPhotos_Click()
+  +buttonStatistics_Click()
+  +SpecialMomentsCollage_Click()
+  +buttonLogout_Click()
+}
+
+class FormProfile {
+  -m_LoginResult : LoginResult
+  -m_MainForm : FormMainFacebookWindow
+  +FormProfile(i_LoginResult : LoginResult, i_MainForm : FormMainFacebookWindow)
+  +FormProfile_Load()
+}
+
+class FormPhotos {
+  -m_LoginResult : LoginResult
+  -m_MainForm : FormMainFacebookWindow
+  +FormPhotos(i_LoginResult : LoginResult, i_MainForm : FormMainFacebookWindow)
+  +FormPhotos_Load()
+}
+
+class FormUserStatistics {
+  -m_LoginResult : LoginResult
+  -m_MainForm : FormMainFacebookWindow
+  +FormUserStatistics(i_LoginResult : LoginResult, i_MainForm : FormMainFacebookWindow)
+  +FormUserStatistics_Load()
+}
+
+class FormCollageOfPhotos {
+  -m_LoginResult : LoginResult
+  -m_MainForm : FormMainFacebookWindow
+  -m_PhotosForCollage : List~Photo~
+  +FormCollageOfPhotos(i_LoginResult : LoginResult, i_MainForm : FormMainFacebookWindow)
+  +FormCollageOfPhotos_Load()
+}
+
+%% All forms inherit from WinForms Form (simplified)
+class Form
+Form <|-- FormMain
+Form <|-- FormMainFacebookWindow
+Form <|-- FormProfile
+Form <|-- FormPhotos
+Form <|-- FormUserStatistics
+Form <|-- FormCollageOfPhotos
+
+%% ========= Facebook API classes =========
+class FacebookService {
+  <<static>>
+  +Login(appId : string, permissions : string[]) : LoginResult
+  +Connect(accessToken : string) : LoginResult
+  +LogoutWithUI() void
+}
+
+class LoginResult {
+  +ErrorMessage : string
+  +LoggedInUser : User
+}
+
+class User {
+  +Name : string
+  +Email : string
+  +Birthday : string
+  +PictureNormalURL : string
+  +Posts : ICollection~Post~
+  +Albums : ICollection~Album~
+  +LikedPages : ICollection~Page~
+  +Friends : ICollection~User~
+}
+
+class Album {
+  +Name : string
+  +Photos : ICollection~Photo~
+}
+
+class Photo {
+  +PictureNormalURL : string
+}
+
+class Page {
+  +Name : string
+}
+
+class Post {
+  +Message : string
+  +Caption : string
+}
+
+%% ========= Relationships =========
+Program --> FormMain : creates
+FormMain --> FacebookService : uses Login/Connect
+FormMain --> LoginResult : holds
+
+FormMainFacebookWindow --> LoginResult : uses
+FormMainFacebookWindow --> User : reads LoggedInUser
+FormMainFacebookWindow --> FormProfile : opens
+FormMainFacebookWindow --> FormPhotos : opens
+FormMainFacebookWindow --> FormUserStatistics : opens
+FormMainFacebookWindow --> FormCollageOfPhotos : opens
+
+FormProfile --> User : shows profile data
+FormPhotos --> Album : reads albums
+FormPhotos --> Photo : shows photos
+FormUserStatistics --> User : reads posts/albums/pages
+FormUserStatistics --> Post : counts posts
+FormUserStatistics --> Album : counts albums
+FormUserStatistics --> Photo : counts photos
+FormCollageOfPhotos --> Album : reads albums
+FormCollageOfPhotos --> Photo : builds collage
+
+LoginResult --> User : LoggedInUser
+User --> Album : has *
+User --> Page : liked *
+User --> Post : posts *
+Album --> Photo : has *

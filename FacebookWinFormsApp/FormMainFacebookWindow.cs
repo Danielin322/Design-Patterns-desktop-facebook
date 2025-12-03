@@ -18,32 +18,28 @@ namespace BasicFacebookFeatures
     public partial class FormMainFacebookWindow : Form
     {
         private LoginResult m_LoginResult;
-        public FormMainFacebookWindow(LoginResult loginResult)
+        public FormMainFacebookWindow(LoginResult i_LoginResult)
         {
-            m_LoginResult = loginResult;
+            m_LoginResult = i_LoginResult;
             InitializeComponent();
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            FormProfile profileForm = new FormProfile(m_LoginResult);
-            profileForm.FormClosed += returnHome;
+            FormProfile profileForm = new FormProfile(m_LoginResult,this);
             this.Hide();
             profileForm.Show();
         }
 
-       
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             FacebookService.LogoutWithUI();
             this.Close();   
         }
 
-
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            FormPhotos photosForm = new FormPhotos(m_LoginResult);
-            photosForm.FormClosed += returnHome;
+            FormPhotos photosForm = new FormPhotos(m_LoginResult,this);
             this.Hide();
             photosForm.Show();
         }
@@ -52,22 +48,17 @@ namespace BasicFacebookFeatures
         {
             // Show picture of user
             pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
-
             //show user name
             textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name;
-
             // Enable user to log out
             buttonLogout.Enabled = true;
-            
             fetchLikedPages();
-
         }
 
         private void buttonPublishPost_Click(object sender, EventArgs e)
         {
             textBoxNewPost.Clear();
             MessageBox.Show("Post published successfully! (not really...)");
-
         }
 
         private void fetchLikedPages()
@@ -86,24 +77,20 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
+            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult,this);
+            this.Hide();
             formStats.Show();
         }
 
         private void SpecialMomentsCollage_Click(object sender, EventArgs e)
         {
-            FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoginResult);
+            FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoginResult,this);
+            this.Hide();
             collageForm.Show();
-        }
-
-        private void returnHome(object sender, EventArgs e)
-        {
-            this.Show();
         }
     }
 }

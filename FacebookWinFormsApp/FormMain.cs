@@ -57,15 +57,12 @@ namespace BasicFacebookFeatures
                 fbWindow.FormClosed += logout;
                 this.Hide(); //hides FormMain
                 fbWindow.Show(); // opens FacebookWindow
-
-                //this.Hide(); //hides FormMain
             }
             else
             {
                 MessageBox.Show(m_LoginResult.ErrorMessage, "Login Failed");
             }
         }
-
 
         private void buttonConnectAsDesig_Click(object sender, EventArgs e)
         {
@@ -85,7 +82,6 @@ namespace BasicFacebookFeatures
             }
         }
 
-
         private void logout(object sender, EventArgs e)
         {
             this.Show();
@@ -93,6 +89,5 @@ namespace BasicFacebookFeatures
             buttonLogin.Enabled = true;
             buttonConnectAsDesig.Enabled = true;
         }
-
     }
 }

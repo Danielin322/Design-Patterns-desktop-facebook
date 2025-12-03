@@ -15,9 +15,11 @@ namespace BasicFacebookFeatures
     public partial class FormPhotos : Form
     {
         private LoginResult m_LoginResult;
-        public FormPhotos(LoginResult i_LoginResult)
+        private FormMainFacebookWindow m_MainForm;
+        public FormPhotos(LoginResult i_LoginResult, FormMainFacebookWindow i_MainForm)
         {
             m_LoginResult = i_LoginResult;
+            m_MainForm = i_MainForm;
             InitializeComponent();
         }
 
@@ -46,23 +48,24 @@ namespace BasicFacebookFeatures
             {
                 listBoxAlbums.Items.Add(album);
             }
-
             if (listBoxAlbums.Items.Count == 0)
             {
                 MessageBox.Show("No Albums to retrieve :(");
             }
         }
 
-        private bool IsValidPhoto(Photo io_Photo)
+        private bool isValidPhoto(Photo i_Photo)
         {
+            bool isValid = false;
             try
             {
-                return io_Photo != null && io_Photo.PictureNormalURL != null;
+                isValid = i_Photo != null && i_Photo.PictureNormalURL != null;
             }
             catch
             {
-                return false;
+                isValid = false;
             }
+            return isValid;
         }
 
         private void addPhotoToLayoutPanel(Photo io_Photo)
@@ -71,7 +74,6 @@ namespace BasicFacebookFeatures
             pictureBox.Size = new Size(100, 100);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.LoadAsync(io_Photo.PictureNormalURL);
-
             flowLayoutPanelPhotos.Controls.Add(pictureBox);
         }
 
@@ -98,7 +100,7 @@ namespace BasicFacebookFeatures
                 {
                     foreach (Photo photo in selectedAlbum.Photos)
                     {
-                        if (IsValidPhoto(photo))
+                        if (isValidPhoto(photo))
                         {
                             addPhotoToLayoutPanel(photo);
                         }
@@ -113,19 +115,20 @@ namespace BasicFacebookFeatures
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            FormProfile profileForm = new FormProfile(m_LoginResult);
+            FormProfile profileForm = new FormProfile(m_LoginResult, m_MainForm);
             this.Close();
             profileForm.Show();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
+            m_MainForm.Show();
             this.Close();
         }
 
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult);
+            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult, m_MainForm);
             this.Close();
             formStats.Show();
         }
