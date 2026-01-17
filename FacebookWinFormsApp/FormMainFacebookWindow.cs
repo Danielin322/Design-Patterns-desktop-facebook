@@ -110,9 +110,9 @@ namespace BasicFacebookFeatures
 
         private void SpecialMomentsCollage_Click(object sender, EventArgs e)
         {
-            //FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoggedInUser, this);
-            //this.Hide();
-            //collageForm.Show();
+            FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoggedInUser, this);
+            this.Hide();
+            collageForm.Show();
         }
 
 

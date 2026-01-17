@@ -40,7 +40,6 @@
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonUserPhotos = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.facadeUserInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.averagePhotosPerAlbumLabel3 = new System.Windows.Forms.Label();
             this.totalLikedPagesCountLabel3 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@
             totalPostsCountLabel2 = new System.Windows.Forms.Label();
             totalPhotosCountLabel2 = new System.Windows.Forms.Label();
             totalAlbumsCountLabel2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.facadeUserInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facadeUserStatisticsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,10 +111,6 @@
             this.buttonProfile.Text = "Profile";
             this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
-            // 
-            // facadeUserInfoBindingSource
-            // 
-            this.facadeUserInfoBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserInfo);
             // 
             // facadeUserStatisticsBindingSource
             // 
@@ -300,7 +294,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUserStatistics";
             this.Load += new System.EventHandler(this.FormUserStatistics_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.facadeUserInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facadeUserStatisticsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -313,7 +306,6 @@
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonUserPhotos;
         private System.Windows.Forms.Button buttonProfile;
-        private System.Windows.Forms.BindingSource facadeUserInfoBindingSource;
         private System.Windows.Forms.BindingSource facadeUserStatisticsBindingSource;
         private System.Windows.Forms.Label averagePhotosPerAlbumLabel3;
         private System.Windows.Forms.Label totalLikedPagesCountLabel3;

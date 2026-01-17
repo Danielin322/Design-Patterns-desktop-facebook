@@ -33,7 +33,7 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                facadeUserInfoBindingSource.DataSource = m_Facade;
+                facadeUserStatisticsBindingSource.DataSource = m_Facade;
             }
             catch (Exception ex)
             {

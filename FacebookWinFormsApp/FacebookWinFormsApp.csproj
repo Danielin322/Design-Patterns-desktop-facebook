@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FacadeCollageOfPhotos.cs" />
+    <Compile Include="FacadeMain.cs" />
     <Compile Include="FacadeMainWindow.cs" />
     <Compile Include="FacadePhotos.cs" />
     <Compile Include="FacadeProfile.cs" />
@@ -149,7 +150,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\DataSources\FacadeUserInfo.datasource" />
     <None Include="Properties\DataSources\FacadeUserStatistics.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

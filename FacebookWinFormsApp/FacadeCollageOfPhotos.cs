@@ -24,16 +24,32 @@ namespace BasicFacebookFeatures
             {
                 foreach (Album album in m_LoggedInUser.Albums)
                 {
-                    if (album.Photos != null)
+                    try
                     {
-                        foreach (Photo photo in album.Photos)
+                        if (album.Photos != null)
                         {
-                            if (photo.PictureNormalURL != null)
+                            foreach (Photo photo in album.Photos)
                             {
-                                allPhotosList.Add(photo);
+                                try
+                                { 
+                                    if (photo.PictureNormalURL != null)
+                                    {
+                                        allPhotosList.Add(photo);
+                                    }
+                                }
+                                catch
+                                {
+                                    // Ignore photos that cannot be accessed
+                                }
+
                             }
                         }
                     }
+                    catch 
+                    {
+                        // Ignore albums that cannot be accessed
+                    }
+
                 }
             }
 

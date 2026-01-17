@@ -9,11 +9,11 @@ namespace BasicFacebookFeatures
 {
     internal class FacadeUserStatistics
     {
-        private readonly User r_LoggedInUser;
+        private User m_LoggedInUser;
 
         public FacadeUserStatistics(User i_User)
         {
-            r_LoggedInUser = i_User;
+            m_LoggedInUser = i_User;
         }
 
         public int TotalPostsCount
@@ -22,9 +22,9 @@ namespace BasicFacebookFeatures
             {
                 int postsCount = 0;
 
-                if (r_LoggedInUser != null && r_LoggedInUser.Posts != null)
+                if (m_LoggedInUser != null && m_LoggedInUser.Posts != null)
                 {
-                    postsCount = r_LoggedInUser.Posts.Count;
+                    postsCount = m_LoggedInUser.Posts.Count;
                 }
 
                 return postsCount;
@@ -37,9 +37,9 @@ namespace BasicFacebookFeatures
             {
                 int albumsCount = 0;
 
-                if (r_LoggedInUser != null && r_LoggedInUser.Albums != null)
+                if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
-                    albumsCount = r_LoggedInUser.Albums.Count;
+                    albumsCount = m_LoggedInUser.Albums.Count;
                 }
 
                 return albumsCount;
@@ -52,9 +52,9 @@ namespace BasicFacebookFeatures
             {
                 int likedPageCount = 0;
 
-                if (r_LoggedInUser != null && r_LoggedInUser.LikedPages != null)
+                if (m_LoggedInUser != null && m_LoggedInUser.LikedPages != null)
                 {
-                    likedPageCount = r_LoggedInUser.LikedPages.Count;
+                    likedPageCount = m_LoggedInUser.LikedPages.Count;
                 }
 
                 return likedPageCount;
@@ -67,9 +67,9 @@ namespace BasicFacebookFeatures
             {
                 int totalPhotos = 0;
 
-                if (r_LoggedInUser != null && r_LoggedInUser.Albums != null)
+                if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
-                    foreach (Album album in r_LoggedInUser.Albums)
+                    foreach (Album album in m_LoggedInUser.Albums)
                     {
                         if (album.Photos != null)
                         {
@@ -103,9 +103,9 @@ namespace BasicFacebookFeatures
             {
                 int maxLikes = -1;
 
-                if (r_LoggedInUser != null && r_LoggedInUser.Albums != null)
+                if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
-                    foreach (Album album in r_LoggedInUser.Albums)
+                    foreach (Album album in m_LoggedInUser.Albums)
                     {
                         if (album.Photos != null)
                         {
