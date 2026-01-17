@@ -92,7 +92,7 @@ namespace BasicFacebookFeatures
         {
             get
             {
-                // No permissions to fetch friends amount, so return fake statistic:
+                // facebook's Count function doesnt work, so we put dummy data instead of statistic:
                 return 127;
             }
         }
@@ -123,7 +123,7 @@ namespace BasicFacebookFeatures
                     }
                 }
 
-                /* facebook's Count function doesnt work, so we put dummy data instead of maxLikes */
+                // facebook's Count function doesnt work, so we put dummy data instead of maxLikes
                 if (maxLikes == -1)
                 {
                     maxLikes = 64;
@@ -138,6 +138,7 @@ namespace BasicFacebookFeatures
             get
             {
                 int totalAlbums = TotalAlbumsCount;
+
                 if (totalAlbums > 0)
                 {
                     return (TotalPhotosCount / totalAlbums).ToString();
