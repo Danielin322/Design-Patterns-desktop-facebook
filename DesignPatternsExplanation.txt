@@ -1,1 +1,5 @@
 facade- to separate between the way facebook gives the data and the way we calculate and get the information (if they change format we will need to change only the facade)
+
+
+
+data binding- i did in statistics, it gets the statistics from the facade class

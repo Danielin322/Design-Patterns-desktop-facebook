@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfile));
-            System.Windows.Forms.Label birthdayLabel;
             this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
             this.textBoxUserFullName = new System.Windows.Forms.TextBox();
             this.textBoxUserEmail = new System.Windows.Forms.TextBox();
@@ -52,8 +51,6 @@
             this.labelContactInfo = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.birthdayTextBox = new System.Windows.Forms.TextBox();
-            birthdayLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
@@ -188,7 +185,7 @@
             this.flowLayoutPanelPosts.Location = new System.Drawing.Point(107, 134);
             this.flowLayoutPanelPosts.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(233, 749);
+            this.flowLayoutPanelPosts.Size = new System.Drawing.Size(550, 749);
             this.flowLayoutPanelPosts.TabIndex = 28;
             this.flowLayoutPanelPosts.WrapContents = false;
             // 
@@ -308,30 +305,11 @@
             // 
             this.cityBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.City);
             // 
-            // birthdayLabel
-            // 
-            birthdayLabel.AutoSize = true;
-            birthdayLabel.Location = new System.Drawing.Point(418, 446);
-            birthdayLabel.Name = "birthdayLabel";
-            birthdayLabel.Size = new System.Drawing.Size(97, 25);
-            birthdayLabel.TabIndex = 38;
-            birthdayLabel.Text = "Birthday:";
-            // 
-            // birthdayTextBox
-            // 
-            this.birthdayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Birthday", true));
-            this.birthdayTextBox.Location = new System.Drawing.Point(521, 443);
-            this.birthdayTextBox.Name = "birthdayTextBox";
-            this.birthdayTextBox.Size = new System.Drawing.Size(100, 31);
-            this.birthdayTextBox.TabIndex = 39;
-            // 
             // FormProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1206, 1008);
-            this.Controls.Add(birthdayLabel);
-            this.Controls.Add(this.birthdayTextBox);
             this.Controls.Add(this.labelContactInfo);
             this.Controls.Add(this.labelAbout);
             this.Controls.Add(this.label6);
@@ -387,6 +365,5 @@
         private System.Windows.Forms.Label labelContactInfo;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource cityBindingSource;
-        private System.Windows.Forms.TextBox birthdayTextBox;
     }
 }

@@ -47,7 +47,7 @@ namespace BasicFacebookFeatures
 
             if (string.IsNullOrEmpty(m_Facade.LoginResult.ErrorMessage))
             {
-                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade);
+                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade.LoggedInUser);
                 fbWindow.FormClosed += logout;
                 this.Hide();
                 fbWindow.Show();
@@ -94,10 +94,10 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                string accessToken = "EAAUm6cZC4eUEB..."; // הטוקן שלך
+                string accessToken = "EAAUm6cZC4eUEB...";
                 m_Facade.Connect(accessToken);
 
-                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade);
+                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade.LoggedInUser);
                 fbWindow.FormClosed += logout;
                 this.Hide();
                 fbWindow.Show();

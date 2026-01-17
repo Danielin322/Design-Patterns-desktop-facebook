@@ -29,104 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label friendsCountLabel;
-            System.Windows.Forms.Label totalPostsCountLabel;
-            System.Windows.Forms.Label totalPhotosCountLabel;
-            System.Windows.Forms.Label totalAlbumsCountLabel;
-            System.Windows.Forms.Label totalLikedPagesCountLabel;
-            System.Windows.Forms.Label averagePhotosPerAlbumLabel;
-            System.Windows.Forms.Label mostLikedCountLabel;
+            System.Windows.Forms.Label averagePhotosPerAlbumLabel2;
+            System.Windows.Forms.Label totalLikedPagesCountLabel2;
+            System.Windows.Forms.Label mostLikedCountLabel2;
+            System.Windows.Forms.Label friendsCountLabel2;
+            System.Windows.Forms.Label totalPostsCountLabel2;
+            System.Windows.Forms.Label totalPhotosCountLabel2;
+            System.Windows.Forms.Label totalAlbumsCountLabel2;
             this.labelUserStatistics = new System.Windows.Forms.Label();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonUserPhotos = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
-            this.friendsCountLabel1 = new System.Windows.Forms.Label();
-            this.totalPostsCountLabel1 = new System.Windows.Forms.Label();
-            this.totalPhotosCountLabel1 = new System.Windows.Forms.Label();
-            this.totalAlbumsCountLabel1 = new System.Windows.Forms.Label();
-            this.totalLikedPagesCountLabel1 = new System.Windows.Forms.Label();
-            this.averagePhotosPerAlbumLabel1 = new System.Windows.Forms.Label();
-            this.mostLikedCountLabel1 = new System.Windows.Forms.Label();
             this.facadeUserInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            friendsCountLabel = new System.Windows.Forms.Label();
-            totalPostsCountLabel = new System.Windows.Forms.Label();
-            totalPhotosCountLabel = new System.Windows.Forms.Label();
-            totalAlbumsCountLabel = new System.Windows.Forms.Label();
-            totalLikedPagesCountLabel = new System.Windows.Forms.Label();
-            averagePhotosPerAlbumLabel = new System.Windows.Forms.Label();
-            mostLikedCountLabel = new System.Windows.Forms.Label();
+            this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.averagePhotosPerAlbumLabel3 = new System.Windows.Forms.Label();
+            this.totalLikedPagesCountLabel3 = new System.Windows.Forms.Label();
+            this.mostLikedCountLabel3 = new System.Windows.Forms.Label();
+            this.friendsCountLabel3 = new System.Windows.Forms.Label();
+            this.totalPostsCountLabel3 = new System.Windows.Forms.Label();
+            this.totalPhotosCountLabel3 = new System.Windows.Forms.Label();
+            this.totalAlbumsCountLabel3 = new System.Windows.Forms.Label();
+            averagePhotosPerAlbumLabel2 = new System.Windows.Forms.Label();
+            totalLikedPagesCountLabel2 = new System.Windows.Forms.Label();
+            mostLikedCountLabel2 = new System.Windows.Forms.Label();
+            friendsCountLabel2 = new System.Windows.Forms.Label();
+            totalPostsCountLabel2 = new System.Windows.Forms.Label();
+            totalPhotosCountLabel2 = new System.Windows.Forms.Label();
+            totalAlbumsCountLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.facadeUserInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facadeUserStatisticsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // friendsCountLabel
-            // 
-            friendsCountLabel.AutoSize = true;
-            friendsCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            friendsCountLabel.Location = new System.Drawing.Point(123, 257);
-            friendsCountLabel.Name = "friendsCountLabel";
-            friendsCountLabel.Size = new System.Drawing.Size(208, 33);
-            friendsCountLabel.TabIndex = 31;
-            friendsCountLabel.Text = "Total Friends:";
-            // 
-            // totalPostsCountLabel
-            // 
-            totalPostsCountLabel.AutoSize = true;
-            totalPostsCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalPostsCountLabel.Location = new System.Drawing.Point(115, 395);
-            totalPostsCountLabel.Name = "totalPostsCountLabel";
-            totalPostsCountLabel.Size = new System.Drawing.Size(181, 33);
-            totalPostsCountLabel.TabIndex = 32;
-            totalPostsCountLabel.Text = "Total Posts:";
-            // 
-            // totalPhotosCountLabel
-            // 
-            totalPhotosCountLabel.AutoSize = true;
-            totalPhotosCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalPhotosCountLabel.Location = new System.Drawing.Point(117, 533);
-            totalPhotosCountLabel.Name = "totalPhotosCountLabel";
-            totalPhotosCountLabel.Size = new System.Drawing.Size(199, 33);
-            totalPhotosCountLabel.TabIndex = 33;
-            totalPhotosCountLabel.Text = "Total Photos:";
-            // 
-            // totalAlbumsCountLabel
-            // 
-            totalAlbumsCountLabel.AutoSize = true;
-            totalAlbumsCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalAlbumsCountLabel.Location = new System.Drawing.Point(117, 671);
-            totalAlbumsCountLabel.Name = "totalAlbumsCountLabel";
-            totalAlbumsCountLabel.Size = new System.Drawing.Size(207, 33);
-            totalAlbumsCountLabel.TabIndex = 34;
-            totalAlbumsCountLabel.Text = "Total Albums:";
-            // 
-            // totalLikedPagesCountLabel
-            // 
-            totalLikedPagesCountLabel.AutoSize = true;
-            totalLikedPagesCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalLikedPagesCountLabel.Location = new System.Drawing.Point(697, 257);
-            totalLikedPagesCountLabel.Name = "totalLikedPagesCountLabel";
-            totalLikedPagesCountLabel.Size = new System.Drawing.Size(274, 33);
-            totalLikedPagesCountLabel.TabIndex = 35;
-            totalLikedPagesCountLabel.Text = "Total Liked Pages:";
-            // 
-            // averagePhotosPerAlbumLabel
-            // 
-            averagePhotosPerAlbumLabel.AutoSize = true;
-            averagePhotosPerAlbumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            averagePhotosPerAlbumLabel.Location = new System.Drawing.Point(705, 395);
-            averagePhotosPerAlbumLabel.Name = "averagePhotosPerAlbumLabel";
-            averagePhotosPerAlbumLabel.Size = new System.Drawing.Size(398, 33);
-            averagePhotosPerAlbumLabel.TabIndex = 36;
-            averagePhotosPerAlbumLabel.Text = "Average Photos Per Album:";
-            // 
-            // mostLikedCountLabel
-            // 
-            mostLikedCountLabel.AutoSize = true;
-            mostLikedCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mostLikedCountLabel.Location = new System.Drawing.Point(706, 533);
-            mostLikedCountLabel.Name = "mostLikedCountLabel";
-            mostLikedCountLabel.Size = new System.Drawing.Size(313, 33);
-            mostLikedCountLabel.TabIndex = 37;
-            mostLikedCountLabel.Text = "Most Likes On Photo:";
             // 
             // labelUserStatistics
             // 
@@ -182,106 +114,183 @@
             this.buttonProfile.UseVisualStyleBackColor = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
-            // friendsCountLabel1
-            // 
-            this.friendsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "FriendsCount", true));
-            this.friendsCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friendsCountLabel1.Location = new System.Drawing.Point(376, 246);
-            this.friendsCountLabel1.Name = "friendsCountLabel1";
-            this.friendsCountLabel1.Size = new System.Drawing.Size(120, 44);
-            this.friendsCountLabel1.TabIndex = 32;
-            this.friendsCountLabel1.Text = "label1";
-            this.friendsCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // totalPostsCountLabel1
-            // 
-            this.totalPostsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "TotalPostsCount", true));
-            this.totalPostsCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPostsCountLabel1.Location = new System.Drawing.Point(360, 382);
-            this.totalPostsCountLabel1.Name = "totalPostsCountLabel1";
-            this.totalPostsCountLabel1.Size = new System.Drawing.Size(118, 46);
-            this.totalPostsCountLabel1.TabIndex = 33;
-            this.totalPostsCountLabel1.Text = "label1";
-            this.totalPostsCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // totalPhotosCountLabel1
-            // 
-            this.totalPhotosCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "TotalPhotosCount", true));
-            this.totalPhotosCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPhotosCountLabel1.Location = new System.Drawing.Point(396, 521);
-            this.totalPhotosCountLabel1.Name = "totalPhotosCountLabel1";
-            this.totalPhotosCountLabel1.Size = new System.Drawing.Size(118, 45);
-            this.totalPhotosCountLabel1.TabIndex = 34;
-            this.totalPhotosCountLabel1.Text = "label1";
-            this.totalPhotosCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // totalAlbumsCountLabel1
-            // 
-            this.totalAlbumsCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "TotalAlbumsCount", true));
-            this.totalAlbumsCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAlbumsCountLabel1.Location = new System.Drawing.Point(396, 655);
-            this.totalAlbumsCountLabel1.Name = "totalAlbumsCountLabel1";
-            this.totalAlbumsCountLabel1.Size = new System.Drawing.Size(118, 49);
-            this.totalAlbumsCountLabel1.TabIndex = 35;
-            this.totalAlbumsCountLabel1.Text = "label1";
-            this.totalAlbumsCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // totalLikedPagesCountLabel1
-            // 
-            this.totalLikedPagesCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "TotalLikedPagesCount", true));
-            this.totalLikedPagesCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLikedPagesCountLabel1.Location = new System.Drawing.Point(1058, 246);
-            this.totalLikedPagesCountLabel1.Name = "totalLikedPagesCountLabel1";
-            this.totalLikedPagesCountLabel1.Size = new System.Drawing.Size(112, 44);
-            this.totalLikedPagesCountLabel1.TabIndex = 36;
-            this.totalLikedPagesCountLabel1.Text = "label1";
-            this.totalLikedPagesCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // averagePhotosPerAlbumLabel1
-            // 
-            this.averagePhotosPerAlbumLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "AveragePhotosPerAlbum", true));
-            this.averagePhotosPerAlbumLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.averagePhotosPerAlbumLabel1.Location = new System.Drawing.Point(1134, 382);
-            this.averagePhotosPerAlbumLabel1.Name = "averagePhotosPerAlbumLabel1";
-            this.averagePhotosPerAlbumLabel1.Size = new System.Drawing.Size(115, 46);
-            this.averagePhotosPerAlbumLabel1.TabIndex = 37;
-            this.averagePhotosPerAlbumLabel1.Text = "label1";
-            this.averagePhotosPerAlbumLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // mostLikedCountLabel1
-            // 
-            this.mostLikedCountLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserInfoBindingSource, "MostLikedCount", true));
-            this.mostLikedCountLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mostLikedCountLabel1.Location = new System.Drawing.Point(1095, 521);
-            this.mostLikedCountLabel1.Name = "mostLikedCountLabel1";
-            this.mostLikedCountLabel1.Size = new System.Drawing.Size(108, 45);
-            this.mostLikedCountLabel1.TabIndex = 38;
-            this.mostLikedCountLabel1.Text = "label1";
-            this.mostLikedCountLabel1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // facadeUserInfoBindingSource
             // 
             this.facadeUserInfoBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserInfo);
+            // 
+            // facadeUserStatisticsBindingSource
+            // 
+            this.facadeUserStatisticsBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserStatistics);
+            // 
+            // averagePhotosPerAlbumLabel2
+            // 
+            averagePhotosPerAlbumLabel2.AutoSize = true;
+            averagePhotosPerAlbumLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            averagePhotosPerAlbumLabel2.Location = new System.Drawing.Point(737, 412);
+            averagePhotosPerAlbumLabel2.Name = "averagePhotosPerAlbumLabel2";
+            averagePhotosPerAlbumLabel2.Size = new System.Drawing.Size(398, 33);
+            averagePhotosPerAlbumLabel2.TabIndex = 38;
+            averagePhotosPerAlbumLabel2.Text = "Average Photos Per Album:";
+            averagePhotosPerAlbumLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // averagePhotosPerAlbumLabel3
+            // 
+            this.averagePhotosPerAlbumLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "AveragePhotosPerAlbum", true));
+            this.averagePhotosPerAlbumLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.averagePhotosPerAlbumLabel3.Location = new System.Drawing.Point(1163, 399);
+            this.averagePhotosPerAlbumLabel3.Name = "averagePhotosPerAlbumLabel3";
+            this.averagePhotosPerAlbumLabel3.Size = new System.Drawing.Size(117, 46);
+            this.averagePhotosPerAlbumLabel3.TabIndex = 39;
+            this.averagePhotosPerAlbumLabel3.Text = "label1";
+            this.averagePhotosPerAlbumLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // totalLikedPagesCountLabel2
+            // 
+            totalLikedPagesCountLabel2.AutoSize = true;
+            totalLikedPagesCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalLikedPagesCountLabel2.Location = new System.Drawing.Point(737, 247);
+            totalLikedPagesCountLabel2.Name = "totalLikedPagesCountLabel2";
+            totalLikedPagesCountLabel2.Size = new System.Drawing.Size(365, 33);
+            totalLikedPagesCountLabel2.TabIndex = 39;
+            totalLikedPagesCountLabel2.Text = "Total Liked Pages Count:";
+            totalLikedPagesCountLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // totalLikedPagesCountLabel3
+            // 
+            this.totalLikedPagesCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalLikedPagesCount", true));
+            this.totalLikedPagesCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLikedPagesCountLabel3.Location = new System.Drawing.Point(1163, 237);
+            this.totalLikedPagesCountLabel3.Name = "totalLikedPagesCountLabel3";
+            this.totalLikedPagesCountLabel3.Size = new System.Drawing.Size(126, 43);
+            this.totalLikedPagesCountLabel3.TabIndex = 40;
+            this.totalLikedPagesCountLabel3.Text = "label1";
+            this.totalLikedPagesCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // mostLikedCountLabel2
+            // 
+            mostLikedCountLabel2.AutoSize = true;
+            mostLikedCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mostLikedCountLabel2.Location = new System.Drawing.Point(737, 584);
+            mostLikedCountLabel2.Name = "mostLikedCountLabel2";
+            mostLikedCountLabel2.Size = new System.Drawing.Size(266, 33);
+            mostLikedCountLabel2.TabIndex = 40;
+            mostLikedCountLabel2.Text = "Most Liked Count:";
+            mostLikedCountLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // mostLikedCountLabel3
+            // 
+            this.mostLikedCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "MostLikedCount", true));
+            this.mostLikedCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mostLikedCountLabel3.Location = new System.Drawing.Point(1163, 575);
+            this.mostLikedCountLabel3.Name = "mostLikedCountLabel3";
+            this.mostLikedCountLabel3.Size = new System.Drawing.Size(115, 42);
+            this.mostLikedCountLabel3.TabIndex = 41;
+            this.mostLikedCountLabel3.Text = "label1";
+            this.mostLikedCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // friendsCountLabel2
+            // 
+            friendsCountLabel2.AutoSize = true;
+            friendsCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            friendsCountLabel2.Location = new System.Drawing.Point(54, 247);
+            friendsCountLabel2.Name = "friendsCountLabel2";
+            friendsCountLabel2.Size = new System.Drawing.Size(220, 33);
+            friendsCountLabel2.TabIndex = 41;
+            friendsCountLabel2.Text = "Friends Count:";
+            // 
+            // friendsCountLabel3
+            // 
+            this.friendsCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "FriendsCount", true));
+            this.friendsCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friendsCountLabel3.Location = new System.Drawing.Point(414, 237);
+            this.friendsCountLabel3.Name = "friendsCountLabel3";
+            this.friendsCountLabel3.Size = new System.Drawing.Size(111, 49);
+            this.friendsCountLabel3.TabIndex = 42;
+            this.friendsCountLabel3.Text = "label1";
+            this.friendsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // totalPostsCountLabel2
+            // 
+            totalPostsCountLabel2.AutoSize = true;
+            totalPostsCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalPostsCountLabel2.Location = new System.Drawing.Point(54, 412);
+            totalPostsCountLabel2.Name = "totalPostsCountLabel2";
+            totalPostsCountLabel2.Size = new System.Drawing.Size(272, 33);
+            totalPostsCountLabel2.TabIndex = 42;
+            totalPostsCountLabel2.Text = "Total Posts Count:";
+            // 
+            // totalPostsCountLabel3
+            // 
+            this.totalPostsCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalPostsCount", true));
+            this.totalPostsCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPostsCountLabel3.Location = new System.Drawing.Point(414, 390);
+            this.totalPostsCountLabel3.Name = "totalPostsCountLabel3";
+            this.totalPostsCountLabel3.Size = new System.Drawing.Size(125, 61);
+            this.totalPostsCountLabel3.TabIndex = 43;
+            this.totalPostsCountLabel3.Text = "label1";
+            this.totalPostsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // totalPhotosCountLabel2
+            // 
+            totalPhotosCountLabel2.AutoSize = true;
+            totalPhotosCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalPhotosCountLabel2.Location = new System.Drawing.Point(54, 584);
+            totalPhotosCountLabel2.Name = "totalPhotosCountLabel2";
+            totalPhotosCountLabel2.Size = new System.Drawing.Size(290, 33);
+            totalPhotosCountLabel2.TabIndex = 43;
+            totalPhotosCountLabel2.Text = "Total Photos Count:";
+            // 
+            // totalPhotosCountLabel3
+            // 
+            this.totalPhotosCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalPhotosCount", true));
+            this.totalPhotosCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPhotosCountLabel3.Location = new System.Drawing.Point(414, 739);
+            this.totalPhotosCountLabel3.Name = "totalPhotosCountLabel3";
+            this.totalPhotosCountLabel3.Size = new System.Drawing.Size(121, 48);
+            this.totalPhotosCountLabel3.TabIndex = 44;
+            this.totalPhotosCountLabel3.Text = "label1";
+            this.totalPhotosCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // totalAlbumsCountLabel2
+            // 
+            totalAlbumsCountLabel2.AutoSize = true;
+            totalAlbumsCountLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalAlbumsCountLabel2.Location = new System.Drawing.Point(54, 747);
+            totalAlbumsCountLabel2.Name = "totalAlbumsCountLabel2";
+            totalAlbumsCountLabel2.Size = new System.Drawing.Size(298, 33);
+            totalAlbumsCountLabel2.TabIndex = 44;
+            totalAlbumsCountLabel2.Text = "Total Albums Count:";
+            // 
+            // totalAlbumsCountLabel3
+            // 
+            this.totalAlbumsCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalAlbumsCount", true));
+            this.totalAlbumsCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAlbumsCountLabel3.Location = new System.Drawing.Point(414, 583);
+            this.totalAlbumsCountLabel3.Name = "totalAlbumsCountLabel3";
+            this.totalAlbumsCountLabel3.Size = new System.Drawing.Size(121, 40);
+            this.totalAlbumsCountLabel3.TabIndex = 45;
+            this.totalAlbumsCountLabel3.Text = "label1";
+            this.totalAlbumsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // FormUserStatistics
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1367, 916);
-            this.Controls.Add(mostLikedCountLabel);
-            this.Controls.Add(this.mostLikedCountLabel1);
-            this.Controls.Add(averagePhotosPerAlbumLabel);
-            this.Controls.Add(this.averagePhotosPerAlbumLabel1);
-            this.Controls.Add(totalLikedPagesCountLabel);
-            this.Controls.Add(this.totalLikedPagesCountLabel1);
-            this.Controls.Add(totalAlbumsCountLabel);
-            this.Controls.Add(this.totalAlbumsCountLabel1);
-            this.Controls.Add(totalPhotosCountLabel);
-            this.Controls.Add(this.totalPhotosCountLabel1);
-            this.Controls.Add(totalPostsCountLabel);
-            this.Controls.Add(this.totalPostsCountLabel1);
-            this.Controls.Add(friendsCountLabel);
-            this.Controls.Add(this.friendsCountLabel1);
+            this.Controls.Add(totalAlbumsCountLabel2);
+            this.Controls.Add(this.totalAlbumsCountLabel3);
+            this.Controls.Add(totalPhotosCountLabel2);
+            this.Controls.Add(this.totalPhotosCountLabel3);
+            this.Controls.Add(totalPostsCountLabel2);
+            this.Controls.Add(this.totalPostsCountLabel3);
+            this.Controls.Add(friendsCountLabel2);
+            this.Controls.Add(this.friendsCountLabel3);
+            this.Controls.Add(mostLikedCountLabel2);
+            this.Controls.Add(this.mostLikedCountLabel3);
+            this.Controls.Add(totalLikedPagesCountLabel2);
+            this.Controls.Add(this.totalLikedPagesCountLabel3);
+            this.Controls.Add(averagePhotosPerAlbumLabel2);
+            this.Controls.Add(this.averagePhotosPerAlbumLabel3);
             this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.buttonUserPhotos);
@@ -292,6 +301,7 @@
             this.Text = "FormUserStatistics";
             this.Load += new System.EventHandler(this.FormUserStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.facadeUserInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facadeUserStatisticsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,12 +314,13 @@
         private System.Windows.Forms.Button buttonUserPhotos;
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.BindingSource facadeUserInfoBindingSource;
-        private System.Windows.Forms.Label friendsCountLabel1;
-        private System.Windows.Forms.Label totalPostsCountLabel1;
-        private System.Windows.Forms.Label totalPhotosCountLabel1;
-        private System.Windows.Forms.Label totalAlbumsCountLabel1;
-        private System.Windows.Forms.Label totalLikedPagesCountLabel1;
-        private System.Windows.Forms.Label averagePhotosPerAlbumLabel1;
-        private System.Windows.Forms.Label mostLikedCountLabel1;
+        private System.Windows.Forms.BindingSource facadeUserStatisticsBindingSource;
+        private System.Windows.Forms.Label averagePhotosPerAlbumLabel3;
+        private System.Windows.Forms.Label totalLikedPagesCountLabel3;
+        private System.Windows.Forms.Label mostLikedCountLabel3;
+        private System.Windows.Forms.Label friendsCountLabel3;
+        private System.Windows.Forms.Label totalPostsCountLabel3;
+        private System.Windows.Forms.Label totalPhotosCountLabel3;
+        private System.Windows.Forms.Label totalAlbumsCountLabel3;
     }
 }

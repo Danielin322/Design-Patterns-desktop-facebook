@@ -77,7 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacadeCollageOfPhotos.cs" />
+    <Compile Include="FacadeMainWindow.cs" />
+    <Compile Include="FacadePhotos.cs" />
+    <Compile Include="FacadeProfile.cs" />
     <Compile Include="FacadeUserInfo.cs" />
+    <Compile Include="FacadeUserStatistics.cs" />
     <Compile Include="FormCollageOfPhotos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +150,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\FacadeUserInfo.datasource" />
+    <None Include="Properties\DataSources\FacadeUserStatistics.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
