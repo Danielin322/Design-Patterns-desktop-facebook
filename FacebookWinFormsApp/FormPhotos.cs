@@ -14,11 +14,11 @@ namespace BasicFacebookFeatures
 {
     public partial class FormPhotos : Form
     {
-        private LoginResult m_LoginResult;
+        private FacadeUserInfo m_Facade;
         private FormMainFacebookWindow m_MainForm;
-        public FormPhotos(LoginResult i_LoginResult, FormMainFacebookWindow i_MainForm)
+        public FormPhotos(FacadeUserInfo i_Facade, FormMainFacebookWindow i_MainForm)
         {
-            m_LoginResult = i_LoginResult;
+            m_Facade = i_Facade;
             m_MainForm = i_MainForm;
             InitializeComponent();
         }
@@ -44,14 +44,33 @@ namespace BasicFacebookFeatures
             listBoxAlbums.Items.Clear();
             listBoxAlbums.DisplayMember = "Name";
 
-            foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+            if (m_Facade.LoggedInUser != null && m_Facade.LoggedInUser.Albums != null)
             {
-                listBoxAlbums.Items.Add(album);
+                foreach (Album album in m_Facade.LoggedInUser.Albums)
+                {
+                    listBoxAlbums.Items.Add(album);
+                }
             }
+
             if (listBoxAlbums.Items.Count == 0)
             {
                 MessageBox.Show("No Albums to retrieve :(");
             }
+
+
+
+
+            //    listBoxAlbums.Items.Clear();
+            //listBoxAlbums.DisplayMember = "Name";
+
+            //foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+            //{
+            //    listBoxAlbums.Items.Add(album);
+            //}
+            //if (listBoxAlbums.Items.Count == 0)
+            //{
+            //    MessageBox.Show("No Albums to retrieve :(");
+            //}
         }
 
         private bool isValidPhoto(Photo i_Photo)
@@ -115,7 +134,7 @@ namespace BasicFacebookFeatures
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            FormProfile profileForm = new FormProfile(m_LoginResult, m_MainForm);
+            FormProfile profileForm = new FormProfile(m_Facade, m_MainForm);
             this.Close();
             profileForm.Show();
         }
@@ -128,7 +147,7 @@ namespace BasicFacebookFeatures
 
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult, m_MainForm);
+            FormUserStatistics formStats = new FormUserStatistics(m_Facade, m_MainForm);
             this.Close();
             formStats.Show();
         }

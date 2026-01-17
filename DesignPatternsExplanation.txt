@@ -1,0 +1,1 @@
+facade- to separate between the way facebook gives the data and the way we calculate and get the information (if they change format we will need to change only the facade)

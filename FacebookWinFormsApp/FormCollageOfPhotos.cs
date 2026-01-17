@@ -14,15 +14,15 @@ namespace BasicFacebookFeatures
 {
     public partial class FormCollageOfPhotos : Form
     {
-        private LoginResult m_LoginResult;
+        private FacadeUserInfo m_Facade;
         private FormMainFacebookWindow m_MainForm;
         private List<Photo> m_PhotosForCollage;
         private Timer m_Timer;
         private int m_PhotoIndex = 0;
 
-        public FormCollageOfPhotos(LoginResult i_LoginResult, FormMainFacebookWindow i_MainForm)
+        public FormCollageOfPhotos(FacadeUserInfo i_Facade, FormMainFacebookWindow i_MainForm)
         {
-            m_LoginResult = i_LoginResult;
+            m_Facade = i_Facade;
             m_MainForm = i_MainForm;
             InitializeComponent();
             m_Timer = new Timer();
@@ -57,33 +57,42 @@ namespace BasicFacebookFeatures
 
         private void FormCollageOfPhotos_Load(object sender, EventArgs e)
         {
-            List<Photo> photosForCollage = new List<Photo>();
-            foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+            m_PhotosForCollage = m_Facade.GetAllUserPhotos();
+
+            if (m_PhotosForCollage.Count == 0)
             {
-                try
-                {
-                    foreach (Photo photo in album.Photos)
-                    {
-                        try
-                        {
-                            if (photo.PictureNormalURL != null)
-                            {
-                                photosForCollage.Add(photo);
-                            }
-                        }
-                        catch
-                        {
-                            //cant fetch photo
-                        }
-                    }
-                }
-                catch
-                {
-                    //cant fetch album
-                }
+                MessageBox.Show("No photos found to create a collage.");
             }
 
-            m_PhotosForCollage = photosForCollage;
+
+
+            //List<Photo> photosForCollage = new List<Photo>();
+            //foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+            //{
+            //    try
+            //    {
+            //        foreach (Photo photo in album.Photos)
+            //        {
+            //            try
+            //            {
+            //                if (photo.PictureNormalURL != null)
+            //                {
+            //                    photosForCollage.Add(photo);
+            //                }
+            //            }
+            //            catch
+            //            {
+            //                //cant fetch photo
+            //            }
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        //cant fetch album
+            //    }
+            //}
+
+            //m_PhotosForCollage = photosForCollage;
         }
 
         

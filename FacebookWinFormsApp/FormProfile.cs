@@ -14,76 +14,119 @@ namespace BasicFacebookFeatures
 {
     public partial class FormProfile : Form
     {
-        private LoginResult m_LoginResult;
+        private FacadeUserInfo m_Facade;
         private FormMainFacebookWindow m_MainForm;
 
 
-        public FormProfile(LoginResult i_LoginResult,FormMainFacebookWindow i_MainForm)
+        public FormProfile(FacadeUserInfo i_Facade, FormMainFacebookWindow i_MainForm)
         {
-            m_LoginResult = i_LoginResult;
+            m_Facade = i_Facade;
             m_MainForm = i_MainForm;
             InitializeComponent();
         }
 
          private void FormProfile_Load(object sender, EventArgs e)
         {
-            if (m_LoginResult?.LoggedInUser == null)
+            if (m_Facade.LoggedInUser == null)
             {
                 MessageBox.Show("Login failed or user data not available.");
                 this.Close();
                 return;
             }
 
-            // Show picture of user
-            if (!string.IsNullOrEmpty(m_LoginResult.LoggedInUser.PictureNormalURL))
+            if (!string.IsNullOrEmpty(m_Facade.GetProfilePictureURL()))
             {
-                pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
+                pictureBox_Profile.LoadAsync(m_Facade.GetProfilePictureURL());
             }
 
-            // if some of the info is missing, we show empty string
-            textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name ?? "";
-            textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday ?? "";
-            textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location?.Name ?? "";
-            textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email ?? "";
-            textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown?.Name ?? "";
-            textBoxGender.Text = m_LoginResult.LoggedInUser.Gender?.ToString() ?? "";
-            fetchPosts();
+            textBoxUserFullName.Text = m_Facade.GetUserName();
+            textBoxBirthdayDate.Text = m_Facade.GetUserBirthday();
+            textBoxUserCity.Text = m_Facade.GetUserCity();
+            textBoxUserEmail.Text = m_Facade.GetUserEmail();
+            textBoxUserLocation.Text = m_Facade.GetUserHometown();
+            textBoxGender.Text = m_Facade.GetUserGender();
+
+            displayPosts();
+
+
+
+
+            //if (m_LoginResult?.LoggedInUser == null)
+            //{
+            //    MessageBox.Show("Login failed or user data not available.");
+            //    this.Close();
+            //    return;
+            //}
+
+            //// Show picture of user
+            //if (!string.IsNullOrEmpty(m_LoginResult.LoggedInUser.PictureNormalURL))
+            //{
+            //    pictureBox_Profile.LoadAsync(m_LoginResult.LoggedInUser.PictureNormalURL);
+            //}
+
+            //// if some of the info is missing, we show empty string
+            //textBoxUserFullName.Text = m_LoginResult.LoggedInUser.Name ?? "";
+            //textBoxBirthdayDate.Text = m_LoginResult.LoggedInUser.Birthday ?? "";
+            //textBoxUserCity.Text = m_LoginResult.LoggedInUser.Location?.Name ?? "";
+            //textBoxUserEmail.Text = m_LoginResult.LoggedInUser.Email ?? "";
+            //textBoxUserLocation.Text = m_LoginResult.LoggedInUser.Hometown?.Name ?? "";
+            //textBoxGender.Text = m_LoginResult.LoggedInUser.Gender?.ToString() ?? "";
+            //fetchPosts();
         }
 
-        private void fetchPosts()
+        private void displayPosts()
         {
             try
             {
                 flowLayoutPanelPosts.Controls.Clear();
 
-                foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+                List<string> posts = m_Facade.GetUserPostsContent();
+
+                foreach (string postText in posts)
                 {
-                    string content = null;
-
-                    if (post.Message != null)
-                    {                       
-                        content = post.Message;
-                    }
-                    else if (post.Caption != null)
-                    {
-                        content = post.Caption;
-                    }
-                    else
-                    {
-                        content = string.Format("[{0}]", post.Type);
-                    }
-
-                    if (!string.IsNullOrEmpty(content))
-                    {
-                        addPostToFlowPanel(content);
-                    }
+                    addPostToFlowPanel(postText);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error displaying posts: " + ex.Message);
             }
         }
+
+        //private void fetchPosts()
+        //{
+        //    try
+        //    {
+        //        flowLayoutPanelPosts.Controls.Clear();
+
+        //        foreach (Post post in m_LoginResult.LoggedInUser.Posts)
+        //        {
+        //            string content = null;
+
+        //            if (post.Message != null)
+        //            {                       
+        //                content = post.Message;
+        //            }
+        //            else if (post.Caption != null)
+        //            {
+        //                content = post.Caption;
+        //            }
+        //            else
+        //            {
+        //                content = string.Format("[{0}]", post.Type);
+        //            }
+
+        //            if (!string.IsNullOrEmpty(content))
+        //            {
+        //                addPostToFlowPanel(content);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void addPostToFlowPanel(string i_PostText)
         {
@@ -103,7 +146,7 @@ namespace BasicFacebookFeatures
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            FormPhotos photosForm = new FormPhotos(m_LoginResult, m_MainForm);
+            FormPhotos photosForm = new FormPhotos(m_Facade, m_MainForm);
             this.Close();
             photosForm.Show();
         }
@@ -116,7 +159,7 @@ namespace BasicFacebookFeatures
        
         private void buttonStatistics_Click(object sender, EventArgs e)
         {
-            FormUserStatistics formStats = new FormUserStatistics(m_LoginResult, m_MainForm);
+            FormUserStatistics formStats = new FormUserStatistics(m_Facade, m_MainForm);
             this.Close();
             formStats.Show();
         }

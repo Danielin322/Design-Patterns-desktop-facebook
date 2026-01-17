@@ -16,17 +16,19 @@ namespace BasicFacebookFeatures
 {
     public partial class FormUserStatistics : Form
     {
-        private LoginResult m_LoginResult;
+        private FacadeUserInfo m_Facade;
         private FormMainFacebookWindow m_MainForm;
-        public FormUserStatistics(LoginResult i_LoginResult, FormMainFacebookWindow i_MainForm)
+        public FormUserStatistics(FacadeUserInfo i_Facade, FormMainFacebookWindow i_MainForm)
         {
             InitializeComponent();
-            m_LoginResult = i_LoginResult;
+            m_Facade = i_Facade;
             m_MainForm = i_MainForm;
         }
 
         private void FormUserStatistics_Load(object sender, EventArgs e)
         {
+            facadeUserInfoBindingSource.DataSource = m_Facade;
+
             try
             {
                 calculateAndDisplayStatistics();
@@ -51,176 +53,197 @@ namespace BasicFacebookFeatures
 
         private void displayMostLikes()
         {
-            int maxLikes = 0;
+            int maxLikes = m_Facade.GetMostLikedPhotoCount();
+            //labelCountMostLikedPhoto.Text = maxLikes.ToString();
 
-            try
-            {
-                if (m_LoginResult.LoggedInUser.Albums != null)
-                {
-                    foreach (Album album in m_LoginResult.LoggedInUser.Albums)
-                    {
-                        try
-                        {
-                            if (album.Photos == null)
-                            {
-                                continue;
-                            }
 
-                            int albumMaxLikes = GetMostLikedPhotoCount(album);
+            //int maxLikes = 0;
 
-                            if (albumMaxLikes > maxLikes)
-                            {
-                                maxLikes = albumMaxLikes;
-                            }
-                        }
-                        catch
-                        {
-                            // skip broken albums
-                            continue;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error finding most liked photo: " + ex.Message);
-            }
+            //try
+            //{
+            //    if (m_LoginResult.LoggedInUser.Albums != null)
+            //    {
+            //        foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+            //        {
+            //            try
+            //            {
+            //                if (album.Photos == null)
+            //                {
+            //                    continue;
+            //                }
 
-            labelCountMostLikedPhoto.Text = maxLikes.ToString();
+            //                int albumMaxLikes = GetMostLikedPhotoCount(album);
+
+            //                if (albumMaxLikes > maxLikes)
+            //                {
+            //                    maxLikes = albumMaxLikes;
+            //                }
+            //            }
+            //            catch
+            //            {
+            //                // skip broken albums
+            //                continue;
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error finding most liked photo: " + ex.Message);
+            //}
+
+            ///* facebook's Count function doesnt work, so we put dummy data intead of maxLikes*/
+            //labelCountMostLikedPhoto.Text = "64";
         }
 
-        public int GetMostLikedPhotoCount(Album album)
-        {
+        //public int GetMostLikedPhotoCount(Album album)
+        //{
 
-            int maxLikes = 0;
-            int likes = 0;
+        //    int maxLikes = 0;
+        //    int likes = 0;
 
-            foreach (Photo photo in album.Photos)
-            {
-                if (!isValidPhoto(photo))
-                {
-                    continue;
-                }
+        //    foreach (Photo photo in album.Photos)
+        //    {
+        //        if (!isValidPhoto(photo))
+        //        {
+        //            continue;
+        //        }
 
 
-                if (photo.LikedBy != null)
-                {
-                    likes = photo.LikedBy.Count;
-                }
+        //        if (photo.LikedBy != null)
+        //        {
+        //            likes = photo.LikedBy.Count;
+        //        }
 
-                if (likes > maxLikes)
-                {
-                    maxLikes = likes;
-                }
-            }
-            /* facebook's Count function doesnt work, so we put dummy data intead of maxLikes*/
+        //        if (likes > maxLikes)
+        //        {
+        //            maxLikes = likes;
+        //        }
+        //    }
 
-            return 64;
-        }
+        //    /* facebook's Count function doesnt work, so we put dummy data intead of maxLikes*/
+
+        //    return maxLikes;
+        //}
 
 
         private void displayTotalFriends()
         {
-            try
-            {
-                // no permissions to fetch friends amount, so fake statistic:
-                int fakeAmountOfFriends = 127;
-                labelCountTotalFriends.Text = fakeAmountOfFriends.ToString();
+            int friendsCount = m_Facade.GetFakeFriendsCount();
+            //labelCountTotalFriends.Text = friendsCount.ToString();
 
-                /* if there were permissions to fetch friends, it would be:
-                int totalFriends = m_LoginResult.LoggedInUser.Friends.Count;
-                it should be: labelCountTotalFriends.Text = totalFriends.ToString();*/
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //try
+            //{
+            //    // no permissions to fetch friends amount, so fake statistic:
+            //    int fakeAmountOfFriends = 127;
+            //    labelCountTotalFriends.Text = fakeAmountOfFriends.ToString();
+
+            //    /* if there were permissions to fetch friends, it would be:
+            //    int totalFriends = m_LoginResult.LoggedInUser.Friends.Count;
+            //    it should be: labelCountTotalFriends.Text = totalFriends.ToString();*/
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
-        private int countAllPosts()
-        {
-            int totalPosts = 0;
+        //private int countAllPosts()
+        //{
+        //    int totalPosts = 0;
 
-            try
-            {
-                totalPosts = m_LoginResult.LoggedInUser.Posts.Count;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error counting posts: " + ex.Message);
-            }
-            return totalPosts;
+        //    try
+        //    {
+        //        totalPosts = m_LoginResult.LoggedInUser.Posts.Count;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error counting posts: " + ex.Message);
+        //    }
+        //    return totalPosts;
 
-        }
+        //}
 
-        private void dummyFunctionToTriggerFetch(Post i_Post)
-        {
-            string dummyFetch = i_Post.Message; // Trigger auto-fetch of next pages
-        }
+        //private void dummyFunctionToTriggerFetch(Post i_Post)
+        //{
+        //    string dummyFetch = i_Post.Message; // Trigger auto-fetch of next pages
+        //}
 
         private void displayTotalPosts()
         {
-            int totalPosts = 0;
+            int totalPosts = m_Facade.GetTotalPostsCount();
+            //labelCountTotalPosts.Text = totalPosts.ToString();
 
-            try
-            {
-                totalPosts = countAllPosts();
-                labelCountTotalPosts.Text = totalPosts.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                labelCountTotalPosts.Text = "-1";
-            }
+
+
+
+            //int totalPosts = 0;
+
+            //try
+            //{
+            //    totalPosts = countAllPosts();
+            //    labelCountTotalPosts.Text = totalPosts.ToString();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //    labelCountTotalPosts.Text = "-1";
+            //}
         }
 
         private void displayTotalPhotos()
         {
-            int totalPhotos = 0;
-            try
-            {
-                totalPhotos = countTotalPhotos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);  
-            }
+            int totalPhotos = m_Facade.GetTotalPhotosCount();
+            //labelCountTotalPhotos.Text = totalPhotos.ToString();
 
-            labelCountTotalPhotos.Text = totalPhotos.ToString();
+
+
+
+            //int totalPhotos = 0;
+            //try
+            //{
+            //    totalPhotos = countTotalPhotos();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);  
+            //}
+
+            //labelCountTotalPhotos.Text = totalPhotos.ToString();
         }
 
-        private int countTotalPhotos()
-        {
-            int totalPhotos = 0;
+        //private int countTotalPhotos()
+        //{
+        //    int totalPhotos = 0;
 
-            if (m_LoginResult.LoggedInUser.Albums != null)
-            {
-                foreach (Album album in m_LoginResult.LoggedInUser.Albums)
-                {
-                    try
-                    {
-                        if (album.Photos == null)
-                        {
-                            continue;
-                        }
+        //    if (m_LoginResult.LoggedInUser.Albums != null)
+        //    {
+        //        foreach (Album album in m_LoginResult.LoggedInUser.Albums)
+        //        {
+        //            try
+        //            {
+        //                if (album.Photos == null)
+        //                {
+        //                    continue;
+        //                }
 
-                        foreach (Photo photo in album.Photos)
-                        {
-                            if (isValidPhoto(photo))
-                            {
-                                totalPhotos++;
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        // the album is broken, we skip it instead of throwing error
-                        continue;
-                    }
-                }
-            }
-            return totalPhotos;
-        }
+        //                foreach (Photo photo in album.Photos)
+        //                {
+        //                    if (isValidPhoto(photo))
+        //                    {
+        //                        totalPhotos++;
+        //                    }
+        //                }
+        //            }
+        //            catch
+        //            {
+        //                // the album is broken, we skip it instead of throwing error
+        //                continue;
+        //            }
+        //        }
+        //    }
+        //    return totalPhotos;
+        //}
 
         private bool isValidPhoto(Photo i_Photo)
         {
@@ -241,88 +264,110 @@ namespace BasicFacebookFeatures
 
         private void displayTotalAlbums()
         {
-            int totalAlbums = 0;
-            try
-            {
-                totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
+            int totalAlbums = m_Facade.GetTotalAlbumsCount();
+            //labelCountTotalAlbums.Text = totalAlbums.ToString();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
 
-            labelCountTotalAlbums.Text = totalAlbums.ToString();
+
+            //int totalAlbums = 0;
+            //try
+            //{
+            //    totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
+
+            //labelCountTotalAlbums.Text = totalAlbums.ToString();
 
         }
 
         private void displayTotalLikedPages()
         {
-            int totalLikedPages = 0;
+            int totalLikedPages = m_Facade.GetTotalLikedPagesCount();
+            //labelCountLikedPages.Text = totalLikedPages.ToString();
 
-            try
-            {
-                totalLikedPages = m_LoginResult.LoggedInUser.LikedPages.Count;
+
+
+            //int totalLikedPages = 0;
+
+            //try
+            //{
+            //    totalLikedPages = m_LoginResult.LoggedInUser.LikedPages.Count;
                 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
 
-            labelCountLikedPages.Text = totalLikedPages.ToString();
+            //labelCountLikedPages.Text = totalLikedPages.ToString();
 
         }
 
         private void displayAveragePhotosPerAlbum()
         {
             int average = 0;
-            try
+            int totalPhotos = m_Facade.GetTotalPhotosCount();
+            int totalAlbums = m_Facade.GetTotalAlbumsCount();
+
+            if (totalAlbums > 0)
             {
-                average = calculateAveragePhotosPerAlbum();
-                            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-            labelCountAvgPhotosPerAlbum.Text = average.ToString();
-
-        }
-
-        private int calculateAveragePhotosPerAlbum()
-        {
-            int average = 0;
-            try
-            {
-                if (m_LoginResult.LoggedInUser.Albums == null || m_LoginResult.LoggedInUser.Albums.Count == 0)
-                {
-                    average = 0;
-                }
-
-                int totalPhotos = countTotalPhotos();
-                int totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
-
                 average = totalPhotos / totalAlbums;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
 
-            return average;
+            //labelCountAvgPhotosPerAlbum.Text = average.ToString();
+
+
+            //int average = 0;
+            //try
+            //{
+            //    average = calculateAveragePhotosPerAlbum();
+            //                }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
+
+            //labelCountAvgPhotosPerAlbum.Text = average.ToString();
+
         }
+
+        //private int calculateAveragePhotosPerAlbum()
+        //{
+        //    int average = 0;
+        //    try
+        //    {
+        //        if (m_LoginResult.LoggedInUser.Albums == null || m_LoginResult.LoggedInUser.Albums.Count == 0)
+        //        {
+        //            average = 0;
+        //        }
+
+        //        int totalPhotos = countTotalPhotos();
+        //        int totalAlbums = m_LoginResult.LoggedInUser.Albums.Count;
+
+        //        average = totalPhotos / totalAlbums;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+
+        //    return average;
+        //}
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            FormProfile profileForm = new FormProfile(m_LoginResult, m_MainForm);
+            FormProfile profileForm = new FormProfile(m_Facade, m_MainForm);
             this.Close();
             profileForm.Show();
         }
 
         private void buttonUserPhotos_Click(object sender, EventArgs e)
         {
-            FormPhotos photosForm = new FormPhotos(m_LoginResult,m_MainForm);
+            FormPhotos photosForm = new FormPhotos(m_Facade, m_MainForm);
             this.Close();
             photosForm.Show();
         }
@@ -332,7 +377,5 @@ namespace BasicFacebookFeatures
             m_MainForm.Show();
             this.Close();
         }
-
-        
     }
 }
