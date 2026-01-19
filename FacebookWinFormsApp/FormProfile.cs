@@ -5,10 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace BasicFacebookFeatures
 {
@@ -29,30 +32,45 @@ namespace BasicFacebookFeatures
 
         private void FormProfile_Load(object sender, EventArgs e)
         {
-            try
-            {
-                loadUserData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading profile data: " + ex.Message);
-            }
+            new Thread(loadUserData).Start();
+            //try
+            //{
+            //    loadUserData();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error loading profile data: " + ex.Message);
+            //}
         }
 
         private void loadUserData()
         {
+            string name = m_Facade.GetName();
+            string birthday = m_Facade.GetBirthday();
+            string city = m_Facade.GetCity();
+            string email = m_Facade.GetEmail();
+            string hometown = m_Facade.GetHometown();
+            string gender = m_Facade.GetGender();
             string pictureUrl = m_Facade.GetProfilePicture();
+
             if (!string.IsNullOrEmpty(pictureUrl))
             {
                 pictureBox_Profile.LoadAsync(pictureUrl);
             }
 
-            textBoxUserFullName.Text = m_Facade.GetName();
-            textBoxBirthdayDate.Text = m_Facade.GetBirthday();
-            textBoxUserCity.Text = m_Facade.GetCity();
-            textBoxUserEmail.Text = m_Facade.GetEmail();
-            textBoxUserLocation.Text = m_Facade.GetHometown();
-            textBoxGender.Text = m_Facade.GetGender();
+            textBoxUserFullName.Invoke(new Action(() => textBoxUserFullName.Text = name));
+            textBoxBirthdayDate.Invoke(new Action(() => textBoxBirthdayDate.Text = birthday));
+            textBoxUserCity.Invoke(new Action(() => textBoxUserCity.Text = city));
+            textBoxUserEmail.Invoke(new Action(() => textBoxUserEmail.Text = email));
+            textBoxUserLocation.Invoke(new Action(() => textBoxUserLocation.Text = hometown));
+            textBoxGender.Invoke(new Action(() => textBoxGender.Text = gender));
+
+            //textBoxUserFullName.Text = m_Facade.GetName();
+            //textBoxBirthdayDate.Text = m_Facade.GetBirthday();
+            //textBoxUserCity.Text = m_Facade.GetCity();
+            //textBoxUserEmail.Text = m_Facade.GetEmail();
+            //textBoxUserLocation.Text = m_Facade.GetHometown();
+            //textBoxGender.Text = m_Facade.GetGender();
 
             displayPosts();
         }
@@ -61,17 +79,18 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                flowLayoutPanelPosts.Controls.Clear();
                 List<string> posts = m_Facade.GetPosts();
+
+                flowLayoutPanelPosts.Invoke(new Action(() => flowLayoutPanelPosts.Controls.Clear()));
 
                 foreach (string postText in posts)
                 {
-                    addPostToFlowPanel(postText);
+                    flowLayoutPanelPosts.Invoke(new Action(() => addPostToFlowPanel(postText)));
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error displaying posts: " + ex.Message);
+                this.Invoke(new Action(() => MessageBox.Show("Error displaying posts: " + ex.Message)));
             }
         }
 
