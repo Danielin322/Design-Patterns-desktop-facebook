@@ -17,14 +17,31 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMainFacebookWindow : Form
     {
+        private static FormMainFacebookWindow s_Instance = null;
+        private static readonly object s_Lock = new object();
         private FacadeMainWindow m_Facade;
         private User m_LoggedInUser;
 
-        public FormMainFacebookWindow(User i_LoggedInUser)
+        private FormMainFacebookWindow(User i_LoggedInUser)
         {
             InitializeComponent();
             m_LoggedInUser = i_LoggedInUser;
             m_Facade = new FacadeMainWindow(m_LoggedInUser);
+        }
+
+        public static FormMainFacebookWindow GetInstance(User i_LoggedInUser)
+        {
+            if (s_Instance == null )
+            {
+                lock (s_Lock)
+                {
+                    if (s_Instance == null)
+                    {
+                        s_Instance = new FormMainFacebookWindow(i_LoggedInUser);
+                    }
+                }
+            }
+            return s_Instance;
         }
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)

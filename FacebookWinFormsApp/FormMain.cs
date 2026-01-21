@@ -38,7 +38,7 @@ namespace BasicFacebookFeatures
 
             if (m_Facade.LoginResult.ErrorMessage == null || m_Facade.LoginResult.ErrorMessage == "")
             {
-                FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade.LoggedInUser);
+                FormMainFacebookWindow fbWindow = FormMainFacebookWindow.GetInstance(m_Facade.LoggedInUser);
 
                 fbWindow.FormClosed += logout;
 
@@ -60,7 +60,7 @@ namespace BasicFacebookFeatures
 
                 if (m_Facade.LoggedInUser != null)
                 {
-                    FormMainFacebookWindow fbWindow = new FormMainFacebookWindow(m_Facade.LoggedInUser);
+                    FormMainFacebookWindow fbWindow = FormMainFacebookWindow.GetInstance(m_Facade.LoggedInUser);
                     fbWindow.FormClosed += logout;
                     this.Hide();
                     fbWindow.Show();
