@@ -120,6 +120,7 @@
     <Compile Include="FormUserStatistics.Designer.cs">
       <DependentUpon>FormUserStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationButtonsFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCollageOfPhotos.resx">

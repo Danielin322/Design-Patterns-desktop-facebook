@@ -37,11 +37,8 @@
             this.textBoxGender = new System.Windows.Forms.TextBox();
             this.textBoxUserCity = new System.Windows.Forms.TextBox();
             this.textBoxUserLocation = new System.Windows.Forms.TextBox();
-            this.buttonUserPhotos = new System.Windows.Forms.Button();
-            this.buttonHome = new System.Windows.Forms.Button();
             this.flowLayoutPanelPosts = new System.Windows.Forms.FlowLayoutPanel();
             this.labelMyPosts = new System.Windows.Forms.Label();
-            this.buttonStatistics = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -147,34 +144,6 @@
             this.textBoxUserLocation.TabIndex = 19;
             this.textBoxUserLocation.Text = "user location";
             // 
-            // buttonUserPhotos
-            // 
-            this.buttonUserPhotos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonUserPhotos.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonUserPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUserPhotos.Location = new System.Drawing.Point(1053, 922);
-            this.buttonUserPhotos.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUserPhotos.Name = "buttonUserPhotos";
-            this.buttonUserPhotos.Size = new System.Drawing.Size(108, 53);
-            this.buttonUserPhotos.TabIndex = 25;
-            this.buttonUserPhotos.Text = "Photos";
-            this.buttonUserPhotos.UseVisualStyleBackColor = false;
-            this.buttonUserPhotos.Click += new System.EventHandler(this.buttonUserPhotos_Click);
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonHome.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHome.Location = new System.Drawing.Point(920, 922);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(108, 53);
-            this.buttonHome.TabIndex = 27;
-            this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = false;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
-            // 
             // flowLayoutPanelPosts
             // 
             this.flowLayoutPanelPosts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -199,21 +168,6 @@
             this.labelMyPosts.Size = new System.Drawing.Size(208, 51);
             this.labelMyPosts.TabIndex = 29;
             this.labelMyPosts.Text = "My Posts";
-            // 
-            // buttonStatistics
-            // 
-            this.buttonStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonStatistics.AutoSize = true;
-            this.buttonStatistics.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStatistics.Location = new System.Drawing.Point(768, 922);
-            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonStatistics.Name = "buttonStatistics";
-            this.buttonStatistics.Size = new System.Drawing.Size(127, 53);
-            this.buttonStatistics.TabIndex = 30;
-            this.buttonStatistics.Text = "Statistics";
-            this.buttonStatistics.UseVisualStyleBackColor = false;
-            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // label2
             // 
@@ -317,11 +271,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.labelMyPosts);
             this.Controls.Add(this.flowLayoutPanelPosts);
-            this.Controls.Add(this.buttonHome);
-            this.Controls.Add(this.buttonUserPhotos);
             this.Controls.Add(this.textBoxUserLocation);
             this.Controls.Add(this.textBoxUserCity);
             this.Controls.Add(this.textBoxGender);
@@ -351,11 +302,11 @@
         private System.Windows.Forms.TextBox textBoxGender;
         private System.Windows.Forms.TextBox textBoxUserCity;
         private System.Windows.Forms.TextBox textBoxUserLocation;
-        private System.Windows.Forms.Button buttonUserPhotos;
-        private System.Windows.Forms.Button buttonHome;
+        //private System.Windows.Forms.Button buttonUserPhotos;
+        //private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPosts;
         private System.Windows.Forms.Label labelMyPosts;
-        private System.Windows.Forms.Button buttonStatistics;
+        //private System.Windows.Forms.Button buttonStatistics;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

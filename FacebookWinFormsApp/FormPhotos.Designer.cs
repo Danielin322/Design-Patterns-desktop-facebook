@@ -28,27 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.flowLayoutPanelPhotos = new System.Windows.Forms.FlowLayoutPanel();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
-            this.buttonHome = new System.Windows.Forms.Button();
             this.labelMyPhotos = new System.Windows.Forms.Label();
-            this.buttonStatistics = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProfile.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProfile.Location = new System.Drawing.Point(1022, 907);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(108, 53);
-            this.buttonProfile.TabIndex = 26;
-            this.buttonProfile.Text = "Profile";
-            this.buttonProfile.UseVisualStyleBackColor = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // flowLayoutPanelPhotos
             // 
@@ -64,27 +47,13 @@
             // 
             this.listBoxAlbums.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxAlbums.FormattingEnabled = true;
-            this.listBoxAlbums.ItemHeight = 29;
+            this.listBoxAlbums.ItemHeight = 22;
             this.listBoxAlbums.Location = new System.Drawing.Point(842, 242);
             this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAlbums.Name = "listBoxAlbums";
-            this.listBoxAlbums.Size = new System.Drawing.Size(224, 294);
+            this.listBoxAlbums.Size = new System.Drawing.Size(224, 290);
             this.listBoxAlbums.TabIndex = 31;
             this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHome.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHome.Location = new System.Drawing.Point(886, 907);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(108, 53);
-            this.buttonHome.TabIndex = 32;
-            this.buttonHome.Text = "Home";
-            this.buttonHome.UseVisualStyleBackColor = false;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // labelMyPhotos
             // 
@@ -93,35 +62,18 @@
             this.labelMyPhotos.Location = new System.Drawing.Point(380, 106);
             this.labelMyPhotos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMyPhotos.Name = "labelMyPhotos";
-            this.labelMyPhotos.Size = new System.Drawing.Size(401, 85);
+            this.labelMyPhotos.Size = new System.Drawing.Size(307, 65);
             this.labelMyPhotos.TabIndex = 33;
             this.labelMyPhotos.Text = "My Photos";
-            // 
-            // buttonStatistics
-            // 
-            this.buttonStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStatistics.BackColor = System.Drawing.Color.MediumPurple;
-            this.buttonStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStatistics.Location = new System.Drawing.Point(748, 907);
-            this.buttonStatistics.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonStatistics.Name = "buttonStatistics";
-            this.buttonStatistics.Size = new System.Drawing.Size(118, 53);
-            this.buttonStatistics.TabIndex = 34;
-            this.buttonStatistics.Text = "Statistics";
-            this.buttonStatistics.UseVisualStyleBackColor = false;
-            this.buttonStatistics.Click += new System.EventHandler(this.buttonStatistics_Click);
             // 
             // FormPhotos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1178, 999);
-            this.Controls.Add(this.buttonStatistics);
             this.Controls.Add(this.labelMyPhotos);
-            this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.flowLayoutPanelPhotos);
-            this.Controls.Add(this.buttonProfile);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPhotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -133,11 +85,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhotos;
         private System.Windows.Forms.ListBox listBoxAlbums;
-        private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Label labelMyPhotos;
-        private System.Windows.Forms.Button buttonStatistics;
     }
 }

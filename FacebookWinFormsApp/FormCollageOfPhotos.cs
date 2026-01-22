@@ -18,10 +18,12 @@ namespace BasicFacebookFeatures
         private FormMainFacebookWindow m_MainForm;
         private List<Photo> m_PhotosForCollage;
         private Timer m_Timer;
+        private User m_LoggedInUser;
         private int m_PhotoIndex = 0;
 
         public FormCollageOfPhotos(User i_LoggedInUser, FormMainFacebookWindow i_MainForm)
         {
+            m_LoggedInUser = i_LoggedInUser;
             m_MainForm = i_MainForm;
             m_Facade = new FacadeCollageOfPhotos(i_LoggedInUser);
 
@@ -34,6 +36,18 @@ namespace BasicFacebookFeatures
 
         private void FormCollageOfPhotos_Load(object sender, EventArgs e)
         {
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.SpecialMoments, m_MainForm, m_LoggedInUser);
+            int xPosition = 690; // Starting X 
+            int yPosition = 200; // Starting Y 
+            int spacing = 10;
+
+            foreach (Button btn in navButtons)
+            {
+                btn.Location = new Point(xPosition, yPosition);
+                this.Controls.Add(btn);
+                btn.BringToFront();
+                yPosition -= (btn.Height + spacing);
+            }
             m_PhotosForCollage = m_Facade.GetAllUserPhotos();
 
             if (m_PhotosForCollage.Count > 0)

@@ -259,7 +259,6 @@ namespace BasicFacebookFeatures
             // No permissions to fetch friends amount, so return fake statistic:
             return 127;
 
-
             /* If there was permissions to fetch friends, it would be:
                    int totalFriends = LoggedInUser.Friends.Count;
                    return totalFriends;

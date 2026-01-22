@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Home = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -39,17 +38,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Home
-            // 
-            this.Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Home.Location = new System.Drawing.Point(745, 462);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(108, 37);
-            this.Home.TabIndex = 0;
-            this.Home.Text = "Home";
-            this.Home.UseVisualStyleBackColor = true;
-            this.Home.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -90,7 +78,7 @@
             this.labelCollageOfPhotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCollageOfPhotos.Location = new System.Drawing.Point(179, 40);
             this.labelCollageOfPhotos.Name = "labelCollageOfPhotos";
-            this.labelCollageOfPhotos.Size = new System.Drawing.Size(565, 55);
+            this.labelCollageOfPhotos.Size = new System.Drawing.Size(427, 40);
             this.labelCollageOfPhotos.TabIndex = 5;
             this.labelCollageOfPhotos.Text = "Here are your moments!";
             // 
@@ -104,7 +92,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Home);
             this.Name = "FormCollageOfPhotos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCollageOfPhotos";
@@ -119,8 +106,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Home;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
