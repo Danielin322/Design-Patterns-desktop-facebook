@@ -36,7 +36,7 @@ namespace BasicFacebookFeatures
 
         private void FormCollageOfPhotos_Load(object sender, EventArgs e)
         {
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.SpecialMoments,this, m_MainForm, m_LoggedInUser);
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.SpecialMoments, this, m_MainForm, m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {
@@ -77,90 +77,5 @@ namespace BasicFacebookFeatures
             m_MainForm.Show();
             this.Close();
         }
-
-
-
-        //private FacadeUserInfo m_Facade;
-        //private FormMainFacebookWindow m_MainForm;
-        //private List<Photo> m_PhotosForCollage;
-        //private Timer m_Timer;
-        //private int m_PhotoIndex = 0;
-
-        //public FormCollageOfPhotos(FacadeUserInfo i_Facade, FormMainFacebookWindow i_MainForm)
-        //{
-        //    m_Facade = i_Facade;
-        //    m_MainForm = i_MainForm;
-        //    InitializeComponent();
-        //    m_Timer = new Timer();
-        //    m_Timer.Interval = 2000;
-        //    m_Timer.Tick += Timer_Tick;
-        //    m_Timer.Start();
-        //}
-
-
-        //private void Timer_Tick(object sender, EventArgs e)
-        //{
-        //    if (m_PhotosForCollage == null || m_PhotosForCollage.Count == 0)
-        //    {
-        //        return;
-        //    }
-
-        //    PictureBox[] placesForPhotos = { pictureBox1, pictureBox2, pictureBox3, pictureBox4 };
-        //    for (int i = 0; i < placesForPhotos.Length; i++)
-        //    {
-        //        placesForPhotos[i].SizeMode = PictureBoxSizeMode.Zoom;
-        //        placesForPhotos[i].LoadAsync(m_PhotosForCollage[m_PhotoIndex].PictureNormalURL);
-        //        m_PhotoIndex = (m_PhotoIndex + 1) % m_PhotosForCollage.Count;
-        //    }
-        //}
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{ 
-        //    m_Timer.Stop();
-        //    m_MainForm.Show();
-        //    this.Close();
-        //}
-
-        //private void FormCollageOfPhotos_Load(object sender, EventArgs e)
-        //{
-        //    m_PhotosForCollage = m_Facade.GetAllUserPhotos();
-
-        //    if (m_PhotosForCollage.Count == 0)
-        //    {
-        //        MessageBox.Show("No photos found to create a collage.");
-        //    }
-
-
-
-        //    //List<Photo> photosForCollage = new List<Photo>();
-        //    //foreach (Album album in m_LoginResult.LoggedInUser.Albums)
-        //    //{
-        //    //    try
-        //    //    {
-        //    //        foreach (Photo photo in album.Photos)
-        //    //        {
-        //    //            try
-        //    //            {
-        //    //                if (photo.PictureNormalURL != null)
-        //    //                {
-        //    //                    photosForCollage.Add(photo);
-        //    //                }
-        //    //            }
-        //    //            catch
-        //    //            {
-        //    //                //cant fetch photo
-        //    //            }
-        //    //        }
-        //    //    }
-        //    //    catch
-        //    //    {
-        //    //        //cant fetch album
-        //    //    }
-        //    //}
-
-        //    //m_PhotosForCollage = photosForCollage;
-        //}
-
-
     }
 }

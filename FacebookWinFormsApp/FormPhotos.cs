@@ -29,7 +29,7 @@ namespace BasicFacebookFeatures
 
         private void FormPhotos_Load(object sender, EventArgs e)
         {
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Photos,this, m_MainForm, m_LoggedInUser);
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Photos, this, m_MainForm, m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {

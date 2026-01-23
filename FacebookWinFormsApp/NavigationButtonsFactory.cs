@@ -24,34 +24,33 @@ namespace BasicFacebookFeatures
 
             if (i_ButtonType == eButtonTypes.Profile)
             {
-                buttonsList.Add(creatNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
-                buttonsList.Add(creatNavigationButton("Photos", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openPhotos(i_MainForm, i_LoggedInUser, formToClose); }));
-                buttonsList.Add(creatNavigationButton("Statistics", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openUserStatistics(i_MainForm, i_LoggedInUser, formToClose); }));
-
+                buttonsList.Add(createNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
+                buttonsList.Add(createNavigationButton("Photos", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openPhotos(i_MainForm, i_LoggedInUser, formToClose); }));
+                buttonsList.Add(createNavigationButton("Statistics", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openUserStatistics(i_MainForm, i_LoggedInUser, formToClose); }));
             }
             else if (i_ButtonType == eButtonTypes.Statistics)
             {
-                buttonsList.Add(creatNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
-                buttonsList.Add(creatNavigationButton("Profile", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openProfile(i_MainForm, i_LoggedInUser, formToClose); }));
-                buttonsList.Add(creatNavigationButton("Photos", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openPhotos(i_MainForm, i_LoggedInUser, formToClose); }));
+                buttonsList.Add(createNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
+                buttonsList.Add(createNavigationButton("Profile", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openProfile(i_MainForm, i_LoggedInUser, formToClose); }));
+                buttonsList.Add(createNavigationButton("Photos", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openPhotos(i_MainForm, i_LoggedInUser, formToClose); }));
             }
             else if (i_ButtonType == eButtonTypes.Photos)
             {
-                buttonsList.Add(creatNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
-                buttonsList.Add(creatNavigationButton("Profile", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openProfile(i_MainForm, i_LoggedInUser, formToClose); }));
-                buttonsList.Add(creatNavigationButton("Statistics", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openUserStatistics(i_MainForm, i_LoggedInUser,formToClose); }));
+                buttonsList.Add(createNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
+                buttonsList.Add(createNavigationButton("Profile", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openProfile(i_MainForm, i_LoggedInUser, formToClose); }));
+                buttonsList.Add(createNavigationButton("Statistics", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openUserStatistics(i_MainForm, i_LoggedInUser, formToClose); }));
 
             }
             else if (i_ButtonType == eButtonTypes.SpecialMoments)
             {
-                buttonsList.Add(creatNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
+                buttonsList.Add(createNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
             }
-            else if(i_ButtonType == eButtonTypes.home)
+            else if (i_ButtonType == eButtonTypes.home)
             {
-                buttonsList.Add(creatNavigationButton("Profile", (s, e) => openProfile(i_MainForm, i_LoggedInUser, null)));
-                buttonsList.Add(creatNavigationButton("Photos", (s, e) => openPhotos(i_MainForm, i_LoggedInUser, null)));
-                buttonsList.Add(creatNavigationButton("Statistics", (s, e) => openUserStatistics(i_MainForm, i_LoggedInUser, null)));
-                buttonsList.Add(creatNavigationButton("Special Moments", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openCollageOfPhotos( i_MainForm,i_LoggedInUser, null); }));
+                buttonsList.Add(createNavigationButton("Profile", (s, e) => openProfile(i_MainForm, i_LoggedInUser, null)));
+                buttonsList.Add(createNavigationButton("Photos", (s, e) => openPhotos(i_MainForm, i_LoggedInUser, null)));
+                buttonsList.Add(createNavigationButton("Statistics", (s, e) => openUserStatistics(i_MainForm, i_LoggedInUser, null)));
+                buttonsList.Add(createNavigationButton("Special Moments", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); openCollageOfPhotos( i_MainForm,i_LoggedInUser, null); }));
             }
 
             for (int i = 0; i < buttonsList.Count; i++)
@@ -69,7 +68,7 @@ namespace BasicFacebookFeatures
             return buttonsList;
         }
 
-        private static Button creatNavigationButton(string i_Text, EventHandler i_ClickHandler)
+        private static Button createNavigationButton(string i_Text, EventHandler i_ClickHandler)
         {
             Button newButton = new Button()
             {

@@ -15,7 +15,7 @@ using Page = FacebookWrapper.ObjectModel.Page;
 
 namespace BasicFacebookFeatures
 {
-    public partial class FormMainFacebookWindow : Form
+    public sealed partial class FormMainFacebookWindow : Form
     {
         private static FormMainFacebookWindow s_Instance = null;
         private static readonly object s_Lock = new object();
@@ -31,7 +31,7 @@ namespace BasicFacebookFeatures
 
         public static FormMainFacebookWindow GetInstance(User i_LoggedInUser)
         {
-            if (s_Instance == null )
+            if (s_Instance == null)
             {
                 lock (s_Lock)
                 {
@@ -46,7 +46,7 @@ namespace BasicFacebookFeatures
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)
         {
-            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.home, this,this, m_LoggedInUser);
+            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.home, this, this, m_LoggedInUser);
 
             foreach (System.Windows.Forms.Button btn in navButtons)
             {

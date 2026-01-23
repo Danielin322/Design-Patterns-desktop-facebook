@@ -33,7 +33,7 @@ namespace BasicFacebookFeatures
         private void FormProfile_Load(object sender, EventArgs e)
         {
             new Thread(loadUserData).Start();
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Profile,this, m_MainForm,m_LoggedInUser);
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Profile, this, m_MainForm, m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {
