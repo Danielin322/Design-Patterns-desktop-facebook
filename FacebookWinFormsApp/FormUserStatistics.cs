@@ -31,16 +31,11 @@ namespace BasicFacebookFeatures
 
         private void FormUserStatistics_Load(object sender, EventArgs e)
         {
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.Statistics, m_MainForm, m_LoggedInUser);
-            int xPosition = 1042; // Starting X
-            int yPosition = 865; // Starting Y
-            int spacing = 10;
-
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Statistics,this , m_MainForm, m_LoggedInUser);
+           
             foreach (Button btn in navButtons)
             {
-                btn.Location = new Point(xPosition, yPosition);
                 this.Controls.Add(btn);
-                xPosition -= btn.Height + spacing;
             }
             try
             {

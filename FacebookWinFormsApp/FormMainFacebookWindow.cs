@@ -46,16 +46,11 @@ namespace BasicFacebookFeatures
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)
         {
-            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.Photos, this, m_LoggedInUser);
-            int xPosition = 1042; // Starting X
-            int yPosition = 865; // Starting Y 
-            int spacing = 10;
+            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.home, this,this, m_LoggedInUser);
 
             foreach (System.Windows.Forms.Button btn in navButtons)
             {
-                btn.Location = new Point(xPosition, yPosition);
                 this.Controls.Add(btn);
-                xPosition -= btn.Height + spacing;
             }
             loadBasicUserInfo();
             fetchLikedPages();

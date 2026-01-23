@@ -33,19 +33,13 @@ namespace BasicFacebookFeatures
         private void FormProfile_Load(object sender, EventArgs e)
         {
             new Thread(loadUserData).Start();
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.Profile,m_MainForm,m_LoggedInUser);
-            int xPosition = 12; // Starting X 
-            int yPosition = 150; // Starting Y
-            int spacing = 10;
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Profile,this, m_MainForm,m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {
-                btn.Location = new Point(xPosition, yPosition);
                 this.Controls.Add(btn);
-                yPosition += btn.Height + spacing;
             }
         }
-
 
         private void loadUserData()
         {

@@ -29,16 +29,11 @@ namespace BasicFacebookFeatures
 
         private void FormPhotos_Load(object sender, EventArgs e)
         {
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.Photos, m_MainForm, m_LoggedInUser);
-            int xPosition = 1042; // Starting X
-            int yPosition = 865; // Starting 
-            int spacing = 10;
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Photos,this, m_MainForm, m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {
-                btn.Location = new Point(xPosition, yPosition);
                 this.Controls.Add(btn);
-                xPosition -= btn.Height + spacing;
             }
             fetchAlbums();
         }

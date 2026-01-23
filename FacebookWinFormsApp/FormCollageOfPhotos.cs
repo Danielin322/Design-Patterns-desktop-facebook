@@ -36,17 +36,11 @@ namespace BasicFacebookFeatures
 
         private void FormCollageOfPhotos_Load(object sender, EventArgs e)
         {
-            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonsTypes.SpecialMoments, m_MainForm, m_LoggedInUser);
-            int xPosition = 690; // Starting X 
-            int yPosition = 200; // Starting Y 
-            int spacing = 10;
+            List<Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.SpecialMoments,this, m_MainForm, m_LoggedInUser);
 
             foreach (Button btn in navButtons)
             {
-                btn.Location = new Point(xPosition, yPosition);
                 this.Controls.Add(btn);
-                btn.BringToFront();
-                yPosition -= (btn.Height + spacing);
             }
             m_PhotosForCollage = m_Facade.GetAllUserPhotos();
 
