@@ -74,7 +74,7 @@ namespace BasicFacebookFeatures
             {
                 Text = i_Text,
                 Size = new System.Drawing.Size(108, 53),
-                BackColor = System.Drawing.Color.Gold
+                BackColor = System.Drawing.Color.MediumPurple,
             };
 
             newButton.Click += i_ClickHandler;

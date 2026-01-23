@@ -50,7 +50,7 @@
             this.textBoxUserFullName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUserFullName.Name = "textBoxUserFullName";
             this.textBoxUserFullName.ReadOnly = true;
-            this.textBoxUserFullName.Size = new System.Drawing.Size(212, 23);
+            this.textBoxUserFullName.Size = new System.Drawing.Size(212, 31);
             this.textBoxUserFullName.TabIndex = 4;
             this.textBoxUserFullName.TabStop = false;
             // 
@@ -103,7 +103,7 @@
             this.labelPost.Location = new System.Drawing.Point(482, 363);
             this.labelPost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPost.Name = "labelPost";
-            this.labelPost.Size = new System.Drawing.Size(259, 29);
+            this.labelPost.Size = new System.Drawing.Size(348, 37);
             this.labelPost.TabIndex = 9;
             this.labelPost.Text = "What\'s on your mind?";
             // 
@@ -128,12 +128,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listBoxLikedPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxLikedPages.FormattingEnabled = true;
-            this.listBoxLikedPages.ItemHeight = 25;
+            this.listBoxLikedPages.ItemHeight = 31;
             this.listBoxLikedPages.Location = new System.Drawing.Point(7, 100);
             this.listBoxLikedPages.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxLikedPages.Name = "listBoxLikedPages";
             this.listBoxLikedPages.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxLikedPages.Size = new System.Drawing.Size(408, 654);
+            this.listBoxLikedPages.Size = new System.Drawing.Size(408, 624);
             this.listBoxLikedPages.TabIndex = 11;
             // 
             // LablePagesYouLiked
@@ -143,7 +143,7 @@
             this.LablePagesYouLiked.Location = new System.Drawing.Point(11, 30);
             this.LablePagesYouLiked.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LablePagesYouLiked.Name = "LablePagesYouLiked";
-            this.LablePagesYouLiked.Size = new System.Drawing.Size(305, 29);
+            this.LablePagesYouLiked.Size = new System.Drawing.Size(394, 37);
             this.LablePagesYouLiked.TabIndex = 12;
             this.LablePagesYouLiked.Text = "Pages you recently liked:";
             // 
