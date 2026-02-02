@@ -69,12 +69,16 @@ namespace BasicFacebookFeatures
 
                 if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
-                    foreach (Album album in m_LoggedInUser.Albums)
+                    IIterator albumIterator = new FacebookListIterator(m_LoggedInUser.Albums);
+                    while(albumIterator.HasNext())
                     {
+                        Album album = albumIterator.Next() as Album;
                         if (album.Photos != null)
                         {
-                            foreach (Photo photo in album.Photos)
+                            IIterator photoIterator = new FacebookListIterator(album.Photos);
+                            while (photoIterator.HasNext())
                             {
+                                Photo photo = photoIterator.Next() as Photo;
                                 if (photo.PictureNormalURL != null)
                                 {
                                     totalPhotos++;

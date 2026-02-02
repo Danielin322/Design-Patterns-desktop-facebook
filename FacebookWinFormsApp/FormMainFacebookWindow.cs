@@ -78,18 +78,23 @@ namespace BasicFacebookFeatures
             {
                 List<Page> pages = m_Facade.GetLikedPages();
 
-                if (pages.Count > 0)
+                IIterator iterator = new FacebookListIterator(pages);
+
+                while (iterator.HasNext())
                 {
-                    foreach (Page page in pages)
+                    Page page = iterator.Next() as Page;
+                    if (page != null)
                     {
                         listBoxLikedPages.Items.Add(page);
                     }
                 }
-                else
+
+                if (listBoxLikedPages.Items.Count == 0)
                 {
                     listBoxLikedPages.Items.Add("No liked pages found.");
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error fetching liked pages: " + ex.Message);

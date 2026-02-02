@@ -84,6 +84,7 @@
     <Compile Include="FacadeProfile.cs" />
     <Compile Include="FacadeUserInfo.cs" />
     <Compile Include="FacadeUserStatistics.cs" />
+    <Compile Include="FacebookListIterator.cs" />
     <Compile Include="FormCollageOfPhotos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +121,7 @@
     <Compile Include="FormUserStatistics.Designer.cs">
       <DependentUpon>FormUserStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="IIterator.cs" />
     <Compile Include="NavigationButtonsFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
