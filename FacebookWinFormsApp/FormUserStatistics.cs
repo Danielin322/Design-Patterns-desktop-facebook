@@ -40,6 +40,7 @@ namespace BasicFacebookFeatures
             try
             {
                 facadeUserStatisticsBindingSource.DataSource = m_Facade;
+                facadeUserStatisticsBindingSource.ResetBindings(false);
             }
             catch (Exception ex)
             {
@@ -65,6 +66,16 @@ namespace BasicFacebookFeatures
         {
             m_MainForm.Show();
             this.Close();
+        }
+
+        private void totalLikedPagesCountLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalPostsCountLabel3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

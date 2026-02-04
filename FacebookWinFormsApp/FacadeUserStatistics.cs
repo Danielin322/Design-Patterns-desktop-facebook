@@ -70,20 +70,27 @@ namespace BasicFacebookFeatures
                 if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
                     IIterator albumIterator = new FacebookListIterator(m_LoggedInUser.Albums);
-                    while(albumIterator.HasNext())
+                    while (albumIterator.HasNext())
                     {
-                        Album album = albumIterator.Next() as Album;
-                        if (album.Photos != null)
+                        try
                         {
-                            IIterator photoIterator = new FacebookListIterator(album.Photos);
-                            while (photoIterator.HasNext())
+                            Album album = albumIterator.Next() as Album;
+                            if (album.Photos != null)
                             {
-                                Photo photo = photoIterator.Next() as Photo;
-                                if (photo.PictureNormalURL != null)
+                                IIterator photoIterator = new FacebookListIterator(album.Photos);
+                                while (photoIterator.HasNext())
                                 {
-                                    totalPhotos++;
+                                    Photo photo = photoIterator.Next() as Photo;
+                                    if (photo.PictureNormalURL != null)
+                                    {
+                                        totalPhotos++;
+                                    }
                                 }
                             }
+                        }
+                        catch
+                        {
+                            // skip album if exception occurs  
                         }
                     }
                 }
@@ -107,7 +114,7 @@ namespace BasicFacebookFeatures
             {
                 int maxLikes = -1;
 
-                if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
+                /*if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
                     foreach (Album album in m_LoggedInUser.Albums)
                     {
@@ -125,9 +132,9 @@ namespace BasicFacebookFeatures
                             }
                         }
                     }
-                }
+                }*/
 
-                // facebook's Count function doesnt work, so we put dummy data instead of maxLikes
+                //facebook's Count function doesnt work, so we put dummy data instead of maxLikes
                 if (maxLikes == -1)
                 {
                     maxLikes = 64;

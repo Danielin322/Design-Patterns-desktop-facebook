@@ -38,13 +38,13 @@
             System.Windows.Forms.Label totalAlbumsCountLabel2;
             this.labelUserStatistics = new System.Windows.Forms.Label();
             this.averagePhotosPerAlbumLabel3 = new System.Windows.Forms.Label();
+            this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalLikedPagesCountLabel3 = new System.Windows.Forms.Label();
             this.mostLikedCountLabel3 = new System.Windows.Forms.Label();
             this.friendsCountLabel3 = new System.Windows.Forms.Label();
             this.totalPostsCountLabel3 = new System.Windows.Forms.Label();
             this.totalPhotosCountLabel3 = new System.Windows.Forms.Label();
             this.totalAlbumsCountLabel3 = new System.Windows.Forms.Label();
-            this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             averagePhotosPerAlbumLabel2 = new System.Windows.Forms.Label();
             totalLikedPagesCountLabel2 = new System.Windows.Forms.Label();
             mostLikedCountLabel2 = new System.Windows.Forms.Label();
@@ -150,6 +150,10 @@
             this.averagePhotosPerAlbumLabel3.Text = "label1";
             this.averagePhotosPerAlbumLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // facadeUserStatisticsBindingSource
+            // 
+            this.facadeUserStatisticsBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserStatistics);
+            // 
             // totalLikedPagesCountLabel3
             // 
             this.totalLikedPagesCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalLikedPagesCount", true));
@@ -160,6 +164,7 @@
             this.totalLikedPagesCountLabel3.TabIndex = 40;
             this.totalLikedPagesCountLabel3.Text = "label1";
             this.totalLikedPagesCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.totalLikedPagesCountLabel3.Click += new System.EventHandler(this.totalLikedPagesCountLabel3_Click);
             // 
             // mostLikedCountLabel3
             // 
@@ -193,10 +198,11 @@
             this.totalPostsCountLabel3.TabIndex = 43;
             this.totalPostsCountLabel3.Text = "label1";
             this.totalPostsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.totalPostsCountLabel3.Click += new System.EventHandler(this.totalPostsCountLabel3_Click);
             // 
             // totalPhotosCountLabel3
             // 
-            this.totalPhotosCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalPhotosCount", true));
+            this.totalPhotosCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalAlbumsCount", true));
             this.totalPhotosCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalPhotosCountLabel3.Location = new System.Drawing.Point(414, 739);
             this.totalPhotosCountLabel3.Name = "totalPhotosCountLabel3";
@@ -207,7 +213,7 @@
             // 
             // totalAlbumsCountLabel3
             // 
-            this.totalAlbumsCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalAlbumsCount", true));
+            this.totalAlbumsCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalPhotosCount", true));
             this.totalAlbumsCountLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalAlbumsCountLabel3.Location = new System.Drawing.Point(414, 583);
             this.totalAlbumsCountLabel3.Name = "totalAlbumsCountLabel3";
@@ -215,10 +221,6 @@
             this.totalAlbumsCountLabel3.TabIndex = 45;
             this.totalAlbumsCountLabel3.Text = "label1";
             this.totalAlbumsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // facadeUserStatisticsBindingSource
-            // 
-            this.facadeUserStatisticsBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserStatistics);
             // 
             // FormUserStatistics
             // 
