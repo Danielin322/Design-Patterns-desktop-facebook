@@ -38,13 +38,13 @@
             System.Windows.Forms.Label totalAlbumsCountLabel2;
             this.labelUserStatistics = new System.Windows.Forms.Label();
             this.averagePhotosPerAlbumLabel3 = new System.Windows.Forms.Label();
-            this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalLikedPagesCountLabel3 = new System.Windows.Forms.Label();
             this.mostLikedCountLabel3 = new System.Windows.Forms.Label();
             this.friendsCountLabel3 = new System.Windows.Forms.Label();
             this.totalPostsCountLabel3 = new System.Windows.Forms.Label();
             this.totalPhotosCountLabel3 = new System.Windows.Forms.Label();
             this.totalAlbumsCountLabel3 = new System.Windows.Forms.Label();
+            this.facadeUserStatisticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             averagePhotosPerAlbumLabel2 = new System.Windows.Forms.Label();
             totalLikedPagesCountLabel2 = new System.Windows.Forms.Label();
             mostLikedCountLabel2 = new System.Windows.Forms.Label();
@@ -150,10 +150,6 @@
             this.averagePhotosPerAlbumLabel3.Text = "label1";
             this.averagePhotosPerAlbumLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // facadeUserStatisticsBindingSource
-            // 
-            this.facadeUserStatisticsBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserStatistics);
-            // 
             // totalLikedPagesCountLabel3
             // 
             this.totalLikedPagesCountLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facadeUserStatisticsBindingSource, "TotalLikedPagesCount", true));
@@ -222,11 +218,15 @@
             this.totalAlbumsCountLabel3.Text = "label1";
             this.totalAlbumsCountLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // facadeUserStatisticsBindingSource
+            // 
+            this.facadeUserStatisticsBindingSource.DataSource = typeof(BasicFacebookFeatures.FacadeUserStatistics);
+            // 
             // FormUserStatistics
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1367, 916);
+            this.ClientSize = new System.Drawing.Size(1367, 999);
             this.Controls.Add(totalAlbumsCountLabel2);
             this.Controls.Add(this.totalAlbumsCountLabel3);
             this.Controls.Add(totalPhotosCountLabel2);

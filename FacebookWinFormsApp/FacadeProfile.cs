@@ -114,6 +114,26 @@ namespace BasicFacebookFeatures
             {
                 if (m_LoggedInUser.Posts != null)
                 {
+                    IIterator postIterator = new FacebookListIterator(m_LoggedInUser.Posts);
+                    while (postIterator.HasNext())
+                    {
+                        Post post = postIterator.Next() as Post;
+                        string content = "";
+                        if (post.Message != null)
+                        {
+                            content = post.Message;
+                        }
+                        else if (post.Caption != null)
+                        {
+                            content = post.Caption;
+                        }
+                        if (content != "")
+                        {
+                            postContents.Add(content);
+                        }
+                    }
+
+                    /*
                     foreach (Post post in m_LoggedInUser.Posts)
                     {
                         string content = "";
@@ -131,7 +151,7 @@ namespace BasicFacebookFeatures
                         {
                             postContents.Add(content);
                         }
-                    }
+                    }*/
                 }
             }
 

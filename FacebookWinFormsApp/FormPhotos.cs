@@ -49,10 +49,20 @@ namespace BasicFacebookFeatures
 
                 if (albums != null && albums.Count > 0)
                 {
+                    IIterator albumIterator = new FacebookListIterator(albums);
+                    while (albumIterator.HasNext())
+                    {
+                        Album album = albumIterator.Next() as Album;
+                        if (album != null)
+                        {
+                            listBoxAlbums.Items.Add(album);
+                        }
+                    }
+                    /*
                     foreach (Album album in albums)
                     {
                         listBoxAlbums.Items.Add(album);
-                    }
+                    }*/
                 }
                 else
                 {
@@ -87,10 +97,17 @@ namespace BasicFacebookFeatures
                 {
                     List<Photo> photosToShow = m_Facade.GetValidPhotosFromAlbum(selectedAlbum);
 
+                    IIterator photoIterator = new FacebookListIterator(photosToShow);
+                    while (photoIterator.HasNext())
+                    {
+                        Photo photo = photoIterator.Next() as Photo;
+                        addPhotoToLayoutPanel(photo);
+                    }
+                    /*
                     foreach (Photo photo in photosToShow)
                     {
                         addPhotoToLayoutPanel(photo);
-                    }
+                    }*/
                 }
                 catch (Exception ex)
                 {

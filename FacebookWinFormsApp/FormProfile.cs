@@ -73,10 +73,21 @@ namespace BasicFacebookFeatures
 
                 flowLayoutPanelPosts.Invoke(new Action(() => flowLayoutPanelPosts.Controls.Clear()));
 
+                IIterator postsIterator = new FacebookListIterator(posts);
+                while (postsIterator.HasNext())
+                {
+                    string postText = postsIterator.Next() as string;
+                    if (!string.IsNullOrEmpty(postText))
+                    {
+                        flowLayoutPanelPosts.Invoke(new Action(() => addPostToFlowPanel(postText)));
+                    }
+                }
+                /*
                 foreach (string postText in posts)
                 {
                     flowLayoutPanelPosts.Invoke(new Action(() => addPostToFlowPanel(postText)));
                 }
+                */
             }
             catch (Exception ex)
             {
