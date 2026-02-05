@@ -23,18 +23,18 @@ namespace BasicFacebookFeatures
             if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
             {
 
-                IIterator albumIterator = new FacebookListIterator(m_LoggedInUser.Albums);
+                IIterator<Album> albumIterator = new FacebookListIterator<Album>(m_LoggedInUser.Albums);
                 while (albumIterator.HasNext())
                 {
-                    Album currentAlbum = albumIterator.Next() as Album;
+                    Album currentAlbum = albumIterator.Next();
                     try
                     {
                         if (currentAlbum.Photos != null)
                         {
-                            IIterator photoIterator = new FacebookListIterator(currentAlbum.Photos);
+                            IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(currentAlbum.Photos);
                             while (photoIterator.HasNext())
                             {
-                                Photo currentPhoto = photoIterator.Next() as Photo;
+                                Photo currentPhoto = photoIterator.Next();
                                 try
                                 {
                                     if (currentPhoto.PictureNormalURL != null)

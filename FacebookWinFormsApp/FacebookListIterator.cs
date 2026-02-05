@@ -4,28 +4,31 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 
 namespace BasicFacebookFeatures
 {
-    public class FacebookListIterator : IIterator
+    public class FacebookListIterator<T> : IIterator<T>
     {
-        private IList m_collection;
-        private int m_currentIndex = 0;
+        private List<T> m_Collection;
+        private int m_CurrentIndex = 0;
 
-        public FacebookListIterator(IList i_Collection)
+        public FacebookListIterator(IEnumerable<T> i_Collection)
         {
-            m_collection = i_Collection;
+            m_Collection = new List<T>(i_Collection);
         }
 
         public bool HasNext()
         {
-            return m_collection != null && m_currentIndex < m_collection.Count;
+            return m_CurrentIndex < m_Collection.Count;
         }
 
-        public object Next()
+        public T Next()
         {
-            return m_collection[m_currentIndex++];
+            T currentItem = m_Collection[m_CurrentIndex];
+            m_CurrentIndex++;
+            return currentItem;
         }
     }
 }

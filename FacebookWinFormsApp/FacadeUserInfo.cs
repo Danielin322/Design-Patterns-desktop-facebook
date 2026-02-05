@@ -151,11 +151,11 @@ namespace BasicFacebookFeatures
 
             if (LoggedInUser != null && LoggedInUser.Posts != null)
             {
-                IIterator postsIterator = new FacebookListIterator(LoggedInUser.Posts);
+                IIterator<Post> postsIterator = new FacebookListIterator<Post>(LoggedInUser.Posts);
                 while (postsIterator.HasNext())
                 {
                     content = "";
-                    Post post = postsIterator.Next() as Post;
+                    Post post = postsIterator.Next();
                     if (post.Message != null)
                     {
                         content = post.Message;
@@ -199,16 +199,16 @@ namespace BasicFacebookFeatures
             if (LoggedInUser != null && LoggedInUser.Albums != null)
             {
 
-                IIterator albumIterator = new FacebookListIterator(LoggedInUser.Albums);
+                IIterator<Album> albumIterator = new FacebookListIterator<Album>(LoggedInUser.Albums);
                 while (albumIterator.HasNext())
                 {
-                    Album album = albumIterator.Next() as Album;
+                    Album album = albumIterator.Next();
                     if (album.Photos != null)
                     {
-                        IIterator photoIterator = new FacebookListIterator(album.Photos);
+                        IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(album.Photos);
                         while (photoIterator.HasNext())
                         {
-                            Photo photo = photoIterator.Next() as Photo;
+                            Photo photo = photoIterator.Next();
                             userPhotos.Add(photo);
                         }
                     }
@@ -236,7 +236,7 @@ namespace BasicFacebookFeatures
             if (LoggedInUser != null && LoggedInUser.Posts != null)
             {
 
-                IIterator postsIterator = new FacebookListIterator(LoggedInUser.Posts);
+                IIterator<Post> postsIterator = new FacebookListIterator<Post>(LoggedInUser.Posts);
                 while (postsIterator.HasNext())
                 {
                     postsIterator.Next();
@@ -257,7 +257,7 @@ namespace BasicFacebookFeatures
             int albumsCount = 0;
             if (LoggedInUser != null && LoggedInUser.Albums != null)
             {
-                IIterator albumsIterator = new FacebookListIterator(LoggedInUser.Albums);
+                IIterator<Album> albumsIterator = new FacebookListIterator<Album>(LoggedInUser.Albums);
                 while (albumsIterator.HasNext())
                 {
                     albumsIterator.Next();
@@ -277,7 +277,7 @@ namespace BasicFacebookFeatures
             int likedPageCount = 0;
             if (LoggedInUser != null && LoggedInUser.LikedPages != null)
             {
-                IIterator iterator = new FacebookListIterator(LoggedInUser.LikedPages);
+                IIterator<Page> iterator = new FacebookListIterator<Page>(LoggedInUser.LikedPages);
                 while (iterator.HasNext())
                 {
                     iterator.Next();
@@ -299,16 +299,16 @@ namespace BasicFacebookFeatures
 
             if (LoggedInUser != null && LoggedInUser.Albums != null)
             {
-                IIterator albumIterator = new FacebookListIterator(LoggedInUser.Albums);
+                IIterator<Album> albumIterator = new FacebookListIterator<Album>(LoggedInUser.Albums);
                 while (albumIterator.HasNext())
                 {
-                    Album album = albumIterator.Next() as Album;
+                    Album album = albumIterator.Next();
                     if (album.Photos != null)
                     {
-                        IIterator photoIterator = new FacebookListIterator(album.Photos);
+                        IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(album.Photos);
                         while (photoIterator.HasNext())
                         {
-                            Photo photo = photoIterator.Next() as Photo;
+                            Photo photo = photoIterator.Next();
                             if (photo.PictureNormalURL != null)
                             {
                                 totalPhotos++;
@@ -353,15 +353,15 @@ namespace BasicFacebookFeatures
             if (LoggedInUser != null && LoggedInUser.Albums != null)
             {
 
-                IIterator albumIterator = new FacebookListIterator(LoggedInUser.Albums);
+                IIterator<Album> albumIterator = new FacebookListIterator<Album>(LoggedInUser.Albums);
                 while (albumIterator.HasNext()) {
-                    Album album = albumIterator.Next() as Album;
+                    Album album = albumIterator.Next();
                     if (album.Photos != null)
                     {
-                        IIterator photoIterator = new FacebookListIterator(album.Photos);
+                        IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(album.Photos);
                         while (photoIterator.HasNext())
                         {
-                            Photo photo = photoIterator.Next() as Photo;
+                            Photo photo = photoIterator.Next();
                             if (photo.LikedBy != null)
                             {
                                 if (photo.LikedBy.Count > maxLikes)
@@ -406,10 +406,10 @@ namespace BasicFacebookFeatures
 
             if (LoggedInUser != null && LoggedInUser.LikedPages != null)
             {
-                IIterator pageIterator = new FacebookListIterator(LoggedInUser.LikedPages);
+                IIterator<Page> pageIterator = new FacebookListIterator<Page>(LoggedInUser.LikedPages);
                 while (pageIterator.HasNext())
                 {
-                    Page page = pageIterator.Next() as Page;
+                    Page page = pageIterator.Next();
                     likedPages.Add(page);
                 }
                 /*foreach (Page page in LoggedInUser.LikedPages)

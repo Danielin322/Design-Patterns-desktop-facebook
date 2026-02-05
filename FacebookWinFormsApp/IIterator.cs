@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures
 {
-    public interface IIterator
+    public interface IIterator<T>
     {
         bool HasNext();
-        object Next();
+        T Next();
     }
 }

@@ -27,11 +27,11 @@ namespace BasicFacebookFeatures
 
             if (i_Album != null && i_Album.Photos != null)
             {
-                IIterator photoIterator = new FacebookListIterator(i_Album.Photos);
+                IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(i_Album.Photos);
 
                 while (photoIterator.HasNext())
                 {
-                    Photo photo = photoIterator.Next() as Photo;
+                    Photo photo = photoIterator.Next();
                     if (isValidPhoto(photo))
                     {
                         validPhotos.Add(photo);

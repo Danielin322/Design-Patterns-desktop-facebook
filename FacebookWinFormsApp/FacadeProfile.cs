@@ -114,10 +114,10 @@ namespace BasicFacebookFeatures
             {
                 if (m_LoggedInUser.Posts != null)
                 {
-                    IIterator postIterator = new FacebookListIterator(m_LoggedInUser.Posts);
+                    IIterator<Post> postIterator = new FacebookListIterator<Post>(m_LoggedInUser.Posts);
                     while (postIterator.HasNext())
                     {
-                        Post post = postIterator.Next() as Post;
+                        Post post = postIterator.Next();
                         string content = "";
                         if (post.Message != null)
                         {

@@ -78,11 +78,11 @@ namespace BasicFacebookFeatures
             {
                 List<Page> pages = m_Facade.GetLikedPages();
 
-                IIterator iterator = new FacebookListIterator(pages);
+                IIterator<Page> iterator = new FacebookListIterator<Page>(pages);
 
                 while (iterator.HasNext())
                 {
-                    Page page = iterator.Next() as Page;
+                    Page page = iterator.Next();
                     if (page != null)
                     {
                         listBoxLikedPages.Items.Add(page);
