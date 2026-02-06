@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BasicFacebookFeatures
 {
     public partial class FormPhotos : Form
@@ -25,6 +26,7 @@ namespace BasicFacebookFeatures
             m_Facade = new FacadePhotos(i_LoggedInUser);
 
             InitializeComponent();
+
         }
 
         private void FormPhotos_Load(object sender, EventArgs e)
@@ -45,7 +47,8 @@ namespace BasicFacebookFeatures
                 listBoxAlbums.Items.Clear();
                 listBoxAlbums.DisplayMember = "Name";
 
-                FacebookObjectCollection<Album> albums = m_Facade.GetUserAlbums();
+                //FacebookObjectCollection<Album> albums = m_Facade.GetUserAlbums();
+                List<Album> albums = m_Facade.GetSortedAlbums();
 
                 if (albums != null && albums.Count > 0)
                 {
@@ -144,6 +147,18 @@ namespace BasicFacebookFeatures
         {
             m_MainForm.Show();
             this.Close();
+        }
+
+        private void sortByName_Click(object sender, EventArgs e)
+        {
+            m_Facade.SortStrategy = new SortByName();
+            fetchAlbums();
+        }
+
+        private void sortBySize_Click(object sender, EventArgs e)
+        {
+            m_Facade.SortStrategy = new SortBySize();
+            fetchAlbums();
         }
     }
 }

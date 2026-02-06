@@ -122,9 +122,12 @@
       <DependentUpon>FormUserStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="IIterator.cs" />
+    <Compile Include="ISortStrategy.cs" />
     <Compile Include="NavigationButtonsFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortByName.cs" />
+    <Compile Include="SortBySize.cs" />
     <EmbeddedResource Include="FormCollageOfPhotos.resx">
       <DependentUpon>FormCollageOfPhotos.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,15 +11,17 @@ namespace BasicFacebookFeatures
     {
         private User m_LoggedInUser;
 
+        public ISortStrategy SortStrategy { get; set; } = new SortByName();
+
         public FacadePhotos(User i_LoggedInUser)
         {
             m_LoggedInUser = i_LoggedInUser;
         }
 
-        public FacebookObjectCollection<Album> GetUserAlbums()
+        /*public FacebookObjectCollection<Album> GetUserAlbums()
         {
             return m_LoggedInUser?.Albums;
-        }
+        }*/
 
         public List<Photo> GetValidPhotosFromAlbum(Album i_Album)
         {
@@ -48,6 +50,12 @@ namespace BasicFacebookFeatures
             }
 
             return validPhotos;
+        }
+
+        public List<Album> GetSortedAlbums()
+        {
+            List<Album> albums = m_LoggedInUser.Albums.ToList();
+            return SortStrategy.Sort(albums);
         }
 
         private bool isValidPhoto(Photo i_Photo)
