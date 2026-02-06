@@ -57,7 +57,6 @@ namespace BasicFacebookFeatures
             {
                 Button btn = buttonsList[i];
 
-                // Calculate X and Y for the bottom right corner
                 int x = i_SpecificForm.ClientSize.Width - (btn.Width * (i + 1));
                 int y = i_SpecificForm.ClientSize.Height - btn.Height;
 

@@ -10,6 +10,8 @@ namespace BasicFacebookFeatures
     internal class FacadeMainWindow
     {
         private User m_LoggedInUser;
+        private Stack<ICommand> m_UndoStack = new Stack<ICommand>();
+        private Stack<ICommand> m_RedoStack = new Stack<ICommand>();
 
         public FacadeMainWindow(User i_LoggedInUser)
         {
@@ -68,6 +70,33 @@ namespace BasicFacebookFeatures
         public void PublishPost(string i_TextToPost)
         {
             // Posting a new status (facebook doesnt allow posting from here)
+        }
+
+        public void ExecuteCommand(ICommand i_Command)
+        {
+            i_Command.Execute();
+            m_UndoStack.Push(i_Command);
+            m_RedoStack.Clear();
+        }
+
+        public void Undo()
+        {
+            if (m_UndoStack.Count > 0)
+            {
+                ICommand command = m_UndoStack.Pop();
+                command.Undo();
+                m_RedoStack.Push(command);
+            }
+        }
+
+        public void Redo()
+        {
+            if (m_RedoStack.Count > 0)
+            {
+                ICommand command = m_RedoStack.Pop();
+                command.Execute();
+                m_UndoStack.Push(command);
+            }
         }
     }
 }

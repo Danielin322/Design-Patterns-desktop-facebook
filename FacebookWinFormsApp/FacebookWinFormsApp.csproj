@@ -77,6 +77,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoldCommand.cs" />
+    <Compile Include="ClearAllCommand.cs" />
+    <Compile Include="ColorChangeCommand.cs" />
     <Compile Include="FacadeCollageOfPhotos.cs" />
     <Compile Include="FacadeMain.cs" />
     <Compile Include="FacadeMainWindow.cs" />
@@ -121,6 +124,7 @@
     <Compile Include="FormUserStatistics.Designer.cs">
       <DependentUpon>FormUserStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICommand.cs" />
     <Compile Include="IIterator.cs" />
     <Compile Include="ISortStrategy.cs" />
     <Compile Include="NavigationButtonsFactory.cs" />
@@ -128,6 +132,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortByName.cs" />
     <Compile Include="SortBySize.cs" />
+    <Compile Include="UnderlineCommand.cs" />
     <EmbeddedResource Include="FormCollageOfPhotos.resx">
       <DependentUpon>FormCollageOfPhotos.cs</DependentUpon>
     </EmbeddedResource>

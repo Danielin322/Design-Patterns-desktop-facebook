@@ -32,11 +32,18 @@
             this.textBoxUserFullName = new System.Windows.Forms.TextBox();
             this.pictureBox_Profile = new System.Windows.Forms.PictureBox();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.textBoxNewPost = new System.Windows.Forms.TextBox();
             this.labelPost = new System.Windows.Forms.Label();
             this.buttonPublishPost = new System.Windows.Forms.Button();
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.LablePagesYouLiked = new System.Windows.Forms.Label();
+            this.RichTextBoxNewPost = new System.Windows.Forms.RichTextBox();
+            this.buttonChooseColor = new System.Windows.Forms.Button();
+            this.buttonBold = new System.Windows.Forms.Button();
+            this.buttonUnderline = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonUndo = new System.Windows.Forms.Button();
+            this.buttonRedo = new System.Windows.Forms.Button();
+            this.colorDialogPost = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,24 +90,11 @@
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // textBoxNewPost
-            // 
-            this.textBoxNewPost.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNewPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNewPost.Location = new System.Drawing.Point(489, 421);
-            this.textBoxNewPost.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNewPost.Multiline = true;
-            this.textBoxNewPost.Name = "textBoxNewPost";
-            this.textBoxNewPost.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxNewPost.Size = new System.Drawing.Size(626, 287);
-            this.textBoxNewPost.TabIndex = 8;
-            // 
             // labelPost
             // 
             this.labelPost.AutoSize = true;
             this.labelPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPost.Location = new System.Drawing.Point(482, 363);
+            this.labelPost.Location = new System.Drawing.Point(491, 299);
             this.labelPost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPost.Name = "labelPost";
             this.labelPost.Size = new System.Drawing.Size(348, 37);
@@ -113,7 +107,7 @@
             this.buttonPublishPost.AutoSize = true;
             this.buttonPublishPost.BackColor = System.Drawing.Color.MediumPurple;
             this.buttonPublishPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPublishPost.Location = new System.Drawing.Point(974, 743);
+            this.buttonPublishPost.Location = new System.Drawing.Point(973, 743);
             this.buttonPublishPost.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPublishPost.Name = "buttonPublishPost";
             this.buttonPublishPost.Size = new System.Drawing.Size(126, 50);
@@ -147,17 +141,91 @@
             this.LablePagesYouLiked.TabIndex = 12;
             this.LablePagesYouLiked.Text = "Pages you recently liked:";
             // 
+            // RichTextBoxNewPost
+            // 
+            this.RichTextBoxNewPost.Location = new System.Drawing.Point(500, 428);
+            this.RichTextBoxNewPost.Name = "RichTextBoxNewPost";
+            this.RichTextBoxNewPost.Size = new System.Drawing.Size(599, 277);
+            this.RichTextBoxNewPost.TabIndex = 13;
+            this.RichTextBoxNewPost.Text = "";
+            // 
+            // buttonChooseColor
+            // 
+            this.buttonChooseColor.Location = new System.Drawing.Point(468, 387);
+            this.buttonChooseColor.Name = "buttonChooseColor";
+            this.buttonChooseColor.Size = new System.Drawing.Size(110, 35);
+            this.buttonChooseColor.TabIndex = 14;
+            this.buttonChooseColor.Text = "color";
+            this.buttonChooseColor.UseVisualStyleBackColor = true;
+            this.buttonChooseColor.Click += new System.EventHandler(this.buttonChooseColor_Click);
+            // 
+            // buttonBold
+            // 
+            this.buttonBold.Location = new System.Drawing.Point(578, 387);
+            this.buttonBold.Name = "buttonBold";
+            this.buttonBold.Size = new System.Drawing.Size(110, 35);
+            this.buttonBold.TabIndex = 15;
+            this.buttonBold.Text = "bold";
+            this.buttonBold.UseVisualStyleBackColor = true;
+            this.buttonBold.Click += new System.EventHandler(this.buttonBold_Click);
+            // 
+            // buttonUnderline
+            // 
+            this.buttonUnderline.Location = new System.Drawing.Point(688, 387);
+            this.buttonUnderline.Name = "buttonUnderline";
+            this.buttonUnderline.Size = new System.Drawing.Size(110, 35);
+            this.buttonUnderline.TabIndex = 16;
+            this.buttonUnderline.Text = "underline";
+            this.buttonUnderline.UseVisualStyleBackColor = true;
+            this.buttonUnderline.Click += new System.EventHandler(this.buttonUnderline_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(798, 387);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(110, 35);
+            this.buttonClear.TabIndex = 17;
+            this.buttonClear.Text = "clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonUndo
+            // 
+            this.buttonUndo.Location = new System.Drawing.Point(908, 387);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(110, 35);
+            this.buttonUndo.TabIndex = 18;
+            this.buttonUndo.Text = "undo";
+            this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
+            // 
+            // buttonRedo
+            // 
+            this.buttonRedo.Location = new System.Drawing.Point(1018, 387);
+            this.buttonRedo.Name = "buttonRedo";
+            this.buttonRedo.Size = new System.Drawing.Size(110, 35);
+            this.buttonRedo.TabIndex = 19;
+            this.buttonRedo.Text = "redo";
+            this.buttonRedo.UseVisualStyleBackColor = true;
+            this.buttonRedo.Click += new System.EventHandler(this.buttonRedo_Click);
+            // 
             // FormMainFacebookWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1169, 943);
+            this.Controls.Add(this.buttonRedo);
+            this.Controls.Add(this.buttonUndo);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonUnderline);
+            this.Controls.Add(this.buttonBold);
+            this.Controls.Add(this.buttonChooseColor);
+            this.Controls.Add(this.RichTextBoxNewPost);
             this.Controls.Add(this.LablePagesYouLiked);
             this.Controls.Add(this.listBoxLikedPages);
             this.Controls.Add(this.buttonPublishPost);
             this.Controls.Add(this.labelPost);
-            this.Controls.Add(this.textBoxNewPost);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.pictureBox_Profile);
             this.Controls.Add(this.textBoxUserFullName);
@@ -178,10 +246,17 @@
         private System.Windows.Forms.TextBox textBoxUserFullName;
         private System.Windows.Forms.PictureBox pictureBox_Profile;
         private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.TextBox textBoxNewPost;
         private System.Windows.Forms.Label labelPost;
         private System.Windows.Forms.Button buttonPublishPost;
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.Label LablePagesYouLiked;
+        private System.Windows.Forms.RichTextBox RichTextBoxNewPost;
+        private System.Windows.Forms.Button buttonChooseColor;
+        private System.Windows.Forms.Button buttonBold;
+        private System.Windows.Forms.Button buttonUnderline;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Button buttonRedo;
+        private System.Windows.Forms.ColorDialog colorDialogPost;
     }
 }

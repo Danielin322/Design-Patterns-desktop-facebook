@@ -103,9 +103,9 @@ namespace BasicFacebookFeatures
 
         private void buttonPublishPost_Click(object sender, EventArgs e)
         {
-            m_Facade.PublishPost(textBoxNewPost.Text);
+            m_Facade.PublishPost(RichTextBoxNewPost.Text);
             MessageBox.Show("Post published successfully! (not really...)");
-            textBoxNewPost.Clear();
+            RichTextBoxNewPost.Clear();
         }
 
 
@@ -141,6 +141,47 @@ namespace BasicFacebookFeatures
             FormCollageOfPhotos collageForm = new FormCollageOfPhotos(m_LoggedInUser, this);
             this.Hide();
             collageForm.Show();
+        }
+
+        private void buttonChooseColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialogPost.ShowDialog() == DialogResult.OK)
+            {
+                ColorChangeCommand colorCommand = new ColorChangeCommand(RichTextBoxNewPost, colorDialogPost.Color);
+
+                m_Facade.ExecuteCommand(colorCommand);
+            }
+        }
+
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            m_Facade.Undo();
+        }
+
+        private void buttonRedo_Click(object sender, EventArgs e)
+        {
+            m_Facade.Redo();
+        }
+
+        private void buttonBold_Click(object sender, EventArgs e)
+        {
+            BoldCommand boldCommand = new BoldCommand(RichTextBoxNewPost);
+
+            m_Facade.ExecuteCommand(boldCommand);
+        }
+
+        private void buttonUnderline_Click(object sender, EventArgs e)
+        {
+            UnderlineCommand underlineCommand = new UnderlineCommand(RichTextBoxNewPost);
+
+            m_Facade.ExecuteCommand(underlineCommand);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearAllCommand clearCommand = new ClearAllCommand(RichTextBoxNewPost);
+
+            m_Facade.ExecuteCommand(clearCommand);
         }
     }
 }
