@@ -143,7 +143,9 @@ namespace BasicFacebookFeatures
             collageForm.Show();
         }
 
-        private void buttonChooseColor_Click(object sender, EventArgs e)
+        
+
+        private void toolStripButtonColor_Click(object sender, EventArgs e)
         {
             if (colorDialogPost.ShowDialog() == DialogResult.OK)
             {
@@ -153,35 +155,35 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void buttonUndo_Click(object sender, EventArgs e)
-        {
-            m_Facade.Undo();
-        }
-
-        private void buttonRedo_Click(object sender, EventArgs e)
-        {
-            m_Facade.Redo();
-        }
-
-        private void buttonBold_Click(object sender, EventArgs e)
+        private void toolStripButtonBold_Click(object sender, EventArgs e)
         {
             BoldCommand boldCommand = new BoldCommand(RichTextBoxNewPost);
 
             m_Facade.ExecuteCommand(boldCommand);
         }
 
-        private void buttonUnderline_Click(object sender, EventArgs e)
+        private void toolStripButtonUnderline_Click(object sender, EventArgs e)
         {
             UnderlineCommand underlineCommand = new UnderlineCommand(RichTextBoxNewPost);
 
             m_Facade.ExecuteCommand(underlineCommand);
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void toolStripButtonClear_Click(object sender, EventArgs e)
         {
             ClearAllCommand clearCommand = new ClearAllCommand(RichTextBoxNewPost);
 
             m_Facade.ExecuteCommand(clearCommand);
+        }
+
+        private void toolStripButtonUndo_Click(object sender, EventArgs e)
+        {
+            m_Facade.Undo();
+        }
+
+        private void toolStripButtonRedo_Click(object sender, EventArgs e)
+        {
+            m_Facade.Redo();
         }
     }
 }

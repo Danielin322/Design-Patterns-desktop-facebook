@@ -37,14 +37,21 @@
             this.listBoxLikedPages = new System.Windows.Forms.ListBox();
             this.LablePagesYouLiked = new System.Windows.Forms.Label();
             this.RichTextBoxNewPost = new System.Windows.Forms.RichTextBox();
-            this.buttonChooseColor = new System.Windows.Forms.Button();
-            this.buttonBold = new System.Windows.Forms.Button();
-            this.buttonUnderline = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonUndo = new System.Windows.Forms.Button();
-            this.buttonRedo = new System.Windows.Forms.Button();
             this.colorDialogPost = new System.Windows.Forms.ColorDialog();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonColor = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonBold = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUnderline = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClear = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUndo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonRedo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxUserFullName
@@ -143,71 +150,121 @@
             // 
             // RichTextBoxNewPost
             // 
-            this.RichTextBoxNewPost.Location = new System.Drawing.Point(500, 428);
+            this.RichTextBoxNewPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RichTextBoxNewPost.Location = new System.Drawing.Point(468, 428);
             this.RichTextBoxNewPost.Name = "RichTextBoxNewPost";
-            this.RichTextBoxNewPost.Size = new System.Drawing.Size(599, 277);
+            this.RichTextBoxNewPost.Size = new System.Drawing.Size(664, 277);
             this.RichTextBoxNewPost.TabIndex = 13;
             this.RichTextBoxNewPost.Text = "";
             // 
-            // buttonChooseColor
+            // toolStrip1
             // 
-            this.buttonChooseColor.Location = new System.Drawing.Point(468, 387);
-            this.buttonChooseColor.Name = "buttonChooseColor";
-            this.buttonChooseColor.Size = new System.Drawing.Size(110, 35);
-            this.buttonChooseColor.TabIndex = 14;
-            this.buttonChooseColor.Text = "color";
-            this.buttonChooseColor.UseVisualStyleBackColor = true;
-            this.buttonChooseColor.Click += new System.EventHandler(this.buttonChooseColor_Click);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonColor,
+            this.toolStripSeparator5,
+            this.toolStripButtonBold,
+            this.toolStripSeparator4,
+            this.toolStripButtonUnderline,
+            this.toolStripSeparator3,
+            this.toolStripButtonClear,
+            this.toolStripSeparator2,
+            this.toolStripButtonUndo,
+            this.toolStripSeparator1,
+            this.toolStripButtonRedo});
+            this.toolStrip1.Location = new System.Drawing.Point(659, 801);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(497, 50);
+            this.toolStrip1.TabIndex = 20;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // buttonBold
+            // toolStripButtonColor
             // 
-            this.buttonBold.Location = new System.Drawing.Point(578, 387);
-            this.buttonBold.Name = "buttonBold";
-            this.buttonBold.Size = new System.Drawing.Size(110, 35);
-            this.buttonBold.TabIndex = 15;
-            this.buttonBold.Text = "bold";
-            this.buttonBold.UseVisualStyleBackColor = true;
-            this.buttonBold.Click += new System.EventHandler(this.buttonBold_Click);
+            this.toolStripButtonColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonColor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonColor.Image")));
+            this.toolStripButtonColor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonColor.Name = "toolStripButtonColor";
+            this.toolStripButtonColor.Size = new System.Drawing.Size(71, 44);
+            this.toolStripButtonColor.Text = "color";
+            this.toolStripButtonColor.Click += new System.EventHandler(this.toolStripButtonColor_Click);
             // 
-            // buttonUnderline
+            // toolStripButtonBold
             // 
-            this.buttonUnderline.Location = new System.Drawing.Point(688, 387);
-            this.buttonUnderline.Name = "buttonUnderline";
-            this.buttonUnderline.Size = new System.Drawing.Size(110, 35);
-            this.buttonUnderline.TabIndex = 16;
-            this.buttonUnderline.Text = "underline";
-            this.buttonUnderline.UseVisualStyleBackColor = true;
-            this.buttonUnderline.Click += new System.EventHandler(this.buttonUnderline_Click);
+            this.toolStripButtonBold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonBold.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonBold.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBold.Image")));
+            this.toolStripButtonBold.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonBold.Name = "toolStripButtonBold";
+            this.toolStripButtonBold.Size = new System.Drawing.Size(46, 44);
+            this.toolStripButtonBold.Text = "B";
+            this.toolStripButtonBold.Click += new System.EventHandler(this.toolStripButtonBold_Click);
             // 
-            // buttonClear
+            // toolStripButtonUnderline
             // 
-            this.buttonClear.Location = new System.Drawing.Point(798, 387);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(110, 35);
-            this.buttonClear.TabIndex = 17;
-            this.buttonClear.Text = "clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.toolStripButtonUnderline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonUnderline.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonUnderline.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUnderline.Image")));
+            this.toolStripButtonUnderline.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUnderline.Name = "toolStripButtonUnderline";
+            this.toolStripButtonUnderline.Size = new System.Drawing.Size(46, 44);
+            this.toolStripButtonUnderline.Text = "U";
+            this.toolStripButtonUnderline.Click += new System.EventHandler(this.toolStripButtonUnderline_Click);
             // 
-            // buttonUndo
+            // toolStripButtonClear
             // 
-            this.buttonUndo.Location = new System.Drawing.Point(908, 387);
-            this.buttonUndo.Name = "buttonUndo";
-            this.buttonUndo.Size = new System.Drawing.Size(110, 35);
-            this.buttonUndo.TabIndex = 18;
-            this.buttonUndo.Text = "undo";
-            this.buttonUndo.UseVisualStyleBackColor = true;
-            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
+            this.toolStripButtonClear.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonClear.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClear.Image")));
+            this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClear.Name = "toolStripButtonClear";
+            this.toolStripButtonClear.Size = new System.Drawing.Size(72, 44);
+            this.toolStripButtonClear.Text = "Clear";
+            this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
             // 
-            // buttonRedo
+            // toolStripButtonUndo
             // 
-            this.buttonRedo.Location = new System.Drawing.Point(1018, 387);
-            this.buttonRedo.Name = "buttonRedo";
-            this.buttonRedo.Size = new System.Drawing.Size(110, 35);
-            this.buttonRedo.TabIndex = 19;
-            this.buttonRedo.Text = "redo";
-            this.buttonRedo.UseVisualStyleBackColor = true;
-            this.buttonRedo.Click += new System.EventHandler(this.buttonRedo_Click);
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonUndo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonUndo.Image")));
+            this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUndo.Name = "toolStripButtonUndo";
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(76, 44);
+            this.toolStripButtonUndo.Text = "Undo";
+            this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
+            // 
+            // toolStripButtonRedo
+            // 
+            this.toolStripButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonRedo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRedo.Image")));
+            this.toolStripButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRedo.Name = "toolStripButtonRedo";
+            this.toolStripButtonRedo.Size = new System.Drawing.Size(72, 44);
+            this.toolStripButtonRedo.Text = "Redo";
+            this.toolStripButtonRedo.Click += new System.EventHandler(this.toolStripButtonRedo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 50);
             // 
             // FormMainFacebookWindow
             // 
@@ -215,12 +272,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1169, 943);
-            this.Controls.Add(this.buttonRedo);
-            this.Controls.Add(this.buttonUndo);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.buttonUnderline);
-            this.Controls.Add(this.buttonBold);
-            this.Controls.Add(this.buttonChooseColor);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.RichTextBoxNewPost);
             this.Controls.Add(this.LablePagesYouLiked);
             this.Controls.Add(this.listBoxLikedPages);
@@ -237,6 +289,8 @@
             this.Text = "FacebookWindow";
             this.Load += new System.EventHandler(this.FormMainFacebookWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Profile)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,12 +305,18 @@
         private System.Windows.Forms.ListBox listBoxLikedPages;
         private System.Windows.Forms.Label LablePagesYouLiked;
         private System.Windows.Forms.RichTextBox RichTextBoxNewPost;
-        private System.Windows.Forms.Button buttonChooseColor;
-        private System.Windows.Forms.Button buttonBold;
-        private System.Windows.Forms.Button buttonUnderline;
-        private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Button buttonUndo;
-        private System.Windows.Forms.Button buttonRedo;
         private System.Windows.Forms.ColorDialog colorDialogPost;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonColor;
+        private System.Windows.Forms.ToolStripButton toolStripButtonBold;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUnderline;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClear;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUndo;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRedo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
