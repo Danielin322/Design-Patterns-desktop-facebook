@@ -132,26 +132,6 @@ namespace BasicFacebookFeatures
                             postContents.Add(content);
                         }
                     }
-
-                    /*
-                    foreach (Post post in m_LoggedInUser.Posts)
-                    {
-                        string content = "";
-
-                        if (post.Message != null)
-                        {
-                            content = post.Message;
-                        }
-                        else if (post.Caption != null)
-                        {
-                            content = post.Caption;
-                        }
-
-                        if (content != "")
-                        {
-                            postContents.Add(content);
-                        }
-                    }*/
                 }
             }
 

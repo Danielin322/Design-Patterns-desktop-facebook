@@ -114,26 +114,6 @@ namespace BasicFacebookFeatures
             {
                 int maxLikes = -1;
 
-                /*if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
-                {
-                    foreach (Album album in m_LoggedInUser.Albums)
-                    {
-                        if (album.Photos != null)
-                        {
-                            foreach (Photo photo in album.Photos)
-                            {
-                                if (photo.LikedBy != null)
-                                {
-                                    if (photo.LikedBy.Count > maxLikes)
-                                    {
-                                        maxLikes = photo.LikedBy.Count;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }*/
-
                 //facebook's Count function doesnt work, so we put dummy data instead of maxLikes
                 if (maxLikes == -1)
                 {

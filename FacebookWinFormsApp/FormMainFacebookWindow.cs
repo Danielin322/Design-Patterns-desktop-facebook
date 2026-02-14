@@ -108,7 +108,6 @@ namespace BasicFacebookFeatures
             RichTextBoxNewPost.Clear();
         }
 
-
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             FormProfile profileForm = new FormProfile(m_LoggedInUser, this);
@@ -142,8 +141,6 @@ namespace BasicFacebookFeatures
             this.Hide();
             collageForm.Show();
         }
-
-        
 
         private void toolStripButtonColor_Click(object sender, EventArgs e)
         {

@@ -56,11 +56,6 @@ namespace BasicFacebookFeatures
                         Page page = pageIterator.Next() as Page;
                         pageList.Add(page);
                     }
-
-                    /*foreach (Page page in m_LoggedInUser.LikedPages)
-                    {
-                        pageList.Add(page);
-                    }*/
                 }
             }
 

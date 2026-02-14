@@ -54,38 +54,6 @@ namespace BasicFacebookFeatures
                         // Ignore albums that cannot be accessed
                     }
                 }
-
-                /*foreach (Album album in m_LoggedInUser.Albums)
-                {
-                    try
-                    {
-                        if (album.Photos != null)
-                        {
-                            
-                            
-                            foreach (Photo photo in album.Photos)
-                            {
-                                try
-                                { 
-                                    if (photo.PictureNormalURL != null)
-                                    {
-                                        allPhotosList.Add(photo);
-                                    }
-                                }
-                                catch
-                                {
-                                    // Ignore photos that cannot be accessed
-                                }
-
-                            }
-                        }
-                    }
-                    catch 
-                    {
-                        // Ignore albums that cannot be accessed
-                    }
-
-                }*/
             }
 
             return allPhotosList;

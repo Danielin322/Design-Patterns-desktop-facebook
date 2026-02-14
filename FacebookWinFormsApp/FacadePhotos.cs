@@ -18,11 +18,6 @@ namespace BasicFacebookFeatures
             m_LoggedInUser = i_LoggedInUser;
         }
 
-        /*public FacebookObjectCollection<Album> GetUserAlbums()
-        {
-            return m_LoggedInUser?.Albums;
-        }*/
-
         public List<Photo> GetValidPhotosFromAlbum(Album i_Album)
         {
             List<Photo> validPhotos = new List<Photo>();
@@ -39,14 +34,6 @@ namespace BasicFacebookFeatures
                         validPhotos.Add(photo);
                     }
                 }
-
-                /*foreach (Photo photo in i_Album.Photos)
-                {
-                    if (isValidPhoto(photo))
-                    {
-                        validPhotos.Add(photo);
-                    }
-                }*/
             }
 
             return validPhotos;

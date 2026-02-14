@@ -169,24 +169,6 @@ namespace BasicFacebookFeatures
                         postsContent.Add(content);
                     }
                 }
-
-
-                /* foreach (Post post in LoggedInUser.Posts)
-                 {
-                     if (post.Message != null)
-                     {
-                         content = post.Message;
-                     }
-                     else if (post.Caption != null)
-                     {
-                         content = post.Caption;
-                     }
-
-                     if (!string.IsNullOrEmpty(content))
-                     {
-                         postsContent.Add(content);
-                     }
-                 }*/
             }
 
             return postsContent;
@@ -213,17 +195,6 @@ namespace BasicFacebookFeatures
                         }
                     }
                 }
-
-                /*foreach (Album album in LoggedInUser.Albums)
-                {
-                    if (album.Photos != null)
-                    {
-                        foreach (Photo photo in album.Photos)
-                        {
-                            userPhotos.Add(photo);
-                        }
-                    }
-                }*/
             }
 
             return userPhotos;
@@ -243,11 +214,6 @@ namespace BasicFacebookFeatures
                     postsCount++;
                 }
             }
-            /*
-            if (LoggedInUser != null && LoggedInUser.Posts != null)
-            {
-                postsCount = LoggedInUser.Posts.Count;
-            }*/
 
             return postsCount;
         }
@@ -264,10 +230,6 @@ namespace BasicFacebookFeatures
                     albumsCount++;
                 }
             }
-            /*if (LoggedInUser != null && LoggedInUser.Albums != null)
-            {
-                albumsCount = LoggedInUser.Albums.Count;
-            }*/
 
             return albumsCount;
         }
@@ -284,11 +246,6 @@ namespace BasicFacebookFeatures
                     likedPageCount++;
                 }
             }
-
-            /*f (LoggedInUser != null && LoggedInUser.LikedPages != null)
-            {
-                likedPageCount = LoggedInUser.LikedPages.Count;
-            }*/
 
             return likedPageCount;
         }
@@ -316,20 +273,6 @@ namespace BasicFacebookFeatures
                         }
                     }
                 }
-
-                /*foreach (Album album in LoggedInUser.Albums)
-                {
-                    if (album.Photos != null)
-                    {
-                        foreach (Photo photo in album.Photos)
-                        {
-                            if (photo.PictureNormalURL != null)
-                            {
-                                totalPhotos++;
-                            }
-                        }
-                    }
-                }*/
             }
 
             return totalPhotos;
@@ -372,23 +315,6 @@ namespace BasicFacebookFeatures
                         }
                     }
                 }
-
-                /*foreach (Album album in LoggedInUser.Albums)
-                {
-                    if (album.Photos != null)
-                    {
-                        foreach (Photo photo in album.Photos)
-                        {
-                            if (photo.LikedBy != null)
-                            {
-                                if (photo.LikedBy.Count > maxLikes)
-                                {
-                                    maxLikes = photo.LikedBy.Count;
-                                }
-                            }
-                        }
-                    }
-                }*/
             }
 
             /* facebook's Count function doesnt work, so we put dummy data intead of maxLikes*/
@@ -412,10 +338,6 @@ namespace BasicFacebookFeatures
                     Page page = pageIterator.Next();
                     likedPages.Add(page);
                 }
-                /*foreach (Page page in LoggedInUser.LikedPages)
-                {
-                    likedPages.Add(page);
-                }*/
             }
 
             return likedPages;
