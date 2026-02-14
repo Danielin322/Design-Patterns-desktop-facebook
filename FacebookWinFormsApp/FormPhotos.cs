@@ -47,7 +47,6 @@ namespace BasicFacebookFeatures
                 listBoxAlbums.Items.Clear();
                 listBoxAlbums.DisplayMember = "Name";
 
-                //FacebookObjectCollection<Album> albums = m_Facade.GetUserAlbums();
                 List<Album> albums = m_Facade.GetSortedAlbums();
 
                 if (albums != null && albums.Count > 0)
