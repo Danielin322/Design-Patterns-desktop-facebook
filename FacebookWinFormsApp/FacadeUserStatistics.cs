@@ -69,7 +69,8 @@ namespace BasicFacebookFeatures
 
                 if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
                 {
-                    IIterator<Album> albumIterator = new FacebookListIterator<Album>(m_LoggedInUser.Albums);
+                    IAggregate<Album> albumAggregate = new FacebookObjectCollection<Album>(m_LoggedInUser.Albums);
+                    IIterator<Album> albumIterator = albumAggregate.CreateIterator();
                     while (albumIterator.HasNext())
                     {
                         try
@@ -77,7 +78,8 @@ namespace BasicFacebookFeatures
                             Album album = albumIterator.Next();
                             if (album.Photos != null)
                             {
-                                IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(album.Photos);
+                                IAggregate<Photo> photoAggregate = new FacebookObjectCollection<Photo>(album.Photos);
+                                IIterator<Photo> photoIterator = photoAggregate.CreateIterator();
                                 while (photoIterator.HasNext())
                                 {
                                     Photo photo = photoIterator.Next();

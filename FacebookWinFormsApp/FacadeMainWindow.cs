@@ -50,7 +50,8 @@ namespace BasicFacebookFeatures
             {
                 if (m_LoggedInUser.LikedPages != null)
                 {
-                    IIterator<Page> pageIterator = new FacebookListIterator<Page>(m_LoggedInUser.LikedPages);
+                    IAggregate<Page> pageAggregate = new FacebookObjectCollection<Page>(m_LoggedInUser.LikedPages);
+                    IIterator<Page> pageIterator = pageAggregate.CreateIterator();
                     while (pageIterator.HasNext())
                     {
                         Page page = pageIterator.Next() as Page;

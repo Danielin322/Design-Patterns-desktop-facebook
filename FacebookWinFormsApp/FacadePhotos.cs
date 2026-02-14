@@ -24,7 +24,8 @@ namespace BasicFacebookFeatures
 
             if (i_Album != null && i_Album.Photos != null)
             {
-                IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(i_Album.Photos);
+                IAggregate<Photo> photoAggregate = new FacebookObjectCollection<Photo>(i_Album.Photos);
+                IIterator<Photo> photoIterator = photoAggregate.CreateIterator();
 
                 while (photoIterator.HasNext())
                 {

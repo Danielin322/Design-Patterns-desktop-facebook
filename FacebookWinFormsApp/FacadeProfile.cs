@@ -114,7 +114,8 @@ namespace BasicFacebookFeatures
             {
                 if (m_LoggedInUser.Posts != null)
                 {
-                    IIterator<Post> postIterator = new FacebookListIterator<Post>(m_LoggedInUser.Posts);
+                    IAggregate<Post> postAggregate = new FacebookObjectCollection<Post>(m_LoggedInUser.Posts);
+                    IIterator<Post> postIterator = postAggregate.CreateIterator();
                     while (postIterator.HasNext())
                     {
                         Post post = postIterator.Next();

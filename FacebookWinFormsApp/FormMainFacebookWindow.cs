@@ -46,7 +46,7 @@ namespace BasicFacebookFeatures
 
         private void FormMainFacebookWindow_Load(object sender, EventArgs e)
         {
-            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.home, this, this, m_LoggedInUser);
+            List<System.Windows.Forms.Button> navButtons = NavigationButtonsFactory.CreateButtons(NavigationButtonsFactory.eButtonTypes.Home, this, this, m_LoggedInUser);
 
             foreach (System.Windows.Forms.Button btn in navButtons)
             {
@@ -77,8 +77,8 @@ namespace BasicFacebookFeatures
             try
             {
                 List<Page> pages = m_Facade.GetLikedPages();
-
-                IIterator<Page> iterator = new FacebookListIterator<Page>(pages);
+                IAggregate<Page> pageAggregate = new FacebookObjectCollection<Page>(pages);
+                IIterator<Page> iterator = pageAggregate.CreateIterator();
 
                 while (iterator.HasNext())
                 {

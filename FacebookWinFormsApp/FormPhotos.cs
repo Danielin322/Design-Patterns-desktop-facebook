@@ -52,7 +52,8 @@ namespace BasicFacebookFeatures
 
                 if (albums != null && albums.Count > 0)
                 {
-                    IIterator<Album> albumIterator = new FacebookListIterator<Album>(albums);
+                    IAggregate<Album> albumAggregate = new FacebookObjectCollection<Album>(albums);
+                    IIterator<Album> albumIterator = albumAggregate.CreateIterator();
                     while (albumIterator.HasNext())
                     {
                         Album album = albumIterator.Next();
@@ -100,7 +101,8 @@ namespace BasicFacebookFeatures
                 {
                     List<Photo> photosToShow = m_Facade.GetValidPhotosFromAlbum(selectedAlbum);
 
-                    IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(photosToShow);
+                    IAggregate<Photo> photoAggregate = new FacebookObjectCollection<Photo>(photosToShow);
+                    IIterator<Photo> photoIterator = photoAggregate.CreateIterator();
                     while (photoIterator.HasNext())
                     {
                         Photo photo = photoIterator.Next();

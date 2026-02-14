@@ -16,7 +16,7 @@ namespace BasicFacebookFeatures
             Photos,
             Statistics,
             SpecialMoments,
-            home
+            Home
         }
         public static List<Button> CreateButtons(eButtonTypes i_ButtonType, Form i_SpecificForm, FormMainFacebookWindow i_MainForm, User i_LoggedInUser)
         {
@@ -45,7 +45,7 @@ namespace BasicFacebookFeatures
             {
                 buttonsList.Add(createNavigationButton("Home", (sender, e) => { Form formToClose = ((Button)sender).FindForm(); formToClose.Close(); i_MainForm.Show(); }));
             }
-            else if (i_ButtonType == eButtonTypes.home)
+            else if (i_ButtonType == eButtonTypes.Home)
             {
                 buttonsList.Add(createNavigationButton("Profile", (s, e) => openProfile(i_MainForm, i_LoggedInUser, null)));
                 buttonsList.Add(createNavigationButton("Photos", (s, e) => openPhotos(i_MainForm, i_LoggedInUser, null)));

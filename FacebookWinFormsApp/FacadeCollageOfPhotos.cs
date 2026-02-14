@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BasicFacebookFeatures
 {
@@ -22,8 +23,8 @@ namespace BasicFacebookFeatures
 
             if (m_LoggedInUser != null && m_LoggedInUser.Albums != null)
             {
-
-                IIterator<Album> albumIterator = new FacebookListIterator<Album>(m_LoggedInUser.Albums);
+                IAggregate<Album> albumAggregate = new FacebookObjectCollection<Album>(m_LoggedInUser.Albums);
+                IIterator<Album> albumIterator = albumAggregate.CreateIterator();
                 while (albumIterator.HasNext())
                 {
                     Album currentAlbum = albumIterator.Next();
@@ -31,7 +32,8 @@ namespace BasicFacebookFeatures
                     {
                         if (currentAlbum.Photos != null)
                         {
-                            IIterator<Photo> photoIterator = new FacebookListIterator<Photo>(currentAlbum.Photos);
+                            IAggregate<Photo> photoAggregate = new FacebookObjectCollection<Photo>(currentAlbum.Photos);
+                            IIterator<Photo> photoIterator = photoAggregate.CreateIterator();
                             while (photoIterator.HasNext())
                             {
                                 Photo currentPhoto = photoIterator.Next();
