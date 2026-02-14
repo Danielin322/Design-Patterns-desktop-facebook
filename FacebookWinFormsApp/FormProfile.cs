@@ -83,12 +83,6 @@ namespace BasicFacebookFeatures
                         flowLayoutPanelPosts.Invoke(new Action(() => addPostToFlowPanel(postText)));
                     }
                 }
-                /*
-                foreach (string postText in posts)
-                {
-                    flowLayoutPanelPosts.Invoke(new Action(() => addPostToFlowPanel(postText)));
-                }
-                */
             }
             catch (Exception ex)
             {

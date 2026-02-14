@@ -43,6 +43,7 @@ namespace BasicFacebookFeatures
         public List<Album> GetSortedAlbums()
         {
             List<Album> albums = m_LoggedInUser.Albums.ToList();
+
             return SortStrategy.Sort(albums);
         }
 

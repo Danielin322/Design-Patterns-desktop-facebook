@@ -125,7 +125,7 @@
     <Compile Include="FormUserStatistics.Designer.cs">
       <DependentUpon>FormUserStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Iaggregate.cs" />
+    <Compile Include="IAggregate.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="IIterator.cs" />
     <Compile Include="ISortStrategy.cs" />

@@ -8,16 +8,16 @@ namespace BasicFacebookFeatures
 {
     public class FacebookObjectCollection<T> : IAggregate<T>
     {
-        private readonly List<T> r_list;
+        private readonly List<T> r_List;
 
         public FacebookObjectCollection(IEnumerable<T> i_Collection)
         {
-            r_list = new List<T>(i_Collection);
+            r_List = new List<T>(i_Collection);
         }
 
         public IIterator<T> CreateIterator()
         {
-            return new FacebookListIterator<T>(r_list);
+            return new FacebookListIterator<T>(r_List);
         }
     }
 }

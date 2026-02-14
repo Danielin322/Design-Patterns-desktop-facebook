@@ -28,6 +28,7 @@ namespace BasicFacebookFeatures
         {
             T currentItem = m_Collection[m_CurrentIndex];
             m_CurrentIndex++;
+
             return currentItem;
         }
     }

@@ -80,6 +80,7 @@ namespace BasicFacebookFeatures
             if (m_UndoStack.Count > 0)
             {
                 ICommand command = m_UndoStack.Pop();
+
                 command.Undo();
                 m_RedoStack.Push(command);
             }
@@ -90,6 +91,7 @@ namespace BasicFacebookFeatures
             if (m_RedoStack.Count > 0)
             {
                 ICommand command = m_RedoStack.Pop();
+
                 command.Execute();
                 m_UndoStack.Push(command);
             }

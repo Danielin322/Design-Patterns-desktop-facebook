@@ -12,6 +12,7 @@ namespace BasicFacebookFeatures
         public List<Album> Sort(List<Album> i_Albums)
         {
             List<Album> sortedAlbums = i_Albums.OrderBy(album => album.Name).ToList();
+
             return sortedAlbums;
         }
     }

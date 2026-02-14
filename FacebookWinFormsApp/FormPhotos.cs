@@ -62,11 +62,6 @@ namespace BasicFacebookFeatures
                             listBoxAlbums.Items.Add(album);
                         }
                     }
-                    /*
-                    foreach (Album album in albums)
-                    {
-                        listBoxAlbums.Items.Add(album);
-                    }*/
                 }
                 else
                 {
@@ -108,11 +103,6 @@ namespace BasicFacebookFeatures
                         Photo photo = photoIterator.Next();
                         addPhotoToLayoutPanel(photo);
                     }
-                    /*
-                    foreach (Photo photo in photosToShow)
-                    {
-                        addPhotoToLayoutPanel(photo);
-                    }*/
                 }
                 catch (Exception ex)
                 {

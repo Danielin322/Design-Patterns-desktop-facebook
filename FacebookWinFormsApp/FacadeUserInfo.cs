@@ -49,14 +49,16 @@ namespace BasicFacebookFeatures
             get
             {
                 int totalAlbums = TotalAlbumsCount;
+                string result;
                 if (totalAlbums > 0)
                 {
-                    return (TotalPhotosCount / totalAlbums).ToString();
+                    result =  (TotalPhotosCount / totalAlbums).ToString();
                 }
                 else
                 {
-                    return "0";
+                    result = "0";
                 }
+                return result;
             }
         }
 
